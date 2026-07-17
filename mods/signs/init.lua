@@ -1,7 +1,7 @@
 -- Font: 04.jp.org
 
 -- load characters map
-local chars_file = io.open(minetest.get_modpath("signs").."/characters", "r")
+local chars_file = io.open(minetest.get_modpath("mcre_signs").."/characters", "r")
 local charmap = {}
 local max_chars = 16
 if not chars_file then
@@ -43,7 +43,7 @@ end
 local destruct_sign = function(pos)
     local objects = minetest.env:get_objects_inside_radius(pos, 0.5)
     for _, v in ipairs(objects) do
-        if v:get_entity_name() == "signs:text" then
+        if v:get_entity_name() == "mcre_signs:text" then
             v:remove()
         end
     end
@@ -61,7 +61,7 @@ local update_sign = function(pos, fields, sender)
 	text = meta:get_string("text")
     local objects = minetest.env:get_objects_inside_radius(pos, 0.5)
     for _, v in ipairs(objects) do
-        if v:get_entity_name() == "signs:text" then
+        if v:get_entity_name() == "mcre_signs:text" then
             v:set_properties({textures={generate_texture(create_lines(text))}})
 			return
         end
@@ -69,9 +69,9 @@ local update_sign = function(pos, fields, sender)
 	
 	-- if there is no entity
 	local sign_info
-	if minetest.env:get_node(pos).name == "signs:sign_yard" then
+	if minetest.env:get_node(pos).name == "mcre_signs:sign_yard" then
 		sign_info = signs_yard[minetest.env:get_node(pos).param2 + 1]
-	elseif minetest.env:get_node(pos).name == "signs:sign_wall" then
+	elseif minetest.env:get_node(pos).name == "mcre_signs:sign_wall" then
 		sign_info = signs[minetest.env:get_node(pos).param2 + 1]
 	end
 	if sign_info == nil then
@@ -79,11 +79,11 @@ local update_sign = function(pos, fields, sender)
 	end
 	local text = minetest.env:add_entity({x = pos.x + sign_info.delta.x,
 										y = pos.y + sign_info.delta.y,
-										z = pos.z + sign_info.delta.z}, "signs:text")
+										z = pos.z + sign_info.delta.z}, "mcre_signs:text")
 	text:setyaw(sign_info.yaw)
 end
 
-minetest.register_node("signs:sign_wall", {
+minetest.register_node("mcre_signs:sign_wall", {
     description = "Sign",
     inventory_image = "default_sign_wall.png",
 	walkable = false,
@@ -121,20 +121,20 @@ minetest.register_node("signs:sign_wall", {
         local sign_info
         if wdir == 0 then
             --how would you add sign to ceiling?
-            minetest.env:add_item(above, "signs:sign_wall")
+            minetest.env:add_item(above, "mcre_signs:sign_wall")
 			itemstack:take_item()
 			return itemstack
         elseif wdir == 1 then
-            minetest.env:add_node(above, {name = "signs:sign_yard", param2 = fdir})
+            minetest.env:add_node(above, {name = "mcre_signs:sign_yard", param2 = fdir})
             sign_info = signs_yard[fdir + 1]
         else
-            minetest.env:add_node(above, {name = "signs:sign_wall", param2 = fdir})
+            minetest.env:add_node(above, {name = "mcre_signs:sign_wall", param2 = fdir})
             sign_info = signs[fdir + 1]
         end
 
         local text = minetest.env:add_entity({x = above.x + sign_info.delta.x,
                                               y = above.y + sign_info.delta.y,
-                                              z = above.z + sign_info.delta.z}, "signs:text")
+                                              z = above.z + sign_info.delta.z}, "mcre_signs:text")
         text:setyaw(sign_info.yaw)
 
 		itemstack:take_item()
@@ -154,7 +154,7 @@ minetest.register_node("signs:sign_wall", {
 	end,
 })
 
-minetest.register_node("signs:sign_yard", {
+minetest.register_node("mcre_signs:sign_yard", {
     paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -167,7 +167,7 @@ minetest.register_node("signs:sign_yard", {
     selection_box = {type = "fixed", fixed = {-0.45, -0.15, -0.049, 0.45, 0.45, 0.049}},
     tiles = {"signs_top.png", "signs_bottom.png", "signs_side.png", "signs_side.png", "signs_back.png", "signs_front.png"},
     groups = {choppy=2, dig_immediate=2},
-    drop = "signs:sign_wall",
+    drop = "mcre_signs:sign_wall",
 
     on_construct = function(pos)
         construct_sign(pos)
@@ -183,7 +183,7 @@ minetest.register_node("signs:sign_yard", {
 	end,
 })
 
-minetest.register_entity("signs:text", {
+minetest.register_entity("mcre_signs:text", {
     collisionbox = { 0, 0, 0, 0, 0, 0 },
     visual = "upright_sprite",
     textures = {},
