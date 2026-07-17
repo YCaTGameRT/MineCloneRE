@@ -33,7 +33,7 @@ local function create_item(frame_pos, frame_param2, item_name)
 	local yaw = math.pi*2 - frame_param2 * math.pi/2
 
 	local item = core.add_entity(
-		pos, "itemframes:item", vector.to_string(frame_pos)..";"..item_name
+		pos, "mcre_itemframes:item", vector.to_string(frame_pos)..";"..item_name
 	)
 
 	if item then
@@ -79,7 +79,7 @@ local function resolve_conflict(pos)
 	end
 end
 
-core.register_entity("itemframes:item", {
+core.register_entity("mcre_itemframes:item", {
 	hp_max = 1,
 	visual="wielditem",
 	visual_size={x=.33, y=.33},
@@ -101,7 +101,7 @@ core.register_entity("itemframes:item", {
 				-- we shouldn't load item if there is no frame position
 				-- or there is no itemframe at this position
 				-- to avoid having items without frames
-				if frame_pos_vec and core.get_node(frame_pos_vec).name == "itemframes:frame" then
+				if frame_pos_vec and core.get_node(frame_pos_vec).name == "mcre_itemframes:frame" then
 					-- only add item if frame contains some item
 					-- to be sure that item won't be placed in empty frame
 					-- in case frame with this item was replaced with empty one
@@ -131,7 +131,7 @@ core.register_entity("itemframes:item", {
 	end
 })
 
-core.register_node("itemframes:frame", {
+core.register_node("mcre_itemframes:frame", {
 	description = "Item frame",
 	drawtype = "nodebox",
 	node_box = {type = "fixed", fixed = {-0.5, -0.5, 7/16, 0.5, 0.5, 0.5}},
@@ -204,7 +204,7 @@ core.register_node("itemframes:frame", {
 })
 
 core.register_craft({
-	output = 'itemframes:frame',
+	output = 'mcre_itemframes:frame',
 	recipe = {
 		{'default:stick', 'default:stick', 'default:stick'},
 		{'default:stick', 'default:paper', 'default:stick'},
