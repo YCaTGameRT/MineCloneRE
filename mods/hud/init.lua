@@ -12,7 +12,7 @@ local SAVE_INTERVAL = 0.5*60--currently useless
 --default settings
 HUD_ENABLE_HUNGER = minetest.setting_getbool("hud_hunger_enable")
 HUD_SHOW_ARMOR = false
-if minetest.get_modpath("3d_armor") ~= nil then HUD_SHOW_ARMOR = true end
+if minetest.get_modpath("mcre_3d_armor") ~= nil then HUD_SHOW_ARMOR = true end
 if HUD_ENABLE_HUNGER == nil then HUD_ENABLE_HUNGER = minetest.setting_getbool("enable_damage") end
 HUD_HUNGER_TICK = 300
 HUD_HEALTH_POS = {x=0.4,y=0.935}
@@ -25,9 +25,9 @@ HUD_ARMOR_POS = {x=0.4,y=0.915}
 HUD_ARMOR_OFFSET = {x=0, y=0}
 
 --load costum settings
-local set = io.open(minetest.get_modpath("hud").."/hud.conf", "r")
+local set = io.open(minetest.get_modpath("mcre_hud").."/hud.conf", "r")
 if set then 
-	dofile(minetest.get_modpath("hud").."/hud.conf")
+	dofile(minetest.get_modpath("mcre_hud").."/hud.conf")
 	set:close()
 else
 	if not HUD_ENABLE_HUNGER then
@@ -134,8 +134,8 @@ function hud.set_armor()
 end
 
 
-if HUD_ENABLE_HUNGER then dofile(minetest.get_modpath("hud").."/hunger.lua") end
-if HUD_SHOW_ARMOR then dofile(minetest.get_modpath("hud").."/armor.lua") end
+if HUD_ENABLE_HUNGER then dofile(minetest.get_modpath("mcre_hud").."/hunger.lua") end
+if HUD_SHOW_ARMOR then dofile(minetest.get_modpath("mcre_hud").."/armor.lua") end
 
 
 local function update_hud(player)
