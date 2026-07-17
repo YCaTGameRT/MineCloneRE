@@ -13,8 +13,8 @@ local directions = {
 local function update_wall(pos)
 	local thisnode = minetest.env:get_node(pos)
 
-	if thisnode.name:find("wallet:wall") ~= 1 and
-		thisnode.name:find("wallet:wallmossy") ~= 1 then
+	if thisnode.name:find("mcre_wallet:wall") ~= 1 and
+		thisnode.name:find("mcre_wallet:wallmossy") ~= 1 then
 		-- Not a wall
 		return
 	end
@@ -174,9 +174,9 @@ end
 
 -- Cobblestone wall
 
-register_wall("wallet:wall", "Cobblestone Wall", "default_cobble.png", "cobblestone_wallet.png")
+register_wall("mcre_wallet:wall", "Cobblestone Wall", "default_cobble.png", "cobblestone_wallet.png")
 minetest.register_craft({
-	output = 'wallet:wall 6',
+	output = 'mcre_wallet:wall 6',
 	recipe = {
 		{'default:cobble', 'default:cobble', 'default:cobble'},
 		{'default:cobble', 'default:cobble', 'default:cobble'}
@@ -185,9 +185,9 @@ minetest.register_craft({
 
 -- Mossy wall
 
-register_wall("wallet:wallmossy", "Mossy Cobblestone Wall", "default_mossycobble.png", "cobblestonemossy_wallet.png")
+register_wall("mcre_wallet:wallmossy", "Mossy Cobblestone Wall", "default_mossycobble.png", "cobblestonemossy_wallet.png")
 minetest.register_craft({
-	output = 'wallet:wallmossy 6',
+	output = 'mcre_wallet:wallmossy 6',
 	recipe = {
 		{'default:mossycobble', 'default:mossycobble', 'default:mossycobble'},
         {'default:mossycobble', 'default:mossycobble', 'default:mossycobble'}
