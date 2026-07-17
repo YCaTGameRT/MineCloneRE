@@ -1,6 +1,6 @@
 -- minetest/fire/init.lua
 local init = os.clock()
-minetest.register_node("fire:basic_flame", {
+minetest.register_node("mcre_fire:basic_flame", {
 	description = "Fire",
 	drawtype = "firelike",
 	tiles = {{
@@ -46,7 +46,7 @@ end
 function fire.update_sounds_around(pos)
 	local p0, p1 = fire.get_area_p0p1(pos)
 	local cp = {x=(p0.x+p1.x)/2, y=(p0.y+p1.y)/2, z=(p0.z+p1.z)/2}
-	local flames_p = minetest.find_nodes_in_area(p0, p1, {"fire:basic_flame"})
+	local flames_p = minetest.find_nodes_in_area(p0, p1, {"mcre_fire:basic_flame"})
 	--print("number of flames at "..minetest.pos_to_string(p0).."/"
 	--		..minetest.pos_to_string(p1)..": "..#flames_p)
 	local should_have_sound = (#flames_p > 0)
@@ -115,7 +115,7 @@ minetest.register_abm({
 		end
 		local p = fire.find_pos_for_flame_around(p0)
 		if p then
-			minetest.set_node(p, {name="fire:basic_flame"})
+			minetest.set_node(p, {name="mcre_fire:basic_flame"})
 			fire.on_flame_add_at(p)
 		end
 	end,
@@ -141,7 +141,7 @@ minetest.register_abm({
 			end
 			local p2 = fire.find_pos_for_flame_around(p)
 			if p2 then
-				minetest.set_node(p2, {name="fire:basic_flame"})
+				minetest.set_node(p2, {name="mcre_fire:basic_flame"})
 				fire.on_flame_add_at(p2)
 			end
 		end
@@ -150,7 +150,7 @@ minetest.register_abm({
 
 -- Remove flammable nodes and flame
 minetest.register_abm({
-	nodenames = {"fire:basic_flame"},
+	nodenames = {"mcre_fire:basic_flame"},
 	interval = 1,
 	chance = 2,
 	action = function(p0, node, _, _)
