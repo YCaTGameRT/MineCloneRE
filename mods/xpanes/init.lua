@@ -12,7 +12,7 @@ function pane(node, desc, dropitem, recipeitem, color)
 	}
 
 	local function update_pane(pos)
-		if minetest.env:get_node(pos).name:find("xpanes:pane_"..node..""..color) == nil then
+		if minetest.env:get_node(pos).name:find("mcre_xpanes:pane_"..node..""..color) == nil then
 			return
 		end
 		local sum = 0
@@ -25,7 +25,7 @@ function pane(node, desc, dropitem, recipeitem, color)
 		if sum == 0 then
 			sum = 15
 		end
-		minetest.env:add_node(pos, {name = "xpanes:pane_"..node..""..color.."_"..sum})
+		minetest.env:add_node(pos, {name = "mcre_xpanes:pane_"..node..""..color.."_"..sum})
 	end
 
 	local function update_nearby(pos)
@@ -73,7 +73,7 @@ function pane(node, desc, dropitem, recipeitem, color)
 		if cnt == 1 then
 			texture = "xpanes_pane_half_"..node..""..color..".png"
 		end
-		minetest.register_node("xpanes:pane_"..node..""..color.."_"..i, {
+		minetest.register_node("mcre_xpanes:pane_"..node..""..color.."_"..i, {
 			drawtype = "nodebox",
 			tiles = {"xpanes_top_"..node..""..color..".png", "xpanes_top_"..node..""..color..".png", texture},
 			paramtype = "light",
@@ -91,7 +91,7 @@ function pane(node, desc, dropitem, recipeitem, color)
 		})
 	end
 
-	minetest.register_node("xpanes:pane_"..node..""..color, {
+	minetest.register_node("mcre_xpanes:pane_"..node..""..color, {
 		description = desc,
 		tiles = {"xpanes_pane_"..node..""..color..".png"},
 		inventory_image = "xpanes_pane_"..node..""..color..".png",
@@ -108,7 +108,7 @@ function pane(node, desc, dropitem, recipeitem, color)
 	minetest.register_on_dignode(update_nearby)
 
 	minetest.register_craft({
-		output = 'xpanes:pane_'..node..''..color..' 16',
+		output = 'mcre_xpanes:pane_'..node..''..color..' 16',
 		recipe = {
 			{recipeitem, recipeitem, recipeitem},
 			{recipeitem, recipeitem, recipeitem}
