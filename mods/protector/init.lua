@@ -103,7 +103,7 @@ protector.can_dig = function(r,pos,digger,onlyowner,infolevel)
 	local positions = minetest.find_nodes_in_area(
 		{x=pos.x-r, y=pos.y-r, z=pos.z-r},
 		{x=pos.x+r, y=pos.y+r, z=pos.z+r},
-		"protector:protect")
+		"mcre_protector:protect")
 
 	for _, pos in ipairs(positions) do
 		local meta = minetest.env:get_meta(pos)
@@ -156,7 +156,7 @@ end
 protector.old_node_place = minetest.item_place
 function minetest.item_place(itemstack, placer, pointed_thing)
 
-	if itemstack:get_name() == "protector:protect" then
+	if itemstack:get_name() == "mcre_protector:protect" then
 		local pos = pointed_thing.above
 		local user = placer:get_player_name()
 		if protector.can_dig(10, pos, user, true, 3) then
@@ -172,7 +172,7 @@ end
 
 -- END
 
-minetest.register_node("protector:protect", {
+minetest.register_node("mcre_protector:protect", {
 	description = "Protection",
 	tiles = {"protector_top.png","protector_top.png","protector_side.png"},
 	sounds = default.node_sound_stone_defaults(),
@@ -216,14 +216,14 @@ minetest.register_node("protector:protect", {
 		end
 
 		local objs = minetest.env:get_objects_inside_radius(pos,.5)
-		minetest.env:add_entity(pos, "protector:display")
+		minetest.env:add_entity(pos, "mcre_protector:display")
 		minetest.env:get_node_timer(pos):start(10)
 	end,
 
 	on_timer = function(pos)
 		local objs = minetest.env:get_objects_inside_radius(pos,.5)
 		for _, o in pairs(objs) do
-			if (not o:is_player()) and o:get_luaentity().name == "protector:display" then
+			if (not o:is_player()) and o:get_luaentity().name == "mcre_protector:display" then
 				o:remove()
 			end
 		end
@@ -270,7 +270,7 @@ minetest.register_on_player_receive_fields(function(player,formname,fields)
 end)
 
 minetest.register_craft({
-	output = "protector:protect 4",
+	output = "mcre_protector:protect 4",
 	recipe = {
 		{"default:stone","default:stone","default:stone"},
 		{"default:stone","default:steel_ingot","default:stone"},
@@ -278,14 +278,14 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_entity("protector:display", {
+minetest.register_entity("mcre_protector:display", {
 	physical = false,
 	collisionbox = {0,0,0,0,0,0},
 	visual = "wielditem",
 	visual_size = {x=1.0/1.5,y=1.0/1.5}, -- wielditem seems to be scaled to 1.5 times original node size
-	textures = {"protector:display_node"},
+	textures = {"mcre_protector:display_node"},
 	on_step = function(self, dtime)
-		if minetest.get_node(self.object:getpos()).name ~= "protector:protect" then
+		if minetest.get_node(self.object:getpos()).name ~= "mcre_protector:protect" then
 			self.object:remove()
 			return
 		end
@@ -296,7 +296,7 @@ minetest.register_entity("protector:display", {
 -- Do NOT place the display as a node
 -- it is made to be used as an entity (see above)
 
-minetest.register_node("protector:display_node", {
+minetest.register_node("mcre_protector:display_node", {
 	tiles = {"protector_display.png"},
 	use_texture_alpha = true,
 	walkable = false,
