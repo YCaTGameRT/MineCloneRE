@@ -66,7 +66,7 @@ end
 
 -- abms for flames
 minetest.register_abm({
-	nodenames = {"torches:wand"},
+	nodenames = {"mcre_torches:wand"},
 	interval = 1,
 	chance = 1,
 	action = function(pos)
@@ -77,7 +77,7 @@ minetest.register_abm({
 })
 
 minetest.register_abm({
-	nodenames = {"torches:floor"},
+	nodenames = {"mcre_torches:floor"},
 	interval = 1,
 	chance = 1,
 	action = function(pos)
@@ -87,7 +87,7 @@ minetest.register_abm({
 	end
 })
 
-minetest.register_craftitem("torches:torch", {
+minetest.register_craftitem("mcre_torches:torch", {
 	description = "Torch",
 	inventory_image = "torches_torch.png",
 	wield_image = "torches_torch.png",
@@ -115,12 +115,12 @@ minetest.register_craftitem("torches:torch", {
 			udef = minetest.registered_nodes[u_n.name]
 			if u_n and udef and udef.walkable then return itemstack end
 			if wdir == 1 then
-				minetest.env:add_node(above, {name = "torches:floor"})	
+				minetest.env:add_node(above, {name = "mcre_torches:floor"})	
 				if minetest.env:get_node(under).name:find("wallet:wall") == 1 then
 					update_wall_global(pos)
 				end
 			else
-				minetest.env:add_node(above, {name = "torches:wand", param2 = is_wall(wdir)})
+				minetest.env:add_node(above, {name = "mcre_torches:wand", param2 = is_wall(wdir)})
 			end
 			if not wdir == 0 or not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
@@ -131,7 +131,7 @@ minetest.register_craftitem("torches:torch", {
 
 })
 
-minetest.register_node("torches:floor", {
+minetest.register_node("mcre_torches:floor", {
 	inventory_image = "default_torch.png",
 	wield_image = "torches_torch.png",
 	wield_scale = {x=1,y=1,z=1+2/16},
@@ -176,7 +176,7 @@ local wall_ndbx = {
 			{-1/16, 0, -1/16, 1/16, 2/16, 1/16},
 }
 
-minetest.register_node("torches:wand", {
+minetest.register_node("mcre_torches:wand", {
 	inventory_image = "default_torch.png",
 	wield_image = "torches_torch.png",
 	wield_scale = {x=1,y=1,z=1+1/16},
@@ -202,7 +202,7 @@ minetest.register_node("torches:wand", {
 	},
 	update = function(pos,node)
 		if not check_attached_node_fdir(pos, node) then
-			minetest.add_item(pos, {name="torches:torch"})
+			minetest.add_item(pos, {name="mcre_torches:torch"})
 		end
 	end,
 
