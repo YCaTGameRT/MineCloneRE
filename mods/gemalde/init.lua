@@ -1,6 +1,6 @@
 -- Count the number of pictures.
 local function get_picture(number)
-	local filename	= minetest.get_modpath("gemalde").."/textures/gemalde_"..number..".png"
+	local filename	= minetest.get_modpath("mcre_gemalde").."/textures/gemalde_"..number..".png"
 	local file		= io.open(filename, "r")
 	if file ~= nil then io.close(file) return true else return false end
 end
@@ -22,7 +22,7 @@ if n == 1 then
 end
 
 -- inivisible node
-minetest.register_node("gemalde:node_"..n.."", {
+minetest.register_node("mcre_gemalde:node_"..n.."", {
 	description = "Picture #"..n.."",
 	drawtype = "signlike",
 	tiles = {"gemalde_"..n..".png"},
@@ -60,7 +60,7 @@ minetest.register_node("gemalde:node_"..n.."", {
 		end
 
 		print("[gemalde] number is "..number.."")
-		node.name = "gemalde:node_"..number..""
+		node.name = "mcre_gemalde:node_"..number..""
 		minetest.env:set_node(pos, node)
 	end,
 
@@ -71,9 +71,9 @@ minetest.register_node("gemalde:node_"..n.."", {
 -- crafts
 if n < N then
 minetest.register_craft({
-	output = 'gemalde:node_'..n..'',
+	output = 'mcre_gemalde:node_'..n..'',
 	recipe = {
-		{'gemalde:node_'..(n+1)..''},
+		{'mcre_gemalde:node_'..(n+1)..''},
 	}
 })
 end
@@ -84,15 +84,15 @@ end
 
 -- close the craft loop
 minetest.register_craft({
-	output = 'gemalde:node_'..N..'',
+	output = 'mcre_gemalde:node_'..N..'',
 	recipe = {
-		{'gemalde:node_1'},
+		{'mcre_gemalde:node_1'},
 	}
 })
 
 -- initial craft
 minetest.register_craft({
-	output = 'gemalde:node_1',
+	output = 'mcre_gemalde:node_1',
 	recipe = {
 		{'default:paper', 'default:paper'},
 		{'default:paper', 'default:paper'},
@@ -103,19 +103,19 @@ minetest.register_craft({
 -- reset several pictures to #1
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 2',
+	output = 'mcre_gemalde:node_1 2',
 	recipe = {'group:picture', 'group:picture'},
 })
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 3',
+	output = 'mcre_gemalde:node_1 3',
 	recipe = {'group:picture', 'group:picture', 'group:picture'},
 })
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 4',
+	output = 'mcre_gemalde:node_1 4',
 	recipe = {
 		'group:picture', 'group:picture', 'group:picture', 
 		'group:picture'
@@ -124,7 +124,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 5',
+	output = 'mcre_gemalde:node_1 5',
 	recipe = {
 		'group:picture', 'group:picture', 'group:picture', 
 		'group:picture', 'group:picture'
@@ -133,7 +133,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 6',
+	output = 'mcre_gemalde:node_1 6',
 	recipe = {
 		'group:picture', 'group:picture', 'group:picture', 
 		'group:picture', 'group:picture', 'group:picture'
@@ -142,7 +142,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 7',
+	output = 'mcre_gemalde:node_1 7',
 	recipe = {
 		'group:picture', 'group:picture', 'group:picture', 
 		'group:picture', 'group:picture', 'group:picture', 
@@ -152,7 +152,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 8',
+	output = 'mcre_gemalde:node_1 8',
 	recipe = {
 		'group:picture', 'group:picture', 'group:picture', 
 		'group:picture', 'group:picture', 'group:picture', 
@@ -162,7 +162,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = 'shapeless',
-	output = 'gemalde:node_1 9',
+	output = 'mcre_gemalde:node_1 9',
 	recipe = {
 			'group:picture', 'group:picture', 'group:picture', 
 			'group:picture', 'group:picture', 'group:picture', 
