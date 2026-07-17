@@ -2,7 +2,7 @@ local init = os.clock()
 local override_original = true  --change to "true" if you want original and placed fences replaced
 
 local function dockable(nodename)
-    if nodename == "default:wood" or string.find(nodename, "wallet:wall") or nodename == "default:brick" or nodename == "default:cobble" or nodename == "default:dirt" or nodename == "default:sandstone" or nodename == "default:stone" or string.find(nodename, "fences:fence_wood") or string.find(nodename, "fences:fencegate") then
+    if nodename == "mcre_default:wood" or string.find(nodename, "mcre_wallet:wall") or nodename == "mcre_default:brick" or nodename == "mcre_default:cobble" or nodename == "mcre_default:dirt" or nodename == "mcre_default:sandstone" or nodename == "mcre_default:stone" or string.find(nodename, "mcre_fences:fence_wood") or string.find(nodename, "mcre_fences:fencegate") then
         return true
     end
 end
@@ -44,7 +44,7 @@ local function find_dock(pos, second)
 	end
 		local me = minetest.env:get_node(pos)
 		if code > 0 then
-			local tmp_name = "fences:fence_wood_"..code
+			local tmp_name = "mcre_fences:fence_wood_"..code
 			local tmp_node = {name=tmp_name, param1=me.param1, param2=me.param2}
 			if second > 0 then
 				local tmp_node = {name=tmp_name, param1=me.param1, param2=me.param2}
@@ -52,7 +52,7 @@ local function find_dock(pos, second)
 			end
 		elseif code == 0 then
 			if second == 2 then
-				local tmp_node = {name="fences:fence_wood", param1=me.param1, param2=me.param2}
+				local tmp_node = {name="mcre_fences:fence_wood", param1=me.param1, param2=me.param2}
 				minetest.env:set_node(pos, tmp_node)			
 			end
 		end
@@ -95,14 +95,14 @@ local bx2 = {5/16, 1/2-1/16, 1/16, 5/16, 1/2+8/16, 1/16}   --oben_block(quer) x 
 local bx21 = {5/16, 1/2-1/16, -1/16, 5/16, 1/2+8/16, -1/16}   --oben_block(quer) x 2seite
 
 
-minetest.register_node("fences:fence_wood", {
+minetest.register_node("mcre_fences:fence_wood", {
 	description = "Wooden Fence",
 	tiles = {"default_wood.png"},
 	inventory_image = "default_fence.png",
 	wield_image = "default_fence.png",
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	stack_max = 64,
 	sunlight_propagates = true,
 	drawtype = "nodebox",
@@ -129,11 +129,11 @@ minetest.register_node("fences:fence_wood", {
 
 --different fence types- (1=left,2=right,3=top,4=bottom)
 
-minetest.register_node("fences:fence_wood_1", {
+minetest.register_node("mcre_fences:fence_wood_1", {
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -156,11 +156,11 @@ minetest.register_node("fences:fence_wood_1", {
 	end
 })
 
-minetest.register_node("fences:fence_wood_2", {
+minetest.register_node("mcre_fences:fence_wood_2", {
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -183,11 +183,11 @@ minetest.register_node("fences:fence_wood_2", {
 	end
 })
 
-minetest.register_node("fences:fence_wood_3", {  --left+right(3)
+minetest.register_node("mcre_fences:fence_wood_3", {  --left+right(3)
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -210,11 +210,11 @@ minetest.register_node("fences:fence_wood_3", {  --left+right(3)
 	end
 })
 
-minetest.register_node("fences:fence_wood_11", {  --top
+minetest.register_node("mcre_fences:fence_wood_11", {  --top
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -237,11 +237,11 @@ minetest.register_node("fences:fence_wood_11", {  --top
 	end
 })
 
-minetest.register_node("fences:fence_wood_21", {  --bottom
+minetest.register_node("mcre_fences:fence_wood_21", {  --bottom
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -265,11 +265,11 @@ minetest.register_node("fences:fence_wood_21", {  --bottom
 })
 
 
-minetest.register_node("fences:fence_wood_32", {  --top+bottom(32)
+minetest.register_node("mcre_fences:fence_wood_32", {  --top+bottom(32)
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -292,11 +292,11 @@ minetest.register_node("fences:fence_wood_32", {  --top+bottom(32)
 	end
 })
 
-minetest.register_node("fences:fence_wood_14", {  --left+right(3)+ top(11) =14
+minetest.register_node("mcre_fences:fence_wood_14", {  --left+right(3)+ top(11) =14
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -319,11 +319,11 @@ minetest.register_node("fences:fence_wood_14", {  --left+right(3)+ top(11) =14
 	end
 })
 
-minetest.register_node("fences:fence_wood_24", {  --left+right(3)+ bottom(21) =24
+minetest.register_node("mcre_fences:fence_wood_24", {  --left+right(3)+ bottom(21) =24
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -346,11 +346,11 @@ minetest.register_node("fences:fence_wood_24", {  --left+right(3)+ bottom(21) =2
 	end
 })
 
-minetest.register_node("fences:fence_wood_35", {  --left+right(3)+top+bottom(32) = 35
+minetest.register_node("mcre_fences:fence_wood_35", {  --left+right(3)+top+bottom(32) = 35
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -373,11 +373,11 @@ minetest.register_node("fences:fence_wood_35", {  --left+right(3)+top+bottom(32)
 	end
 })
 
-minetest.register_node("fences:fence_wood_12", {  --left(1)+top(11)=12
+minetest.register_node("mcre_fences:fence_wood_12", {  --left(1)+top(11)=12
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -400,11 +400,11 @@ minetest.register_node("fences:fence_wood_12", {  --left(1)+top(11)=12
 	end
 })
 
-minetest.register_node("fences:fence_wood_22", {  --left(1)+bottom(21)=22
+minetest.register_node("mcre_fences:fence_wood_22", {  --left(1)+bottom(21)=22
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -427,11 +427,11 @@ minetest.register_node("fences:fence_wood_22", {  --left(1)+bottom(21)=22
 	end
 })
 
-minetest.register_node("fences:fence_wood_33", {  --left(1)+top+bottom(32)=33
+minetest.register_node("mcre_fences:fence_wood_33", {  --left(1)+top+bottom(32)=33
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -454,11 +454,11 @@ minetest.register_node("fences:fence_wood_33", {  --left(1)+top+bottom(32)=33
 	end
 })
 
-minetest.register_node("fences:fence_wood_34", {  --right(2)+top+bottom(32)=34
+minetest.register_node("mcre_fences:fence_wood_34", {  --right(2)+top+bottom(32)=34
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -481,11 +481,11 @@ minetest.register_node("fences:fence_wood_34", {  --right(2)+top+bottom(32)=34
 	end
 })
 
-minetest.register_node("fences:fence_wood_23", {  --right(2)+bottom(21)=23
+minetest.register_node("mcre_fences:fence_wood_23", {  --right(2)+bottom(21)=23
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -508,11 +508,11 @@ minetest.register_node("fences:fence_wood_23", {  --right(2)+bottom(21)=23
 	end
 })
 
-minetest.register_node("fences:fence_wood_13", {  --right(2)+top(11)=13
+minetest.register_node("mcre_fences:fence_wood_13", {  --right(2)+top(11)=13
 	tiles = {"default_wood.png"},
 	paramtype = "light",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1},
-	drop = 'fences:fence_wood',
+	drop = 'mcre_fences:fence_wood',
 	sunlight_propagates = true,
 	drawtype = "nodebox",
 	node_box = {
@@ -535,21 +535,21 @@ minetest.register_node("fences:fence_wood_13", {  --right(2)+top(11)=13
 	end
 })
 
-minetest.register_alias("default:fence_wood", "fences:fence")
+minetest.register_alias("mcre_default:fence_wood", "mcre_fences:fence")
 
 minetest.register_craft({
-	output = 'fences:fence_wood 3',
+	output = 'mcre_fences:fence_wood 3',
 	recipe = {
-		{'default:wood', 'default:stick', 'default:wood'},
-		{'default:wood', 'default:stick', 'default:wood'},
+		{'mcre_default:wood', 'mcre_default:stick', 'mcre_default:wood'},
+		{'mcre_default:wood', 'mcre_default:stick', 'mcre_default:wood'},
 	}
 })
 
 minetest.register_craft({
-	output = 'fences:fencegate',
+	output = 'mcre_fences:fencegate',
 	recipe = {
-		{'default:stick', 'default:wood', 'default:stick'},
-		{'default:stick', 'default:wood', 'default:stick'},
+		{'mcre_default:stick', 'mcre_default:wood', 'mcre_default:stick'},
+		{'mcre_default:stick', 'mcre_default:wood', 'mcre_default:stick'},
 	}
 })
 
@@ -570,17 +570,17 @@ local function punch_gate(pos, node)
 		if state2 == 1 then
 			state2 = 0
 			minetest.sound_play("door_close", {gain = 0.3, max_hear_distance = 10})
-			tmp_node2 = {name="fences:fencegate", param1=node.param1, param2=node.param2}
+			tmp_node2 = {name="mcre_fences:fencegate", param1=node.param1, param2=node.param2}
 		else
 			state2 = 1
 			minetest.sound_play("door_open", {gain = 0.3, max_hear_distance = 10})
-			tmp_node2 = {name="fences:fencegate_open", param1=node.param1, param2=node.param2}
+			tmp_node2 = {name="mcre_fences:fencegate_open", param1=node.param1, param2=node.param2}
 		end
 		update_gate(pos, tmp_node2)
 		meta2:set_int("state", state2)
 end
 
-minetest.register_node("fences:fencegate_open", {
+minetest.register_node("mcre_fences:fencegate_open", {
 	tiles = {"default_wood.png"},
 	inventory_image = "default_fence.png",
 	wield_image = "default_fence.png",
@@ -589,7 +589,7 @@ minetest.register_node("fences:fencegate_open", {
 	sunlight_propagates = true,
 	walkable = true,
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,fences=1,not_in_inventory=1,mesecon_effector_on=1},
-	drop = 'fences:fencegate',
+	drop = 'mcre_fences:fencegate',
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -624,7 +624,7 @@ minetest.register_node("fences:fencegate_open", {
 	end
 })
 
-minetest.register_node("fences:fencegate", {
+minetest.register_node("mcre_fences:fencegate", {
 	description = "Wooden Fancegate",
 	tiles = {"default_wood.png"},
 	inventory_image = "fences_fencegate.png",
@@ -635,7 +635,7 @@ minetest.register_node("fences:fencegate", {
 	sunlight_propagates = true,
 	walkable = true,
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,mesecon_effector_on=1,fences=1},
-	drop = 'fences:fencegate',
+	drop = 'mcre_fences:fencegate',
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -681,11 +681,11 @@ minetest.register_node("fences:fencegate", {
 
 if override_original == true then
 	minetest.register_abm({
-		nodenames = {"default:fence_wood"},
+		nodenames = {"mcre_default:fence_wood"},
 		interval = 1.0,
 		chance = 1,
 		action = function(pos, node, active_object_count, active_object_count_wider)
-			local tmp_node3 = {name="fences:fence_wood"}
+			local tmp_node3 = {name="mcre_fences:fence_wood"}
 			minetest.env:set_node(pos, tmp_node3)
 			minetest.env:punch_node(pos)
 		end
