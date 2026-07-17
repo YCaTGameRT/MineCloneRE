@@ -4,50 +4,50 @@
 -- Node definitions
 --
 
-minetest.register_node("default:stone", {
+minetest.register_node("mcre_default:stone", {
 	description = "Stone",
 	tiles = {"default_stone.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=3, stone=1},
-	drop = 'default:cobble',
+	drop = 'mcre_default:cobble',
 	legacy_mineral = true,
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_with_coal", {
+minetest.register_node("mcre_default:stone_with_coal", {
 	description = "Coal Ore",
 	tiles = {"default_stone.png^default_mineral_coal.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=3},
-	drop = 'default:coal_lump',
+	drop = 'mcre_default:coal_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_with_iron", {
+minetest.register_node("mcre_default:stone_with_iron", {
 	description = "Iron Ore",
 	tiles = {"default_stone.png^default_mineral_iron.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=2},
-	drop = 'default:stone_with_iron',
+	drop = 'mcre_default:stone_with_iron',
 	sounds = default.node_sound_stone_defaults(),
 })
 
 
-minetest.register_node("default:stone_with_gold", {
+minetest.register_node("mcre_default:stone_with_gold", {
 	description = "Gold Ore",
 	tiles = {"default_stone.png^default_mineral_gold.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=2},
-	drop = "default:stone_with_gold",
+	drop = "mcre_default:stone_with_gold",
 	sounds = default.node_sound_stone_defaults(),
 })
 
 
-minetest.register_node("default:stone_with_redstone", {
+minetest.register_node("mcre_default:stone_with_redstone", {
 	description = "Redstone Ore",
 	tiles = {"default_stone.png^default_mineral_redstone.png"},
 	is_ground_content = true,
@@ -57,7 +57,7 @@ minetest.register_node("default:stone_with_redstone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_with_lapis", {
+minetest.register_node("mcre_default:stone_with_lapis", {
 	description = "Lapis Lazuli Ore",
 	tiles = {"default_stone.png^default_mineral_lapis.png"},
 	is_ground_content = true,
@@ -66,23 +66,23 @@ minetest.register_node("default:stone_with_lapis", {
 	drop = {
 		max_items = 2,
 		items = {
-			{items = {'default:lapis_lazuli 5'},rarity = 16},
-			{items = {'default:lapis_lazuli 4'},rarity = 12},
-			{items = {'default:lapis_lazuli 3'},rarity = 8},
-			{items = {'default:lapis_lazuli 2'},rarity = 6},
-			{items = {'default:lapis_lazuli 1'},rarity = 1},
+			{items = {'mcre_default:lapis_lazuli 5'},rarity = 16},
+			{items = {'mcre_default:lapis_lazuli 4'},rarity = 12},
+			{items = {'mcre_default:lapis_lazuli 3'},rarity = 8},
+			{items = {'mcre_default:lapis_lazuli 2'},rarity = 6},
+			{items = {'mcre_default:lapis_lazuli 1'},rarity = 1},
 		}
 	},
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_with_emerald", {
+minetest.register_node("mcre_default:stone_with_emerald", {
 	description = "Emerald Ore",
 	tiles = {"default_stone.png^default_mineral_emerald.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=2},
-	drop = "default:emerald",
+	drop = "mcre_default:emerald",
 --	drop = {
 --		max_items = 2,
 --		items = {
@@ -93,17 +93,17 @@ minetest.register_node("default:stone_with_emerald", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stone_with_diamond", {
+minetest.register_node("mcre_default:stone_with_diamond", {
 	description = "Diamonds in Stone",
 	tiles = {"default_stone.png^default_mineral_diamond.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {cracky=1},
-	drop = "default:diamond",
+	drop = "mcre_default:diamond",
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stonebrick", {
+minetest.register_node("mcre_default:stonebrick", {
 	description = "Stone Brick",
 	tiles = {"default_stone_brick.png"},
 	stack_max = 64,
@@ -111,7 +111,7 @@ minetest.register_node("default:stonebrick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stonebrickcarved", {
+minetest.register_node("mcre_default:stonebrickcarved", {
 	description = "Stone Brick Carved",
 	tiles = {"default_stonebrick_carved.png"},
 	stack_max = 64,
@@ -119,7 +119,7 @@ minetest.register_node("default:stonebrickcarved", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stonebrickcracked", {
+minetest.register_node("mcre_default:stonebrickcracked", {
 	description = "Stone Brick Cracked",
 	tiles = {"default_stonebrick_cracked.png"},
 	stack_max = 64,
@@ -127,7 +127,7 @@ minetest.register_node("default:stonebrickcracked", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:stonebrickmossy", {
+minetest.register_node("mcre_default:stonebrickmossy", {
 	description = "Mossy Stone Brick",
 	tiles = {"default_stonebrick_mossy.png"},
 	stack_max = 64,
@@ -139,7 +139,7 @@ minetest.register_node("default:stonebrickmossy", {
 -- Grass Variations
 --
 
-minetest.register_node("default:dirt_with_grass", {
+minetest.register_node("mcre_default:dirt_with_grass", {
 	description = "Dirt with Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -149,13 +149,13 @@ minetest.register_node("default:dirt_with_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_savanna_grass", {
+minetest.register_node("mcre_default:dirt_with_savanna_grass", {
 	description = "Dirt with Savanna Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -165,13 +165,13 @@ minetest.register_node("default:dirt_with_savanna_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_taiga_grass", {
+minetest.register_node("mcre_default:dirt_with_taiga_grass", {
 	description = "Dirt with Taiga Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -181,13 +181,13 @@ minetest.register_node("default:dirt_with_taiga_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_jungle_grass", {
+minetest.register_node("mcre_default:dirt_with_jungle_grass", {
 	description = "Dirt with Jungle Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -197,13 +197,13 @@ minetest.register_node("default:dirt_with_jungle_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_forest_grass", {
+minetest.register_node("mcre_default:dirt_with_forest_grass", {
 	description = "Dirt with Forest Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -213,13 +213,13 @@ minetest.register_node("default:dirt_with_forest_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_birch_forest_grass", {
+minetest.register_node("mcre_default:dirt_with_birch_forest_grass", {
 	description = "Dirt with Birch Forest Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -229,13 +229,13 @@ minetest.register_node("default:dirt_with_birch_forest_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_swamp_grass", {
+minetest.register_node("mcre_default:dirt_with_swamp_grass", {
 	description = "Dirt with Swamp Grass",
 	paramtype2 = "color",
 	tiles = {"default_grass_block_top.png", { name="default_dirt.png", color="white" }, { name="default_dirt.png^default_dirt_grass_shadow.png", color="white" }},
@@ -245,49 +245,49 @@ minetest.register_node("default:dirt_with_swamp_grass", {
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_grass_footsteps", {
+minetest.register_node("mcre_default:dirt_with_grass_footsteps", {
 	description = "Dirt with Grass and Footsteps",
 	tiles = {"default_grass_path_top.png", "default_dirt.png", "default_grass_path_side.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=1},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_with_snow", {
+minetest.register_node("mcre_default:dirt_with_snow", {
 	description = "Dirt with Snow",
 	tiles = {"default_snow.png", "default_dirt.png", "default_dirt.png^default_snow_side.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt_podzol", {
+minetest.register_node("mcre_default:dirt_podzol", {
 	description = "Podzol",
 	tiles = {"default_dirt_podzol.png", "default_dirt.png", "default_dirt.png^default_dirt_podzol_side.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3},
-	drop = 'default:dirt',
+	drop = 'mcre_default:dirt',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
 
-minetest.register_node("default:dirt", {
+minetest.register_node("mcre_default:dirt", {
 	description = "Dirt",
 	tiles = {"default_dirt.png"},
 	is_ground_content = true,
@@ -297,7 +297,7 @@ minetest.register_node("default:dirt", {
 })
 
 
-minetest.register_node("default:gravel", {
+minetest.register_node("mcre_default:gravel", {
 	description = "Gravel",
 	tiles = {"default_gravel.png"},
 	is_ground_content = true,
@@ -306,8 +306,8 @@ minetest.register_node("default:gravel", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'default:flint'},rarity = 7},
-			{items = {'default:gravel'}}
+			{items = {'mcre_default:flint'},rarity = 7},
+			{items = {'mcre_default:gravel'}}
 		}
 	},
 	sounds = default.node_sound_dirt_defaults({
@@ -316,7 +316,7 @@ minetest.register_node("default:gravel", {
 })
 
 -- sandstone --
-minetest.register_node("default:sand", {
+minetest.register_node("mcre_default:sand", {
 	description = "Sand",
 	tiles = {"default_sand.png"},
 	is_ground_content = true,
@@ -325,7 +325,7 @@ minetest.register_node("default:sand", {
 	sounds = default.node_sound_sand_defaults(),
 })
 
-minetest.register_node("default:sandstone", {
+minetest.register_node("mcre_default:sandstone", {
 	description = "Sandstone",
 	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_normal.png"},
 	is_ground_content = true,
@@ -334,7 +334,7 @@ minetest.register_node("default:sandstone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:sandstonesmooth", {
+minetest.register_node("mcre_default:sandstonesmooth", {
 	description = "Sandstone Smooth",
 	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_smooth.png"},
 	is_ground_content = true,
@@ -343,7 +343,7 @@ minetest.register_node("default:sandstonesmooth", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:sandstonecarved", {
+minetest.register_node("mcre_default:sandstonecarved", {
 	description = "Sandstone Carved",
 	tiles = {"default_sandstone_top.png", "default_sandstone_bottom.png", "default_sandstone_carved.png"},
 	is_ground_content = true,
@@ -354,7 +354,7 @@ minetest.register_node("default:sandstonecarved", {
 
 -- red sandstone --
 
-minetest.register_node("default:redsand", {
+minetest.register_node("mcre_default:redsand", {
 	description = "Red Sand",
 	tiles = {"default_red_sand.png"},
 	is_ground_content = true,
@@ -363,7 +363,7 @@ minetest.register_node("default:redsand", {
 	sounds = default.node_sound_sand_defaults(),
 })
 
-minetest.register_node("default:redsandstone", {
+minetest.register_node("mcre_default:redsandstone", {
 	description = "Red SandStone",
 	tiles = {"default_redsandstone_top.png", "default_redsandstone_bottom.png", "default_redsandstone_normal.png"},
 	is_ground_content = true,
@@ -372,7 +372,7 @@ minetest.register_node("default:redsandstone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:redsandstonesmooth", {
+minetest.register_node("mcre_default:redsandstonesmooth", {
 	description = "Red SandStone Smooth",
 	tiles = {"default_redsandstone_top.png", "default_redsandstone_bottom.png", "default_redsandstone_smooth.png"},
 	is_ground_content = true,
@@ -381,7 +381,7 @@ minetest.register_node("default:redsandstonesmooth", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:redsandstonecarved", {
+minetest.register_node("mcre_default:redsandstonecarved", {
 	description = "Red SandStone Carved",
 	tiles = {"default_redsandstone_top.png", "default_redsandstone_bottom.png", "default_redsandstone_carved.png"},
 	is_ground_content = true,
@@ -392,19 +392,19 @@ minetest.register_node("default:redsandstonecarved", {
 
 ---
 
-minetest.register_node("default:clay", {
+minetest.register_node("mcre_default:clay", {
 	description = "Clay",
 	tiles = {"default_clay.png"},
 	is_ground_content = true,
 	stack_max = 64,
 	groups = {crumbly=3},
-	drop = 'default:clay_lump 4',
+	drop = 'mcre_default:clay_lump 4',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = "",
 	}),
 })
 
-minetest.register_node("default:brick", {
+minetest.register_node("mcre_default:brick", {
 	description = "Brick Block",
 	tiles = {"default_brick.png"},
 	stack_max = 64,
@@ -412,7 +412,7 @@ minetest.register_node("default:brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:haybale", {
+minetest.register_node("mcre_default:haybale", {
 	description = "Hay Bale",
 	tiles = {"default_hayblock_top.png", "default_hayblock_top.png", "default_hayblock_side.png"},
 	stack_max = 64,
@@ -423,7 +423,7 @@ minetest.register_node("default:haybale", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:sea_lantern", {
+minetest.register_node("mcre_default:sea_lantern", {
 	description = "Sea Lantern",
 	paramtype2 = "facedir",
 	stack_max = 64,
@@ -431,29 +431,29 @@ minetest.register_node("default:sea_lantern", {
 	drop = {
 		max_items = 1,
 		items = {
-			{ items = {'default:prismarine_cry 2'} },
-			{ items = {'default:prismarine_cry 3'}, rarity = 2 }
+			{ items = {'mcre_default:prismarine_cry 2'} },
+			{ items = {'mcre_default:prismarine_cry 3'}, rarity = 2 }
 		}
 	},
 	tiles = {"default_sea_lantern.png"},
 	groups = {oddly_breakable_by_hand=3},
 })
 
-minetest.register_node("default:prismarine", {
+minetest.register_node("mcre_default:prismarine", {
      description = "Prismarine",
 	 stack_max = 64,
      tiles = {{name="default_prismarine_anim.png", animation={type="vertical_frames", aspect_w=32, aspect_h=32, length=45.0}}},
      groups = {cracky=3},
 })
 
-minetest.register_node("default:prismarine_brick", {
+minetest.register_node("mcre_default:prismarine_brick", {
      description = "Prismarine Brick",
 	 stack_max = 64,
      tiles = {"default_prismarine_bricks.png"},
      groups = {cracky=2},
 })
 
-minetest.register_node("default:prismarine_dark", {
+minetest.register_node("mcre_default:prismarine_dark", {
      description = "Dark Prismarine",
 	 stack_max = 64,
      tiles = {"default_prismarine_dark.png"},
@@ -464,7 +464,7 @@ minetest.register_node("default:prismarine_dark", {
 
 
 -- Normal tree --
-minetest.register_node("default:tree", {
+minetest.register_node("mcre_default:tree", {
 	description = "Tree",
 	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
 	paramtype2 = "facedir",
@@ -475,7 +475,7 @@ minetest.register_node("default:tree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:sapling", {
+minetest.register_node("mcre_default:sapling", {
 	description = "Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -493,7 +493,7 @@ minetest.register_node("default:sapling", {
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node("default:leaves", {
+minetest.register_node("mcre_default:leaves", {
 	description = "Leaves",
 	drawtype = "allfaces_optional",
 	tiles = {"default_leaves.png"},
@@ -506,12 +506,12 @@ minetest.register_node("default:leaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'default:sapling'},
+				items = {'mcre_default:sapling'},
 				rarity = 20,
 			},
 						{
 				-- player will get apple with 1/20 chance
-				items = {'default:apple'},
+				items = {'mcre_default:apple'},
 				rarity = 200,
 			},
 			{
@@ -526,7 +526,7 @@ minetest.register_node("default:leaves", {
 
 -- Birch Tree --
 
-minetest.register_node("default:birchtree", {
+minetest.register_node("mcre_default:birchtree", {
 	description = "Birch Tree",
 	tiles = {"default_birchtree_top.png", "default_birchtree_top.png", "default_birchtree.png"},
 	paramtype2 = "facedir",
@@ -537,7 +537,7 @@ minetest.register_node("default:birchtree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:birchsapling", {
+minetest.register_node("mcre_default:birchsapling", {
 	description = "Birch Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -555,7 +555,7 @@ minetest.register_node("default:birchsapling", {
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node("default:birchleaves", {
+minetest.register_node("mcre_default:birchleaves", {
 	description = "Birch Leaves",
 	drawtype = "allfaces_optional",
 	tiles = {"default_birchleaves.png"},
@@ -568,7 +568,7 @@ minetest.register_node("default:birchleaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'default:birchsapling'},
+				items = {'mcre_default:birchsapling'},
 				rarity = 20,
 			},
 			{
@@ -583,7 +583,7 @@ minetest.register_node("default:birchleaves", {
 
 -- Jungle Tree --
 
-minetest.register_node("default:jungletree", {
+minetest.register_node("mcre_default:jungletree", {
 	description = "Jungle Tree",
 	tiles = {"default_jungletree_top.png", "default_jungletree_top.png", "default_jungletree.png"},
 	stack_max = 64,
@@ -594,7 +594,7 @@ minetest.register_node("default:jungletree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:junglewood", {
+minetest.register_node("mcre_default:junglewood", {
 	description = "Junglewood Planks",
 	tiles = {"default_junglewood.png"},
 	stack_max = 64,
@@ -602,7 +602,7 @@ minetest.register_node("default:junglewood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:jungleleaves", {
+minetest.register_node("mcre_default:jungleleaves", {
 	description = "Jungle Leaves",
 	drawtype = "allfaces_optional",
 	tiles = {"default_jungleleaves.png"},
@@ -615,7 +615,7 @@ minetest.register_node("default:jungleleaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'default:junglesapling'},
+				items = {'mcre_default:junglesapling'},
 				rarity = 20,
 			},
 			{
@@ -628,7 +628,7 @@ minetest.register_node("default:jungleleaves", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("default:junglesapling", {
+minetest.register_node("mcre_default:junglesapling", {
 	description = "Jungle Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -649,7 +649,7 @@ minetest.register_node("default:junglesapling", {
 
 -- Accacia Tree --
 
-minetest.register_node("default:acaciatree", {
+minetest.register_node("mcre_default:acaciatree", {
 	description = "Acacia Tree",
 	tiles = {"default_acaciatree_top.png", "default_acaciatree_top.png", "default_acaciatree.png"},
 	stack_max = 64,
@@ -660,7 +660,7 @@ minetest.register_node("default:acaciatree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:acaciawood", {
+minetest.register_node("mcre_default:acaciawood", {
 	description = "Acaciawood Planks",
 	tiles = {"default_acaciawood.png"},
 	stack_max = 64,
@@ -668,7 +668,7 @@ minetest.register_node("default:acaciawood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:acacialeaves", {
+minetest.register_node("mcre_default:acacialeaves", {
 	description = "Acacia Leaves",
 	drawtype = "allfaces_optional",
 	tiles = {"default_acacialeaves.png"},
@@ -681,7 +681,7 @@ minetest.register_node("default:acacialeaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'default:acaciasapling'},
+				items = {'mcre_default:acaciasapling'},
 				rarity = 20,
 			},
 			{
@@ -694,7 +694,7 @@ minetest.register_node("default:acacialeaves", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("default:acaciasapling", {
+minetest.register_node("mcre_default:acaciasapling", {
 	description = "Acacia Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -714,7 +714,7 @@ minetest.register_node("default:acaciasapling", {
 
 -- Spruce Tree --
 
-minetest.register_node("default:sprucetree", {
+minetest.register_node("mcre_default:sprucetree", {
 	description = "Spruce Tree",
 	tiles = {"default_sprucetree_top.png", "default_sprucetree_top.png", "default_sprucetree.png"},
 	stack_max = 64,
@@ -725,7 +725,7 @@ minetest.register_node("default:sprucetree", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:sprucewood", {
+minetest.register_node("mcre_default:sprucewood", {
 	description = "Sprucewood Planks",
 	tiles = {"default_sprucewood.png"},
 	stack_max = 64,
@@ -733,7 +733,7 @@ minetest.register_node("default:sprucewood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:spruceleaves", {
+minetest.register_node("mcre_default:spruceleaves", {
 	description = "Spruce Leaves",
 	drawtype = "allfaces_optional",
 	tiles = {"default_spruceleaves.png"},
@@ -746,7 +746,7 @@ minetest.register_node("default:spruceleaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'default:sprucesapling'},
+				items = {'mcre_default:sprucesapling'},
 				rarity = 20,
 			},
 			{
@@ -759,7 +759,7 @@ minetest.register_node("default:spruceleaves", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("default:sprucesapling", {
+minetest.register_node("mcre_default:sprucesapling", {
 	description = "Spruce Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -779,13 +779,13 @@ minetest.register_node("default:sprucesapling", {
 
 
 -- aliases 
-minetest.register_alias("sapling", "default:sapling")
-minetest.register_alias("junglesapling", "default:junglesapling")
-minetest.register_alias("acaciasapling", "default:acaciasapling")
-minetest.register_alias("sprucesapling", "default:sprucesapling")
-minetest.register_alias("default:junglegrass", "default:grass")
+minetest.register_alias("sapling", "mcre_default:sapling")
+minetest.register_alias("junglesapling", "mcre_default:junglesapling")
+minetest.register_alias("acaciasapling", "mcre_default:acaciasapling")
+minetest.register_alias("sprucesapling", "mcre_default:sprucesapling")
+minetest.register_alias("mcre_default:junglegrass", "mcre_default:grass")
 
-minetest.register_node("default:cactus", {
+minetest.register_node("mcre_default:cactus", {
 	description = "Cactus",
 	drawtype = "nodebox",
 	tiles = {"default_cactus_top.png", "default_cactus_bottom.png", "default_cactus_side.png","default_cactus_side.png","default_cactus_side.png","default_cactus_side.png"},
@@ -814,7 +814,7 @@ minetest.register_node("default:cactus", {
 			
 })
 
-minetest.register_node("default:reeds", {
+minetest.register_node("mcre_default:reeds", {
 	description = "Sugarcane",
 	drawtype = "plantlike",
 	tiles = {"default_papyrus.png"},
@@ -848,16 +848,16 @@ minetest.register_node("default:reeds", {
 })
 
 
-minetest.register_node("default:quartz_ore", {
+minetest.register_node("mcre_default:quartz_ore", {
     description = "Quartz Ore",
 	stack_max = 64,
  	tiles = {"default_quartz_ore.png"},
 	groups = {cracky=3, stone=1},
-	drop = 'default:quartz_crystal',
+	drop = 'mcre_default:quartz_crystal',
     sounds = default.node_sound_stone_defaults(),
 })
 	 
-minetest.register_node("default:quartz_block", {
+minetest.register_node("mcre_default:quartz_block", {
 	description = "Quartz Block",
 	stack_max = 64,
 	tiles = {"default_quartz_block_top.png", "default_quartz_block_bottom.png", "default_quartz_block_side.png"},
@@ -865,7 +865,7 @@ minetest.register_node("default:quartz_block", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:quartz_chiseled", {
+minetest.register_node("mcre_default:quartz_chiseled", {
 	description = "Chiseled Quartz",
 	stack_max = 64,
 	tiles = {"default_quartz_chiseled_top.png", "default_quartz_chiseled_top.png", "default_quartz_chiseled_side.png"},
@@ -873,7 +873,7 @@ minetest.register_node("default:quartz_chiseled", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:quartz_pillar", {
+minetest.register_node("mcre_default:quartz_pillar", {
 	description = "Quartz Pillar",
 	stack_max = 64,
 	paramtype2 = "facedir",
@@ -883,7 +883,7 @@ minetest.register_node("default:quartz_pillar", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:bedrock", {
+minetest.register_node("mcre_default:bedrock", {
 	description = "Bedrock",
 	tiles = {"default_bedrock.png"},
 	stack_max = 64,
@@ -891,7 +891,7 @@ minetest.register_node("default:bedrock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:bookshelf", {
+minetest.register_node("mcre_default:bookshelf", {
 	description = "Bookshelf",
 	tiles = {"default_wood.png", "default_wood.png", "default_bookshelf.png"},
 	stack_max = 64,
@@ -899,7 +899,7 @@ minetest.register_node("default:bookshelf", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:slimeblock", {
+minetest.register_node("mcre_default:slimeblock", {
 	description = "Slime Block",
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -919,7 +919,7 @@ minetest.register_node("default:slimeblock", {
 	groups = {oddly_breakable_by_hand=3,dig_immediate=2,bouncy=70,disable_jump=1, fall_damage_add_percent=-100},
 })
 
-minetest.register_node("default:glass", {
+minetest.register_node("mcre_default:glass", {
 	description = "Glass",
 	drawtype = "glasslike",
 	tiles = {"default_glass.png"},
@@ -949,7 +949,7 @@ AddGlass( "Glass Silver",  "basecolor_grey", "_silver")
 AddGlass( "Glass Magenta",  "basecolor_magenta", "_magenta")
 AddGlass( "Glass Purple",  "excolor_violet", "_purple")
 
-minetest.register_node("default:rail", {
+minetest.register_node("mcre_default:rail", {
 	description = "Rail",
 	drawtype = "raillike",
 	tiles = {"default_rail.png", "default_rail_curved.png", "default_rail_t_junction.png", "default_rail_crossing.png"},
@@ -966,7 +966,7 @@ minetest.register_node("default:rail", {
 	groups = {bendy=2,dig_immediate=2,attached_node=1},
 })
 
-minetest.register_node("default:ladder", {
+minetest.register_node("mcre_default:ladder", {
 	description = "Ladder",
 	drawtype = "signlike",
 	tiles = {"default_ladder.png"},
@@ -989,7 +989,7 @@ minetest.register_node("default:ladder", {
 })
 
 
-minetest.register_node("default:vine", {
+minetest.register_node("mcre_default:vine", {
 	description = "Vine",
 	drawtype = "signlike",
 	tiles = {"default_vine.png"},
@@ -1009,7 +1009,7 @@ minetest.register_node("default:vine", {
 	drop = "",
 	after_dig_node = function(pos, oldnode, oldmetadata, user)
 	local item = user:get_wielded_item()
-		if item:get_name() == "default:shears" then 
+		if item:get_name() == "mcre_default:shears" then 
 			user:get_inventory():add_item("main", ItemStack(oldnode.name))
 		end
 		local next_find = true
@@ -1017,7 +1017,7 @@ minetest.register_node("default:vine", {
 		while next_find == true do 
 			local pos2 = {x=pos.x, y=pos.y-ptr, z=pos.z}
 			local node = minetest.env:get_node(pos2)
-			if node.name == "default:vine" and compatibility.check_attached_node(pos2, node) == false then
+			if node.name == "mcre_default:vine" and compatibility.check_attached_node(pos2, node) == false then
 				compatibility.drop_attached_node(pos2)
 				core.check_for_falling(pos2)
 				ptr = ptr + 1
@@ -1030,7 +1030,7 @@ minetest.register_node("default:vine", {
 
 
 
-minetest.register_node("default:wood", {
+minetest.register_node("mcre_default:wood", {
 	description = "Wooden Planks",
 	tiles = {"default_wood.png"},
 	stack_max = 64,
@@ -1038,7 +1038,7 @@ minetest.register_node("default:wood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("default:cloud", {
+minetest.register_node("mcre_default:cloud", {
 	description = "Cloud",
 	tiles = {"default_cloud.png"},
 	stack_max = 64,
@@ -1046,7 +1046,7 @@ minetest.register_node("default:cloud", {
 	groups = {not_in_creative_inventory=1},
 })
 
-minetest.register_node("default:water_flowing", {
+minetest.register_node("mcre_default:water_flowing", {
 	description = "Flowing Water",
 	inventory_image = minetest.inventorycube("default_water.png"),
 	drawtype = "flowingliquid",
@@ -1073,16 +1073,16 @@ minetest.register_node("default:water_flowing", {
 	drop = "",
 	drowning = 1,
 	liquidtype = "flowing",
-	liquid_alternative_flowing = "default:water_flowing",
-	liquid_alternative_source = "default:water_source",
+	liquid_alternative_flowing = "mcre_default:water_flowing",
+	liquid_alternative_source = "mcre_default:water_source",
 	liquid_viscosity = WATER_VISC,
 	liquid_range = 7,
-	freezemelt = "default:snow",
+	freezemelt = "mcre_default:snow",
 	post_effect_color = {a=64, r=100, g=100, b=200},
 	groups = {water=3, liquid=3, puts_out_fire=1, not_in_creative_inventory=1, freezes=1, melt_around=1},
 })
 
-minetest.register_node("default:water_source", {
+minetest.register_node("mcre_default:water_source", {
 	description = "Water Source",
 	inventory_image = minetest.inventorycube("default_water.png"),
 	drawtype = "liquid",
@@ -1106,17 +1106,17 @@ minetest.register_node("default:water_source", {
 	drop = "",
 	drowning = 1,
 	liquidtype = "source",
-	liquid_alternative_flowing = "default:water_flowing",
-	liquid_alternative_source = "default:water_source",
+	liquid_alternative_flowing = "mcre_default:water_flowing",
+	liquid_alternative_source = "mcre_default:water_source",
 	liquid_viscosity = WATER_VISC,
 	liquid_range = 7,
-	freezemelt = "default:ice",
+	freezemelt = "mcre_default:ice",
 	post_effect_color = {a=64, r=100, g=100, b=200},
 	stack_max = 64,
 	groups = {not_in_creative_inventory=1, water=3, liquid=3, puts_out_fire=1, freezes=1},
 })
 
-minetest.register_node("default:lava_flowing", {
+minetest.register_node("mcre_default:lava_flowing", {
 	description = "Flowing Lava",
 	inventory_image = minetest.inventorycube("default_lava.png"),
 	drawtype = "flowingliquid",
@@ -1143,8 +1143,8 @@ minetest.register_node("default:lava_flowing", {
 	drop = "",
 	drowning = 1,
 	liquidtype = "flowing",
-	liquid_alternative_flowing = "default:lava_flowing",
-	liquid_alternative_source = "default:lava_source",
+	liquid_alternative_flowing = "mcre_default:lava_flowing",
+	liquid_alternative_source = "mcre_default:lava_source",
 	liquid_viscosity = LAVA_VISC,
 	liquid_renewable = false,
 	liquid_range = 7,
@@ -1153,7 +1153,7 @@ minetest.register_node("default:lava_flowing", {
 	groups = {lava=3, liquid=2, hot=3, igniter=1, not_in_creative_inventory=1},
 })
 
-minetest.register_node("default:lava_source", {
+minetest.register_node("mcre_default:lava_source", {
 	description = "Lava Source",
 	inventory_image = minetest.inventorycube("default_lava.png"),
 	drawtype = "liquid",
@@ -1177,8 +1177,8 @@ minetest.register_node("default:lava_source", {
 	drop = "",
 	drowning = 1,
 	liquidtype = "source",
-	liquid_alternative_flowing = "default:lava_flowing",
-	liquid_alternative_source = "default:lava_source",
+	liquid_alternative_flowing = "mcre_default:lava_flowing",
+	liquid_alternative_source = "mcre_default:lava_source",
 	liquid_viscosity = LAVA_VISC,
 	liquid_renewable = false,
 	liquid_range = 7,
@@ -1227,7 +1227,7 @@ local function hacky_swap_node(pos,name, param2)
 	meta:from_table(meta0)
 end
 
-minetest.register_node("default:chest", {
+minetest.register_node("mcre_default:chest", {
 	description = "Chest",
 	tiles = {"default_chest_top.png", "default_chest_top.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side.png", "default_chest_front.png"},
@@ -1239,8 +1239,8 @@ minetest.register_node("default:chest", {
 	on_construct = function(pos)
 		local param2 = minetest.env:get_node(pos).param2
 		local meta = minetest.env:get_meta(pos)
-		if minetest.env:get_node(get_chest_neighborpos(pos, param2, "right")).name == "default:chest" then
-			minetest.env:set_node(pos, {name="default:chest_right",param2=param2})
+		if minetest.env:get_node(get_chest_neighborpos(pos, param2, "right")).name == "mcre_default:chest" then
+			minetest.env:set_node(pos, {name="mcre_default:chest_right",param2=param2})
 			local p = get_chest_neighborpos(pos, param2, "right")
 			meta:set_string("formspec",
 					"size[9,11.5]"..
@@ -1249,7 +1249,7 @@ minetest.register_node("default:chest", {
 					"list[current_player;main;0,7;9,3;9]"..
 					"list[current_player;main;0,10.5;9,1;]")
 			meta:set_string("infotext", "Large Chest")
-			hacky_swap_node(p, "default:chest_left", param2)
+			hacky_swap_node(p, "mcre_default:chest_left", param2)
 			local m = minetest.env:get_meta(p)
 			m:set_string("formspec",
 					"size[9,11.5]"..
@@ -1258,8 +1258,8 @@ minetest.register_node("default:chest", {
 					"list[current_player;main;0,7;9,3;9]"..
 					"list[current_player;main;0,10.5;9,1;]")
 			m:set_string("infotext", "Large Chest")
-		elseif minetest.env:get_node(get_chest_neighborpos(pos, param2, "left")).name == "default:chest" then
-			minetest.env:set_node(pos, {name="default:chest_left",param2=param2})
+		elseif minetest.env:get_node(get_chest_neighborpos(pos, param2, "left")).name == "mcre_default:chest" then
+			minetest.env:set_node(pos, {name="mcre_default:chest_left",param2=param2})
 			local p = get_chest_neighborpos(pos, param2, "left")
 			meta:set_string("formspec",
 					"size[9,11.5]"..
@@ -1268,7 +1268,7 @@ minetest.register_node("default:chest", {
 					"list[current_player;main;0,7;9,3;9]"..
 					"list[current_player;main;0,10.5;9,1;]")
 			meta:set_string("infotext", "Large Chest")
-			hacky_swap_node(p, "default:chest_right", param2)
+			hacky_swap_node(p, "mcre_default:chest_right", param2)
 			local m = minetest.env:get_meta(p)
 			m:set_string("formspec",
 					"size[9,11.5]"..
@@ -1316,12 +1316,12 @@ minetest.register_node("default:chest", {
 	end,
 })
 
-minetest.register_node("default:chest_left", {
+minetest.register_node("mcre_default:chest_left", {
 	tiles = {"default_chest_top_big.png", "default_chest_top_big.png", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side_big.png^[transformFX", "default_chest_front_big.png"},
 	paramtype2 = "facedir",
 	groups = {choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
-	drop = "default:chest",
+	drop = "mcre_default:chest",
 	sounds = default.node_sound_wood_defaults(),
 	on_destruct = function(pos)
 		local m = minetest.env:get_meta(pos)
@@ -1330,7 +1330,7 @@ minetest.register_node("default:chest_left", {
 		end
 		local param2 = minetest.env:get_node(pos).param2
 		local p = get_chest_neighborpos(pos, param2, "left")
-		if not p or minetest.env:get_node(p).name ~= "default:chest_right" then
+		if not p or minetest.env:get_node(p).name ~= "mcre_default:chest_right" then
 			return
 		end
 		local meta = minetest.env:get_meta(p)
@@ -1340,7 +1340,7 @@ minetest.register_node("default:chest_left", {
 				"list[current_player;main;0,4;9,3;9]"..
 				"list[current_player;main;0,7.5.5;9,1;]")
 		meta:set_string("infotext", "Coffre")
-		hacky_swap_node(p, "default:chest")
+		hacky_swap_node(p, "mcre_default:chest")
 	end,
 	after_dig_node = function(pos, oldnode, oldmetadata, digger)
 		local meta = minetest.env:get_meta(pos)
@@ -1370,12 +1370,12 @@ minetest.register_node("default:chest_left", {
 	end,
 })
 
-minetest.register_node("default:chest_right", {
+minetest.register_node("mcre_default:chest_right", {
 	tiles = {"default_chest_top_big.png^[transformFX", "default_chest_top_big.png^[transformFX", "default_chest_side.png",
 		"default_chest_side.png", "default_chest_side_big.png", "default_chest_front_big.png^[transformFX"},
 	paramtype2 = "facedir",
 	groups = {choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
-	drop = "default:chest",
+	drop = "mcre_default:chest",
 	sounds = default.node_sound_wood_defaults(),
 	on_destruct = function(pos)
 		local m = minetest.env:get_meta(pos)
@@ -1384,7 +1384,7 @@ minetest.register_node("default:chest_right", {
 		end
 		local param2 = minetest.env:get_node(pos).param2
 		local p = get_chest_neighborpos(pos, param2, "right")
-		if not p or minetest.env:get_node(p).name ~= "default:chest_left" then
+		if not p or minetest.env:get_node(p).name ~= "mcre_default:chest_left" then
 			return
 		end
 		local meta = minetest.env:get_meta(p)
@@ -1394,7 +1394,7 @@ minetest.register_node("default:chest_right", {
 				"list[current_player;main;0,4;9,3;9]"..
 				"list[current_player;main;0,7.5.5;9,1;]")
 		meta:set_string("infotext", "Chest")
-		hacky_swap_node(p, "default:chest")
+		hacky_swap_node(p, "mcre_default:chest")
 	end,
 	after_dig_node = function(pos, oldnode, oldmetadata, digger)
 		local meta = minetest.env:get_meta(pos)
@@ -1432,7 +1432,7 @@ default.furnace_inactive_formspec =
 	"list[current_name;dst;5,1;2,2;]"..
 	"list[current_player;main;0,5;9,4;]"
 
-minetest.register_node("default:furnace", {
+minetest.register_node("mcre_default:furnace", {
 	description = "Furnace",
 	tiles = {"default_furnace_top.png", "default_furnace_bottom.png", "default_furnace_side.png",
 		"default_furnace_side.png", "default_furnace_side.png", "default_furnace_front.png"},
@@ -1501,13 +1501,13 @@ minetest.register_node("default:furnace", {
 	end,
 })
 
-minetest.register_node("default:furnace_active", {
+minetest.register_node("mcre_default:furnace_active", {
 	description = "Furnace",
 	tiles = {"default_furnace_top.png", "default_furnace_bottom.png", "default_furnace_side.png",
 		"default_furnace_side.png", "default_furnace_side.png", "default_furnace_front_active.png"},
 	paramtype2 = "facedir",
 	light_source = 8,
-	drop = "default:furnace",
+	drop = "mcre_default:furnace",
 	groups = {cracky=2, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_stone_defaults(),
@@ -1586,7 +1586,7 @@ function hacky_swap_node(pos,name)
 end
 
 minetest.register_abm({
-	nodenames = {"default:furnace","default:furnace_active"},
+	nodenames = {"mcre_default:furnace","mcre_default:furnace_active"},
 	interval = 1.0,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
@@ -1636,7 +1636,7 @@ minetest.register_abm({
 			local percent = math.floor(meta:get_float("fuel_time") /
 					meta:get_float("fuel_totaltime") * 100)
 			meta:set_string("infotext","Furnace active: "..percent.."%")
-			hacky_swap_node(pos,"default:furnace_active")
+			hacky_swap_node(pos,"mcre_default:furnace_active")
 			meta:set_string("formspec",
 				"size[9,9]"..
 				"image[2,2;1,1;default_furnace_fire_bg.png^[lowpart:"..
@@ -1663,7 +1663,7 @@ minetest.register_abm({
 
 		if fuel.time <= 0 then
 			meta:set_string("infotext","Furnace out of fuel")
-			hacky_swap_node(pos,"default:furnace")
+			hacky_swap_node(pos,"mcre_default:furnace")
 			meta:set_string("formspec", default.furnace_inactive_formspec)
 			return
 		end
@@ -1671,7 +1671,7 @@ minetest.register_abm({
 		if cooked.item:is_empty() then
 			if was_active then
 				meta:set_string("infotext","Furnace is empty")
-				hacky_swap_node(pos,"default:furnace")
+				hacky_swap_node(pos,"mcre_default:furnace")
 				meta:set_string("formspec", default.furnace_inactive_formspec)
 			end
 			return
@@ -1684,7 +1684,7 @@ minetest.register_abm({
 	end,
 })
 
-minetest.register_node("default:cobble", {
+minetest.register_node("mcre_default:cobble", {
 	description = "Cobblestone",
 	tiles = {"default_cobble.png"},
 	is_ground_content = true,
@@ -1693,7 +1693,7 @@ minetest.register_node("default:cobble", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:mossycobble", {
+minetest.register_node("mcre_default:mossycobble", {
 	description = "Mossy Cobblestone",
 	tiles = {"default_mossycobble.png"},
 	is_ground_content = true,
@@ -1702,7 +1702,7 @@ minetest.register_node("default:mossycobble", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:steelblock", {
+minetest.register_node("mcre_default:steelblock", {
 	description = "Steel Block",
 	tiles = {"default_steel_block.png"},
 	is_ground_content = true,
@@ -1711,7 +1711,7 @@ minetest.register_node("default:steelblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:goldblock", {
+minetest.register_node("mcre_default:goldblock", {
 	description = "Gold Block",
 	tiles = {"default_gold_block.png"},
 	is_ground_content = true,
@@ -1720,7 +1720,7 @@ minetest.register_node("default:goldblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:diamondblock", {
+minetest.register_node("mcre_default:diamondblock", {
 	description = "Diamond Block",
 	tiles = {"default_diamond_block.png"},
 	is_ground_content = true,
@@ -1729,7 +1729,7 @@ minetest.register_node("default:diamondblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:lapisblock", {
+minetest.register_node("mcre_default:lapisblock", {
 	description = "Lapis Lazul Block",
 	tiles = {"default_lapis_block.png"},
 	stack_max = 64,
@@ -1737,7 +1737,7 @@ minetest.register_node("default:lapisblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:emeraldblock", {
+minetest.register_node("mcre_default:emeraldblock", {
 	description = "Emerald Block",
 	tiles = {"default_emerald_block.png"},
 	stack_max = 64,
@@ -1745,7 +1745,7 @@ minetest.register_node("default:emeraldblock", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:obsidian", {
+minetest.register_node("mcre_default:obsidian", {
 	description = "Obsidian",
 	tiles = {"default_obsidian.png"},
 	is_ground_content = true,
@@ -1754,7 +1754,7 @@ minetest.register_node("default:obsidian", {
 	groups = {cracky=4,level=2,oddly_breakable_by_hand=4},
 })
 
-minetest.register_node("default:apple", {
+minetest.register_node("mcre_default:apple", {
 	description = "Apple",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -1773,7 +1773,7 @@ minetest.register_node("default:apple", {
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node("default:apple_gold", {
+minetest.register_node("mcre_default:apple_gold", {
 	description = "Golden Apple",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -1792,7 +1792,7 @@ minetest.register_node("default:apple_gold", {
 	sounds = default.node_sound_defaults(),
 })
 
-minetest.register_node("default:dry_shrub", {
+minetest.register_node("mcre_default:dry_shrub", {
 	description = "Dry Shrub",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
@@ -1810,7 +1810,7 @@ minetest.register_node("default:dry_shrub", {
 	},
 })
 
-minetest.register_node("default:grass", {
+minetest.register_node("mcre_default:grass", {
 	description = "Grass",
 	drawtype = "plantlike",
 	paramtype = "color",
@@ -1846,13 +1846,13 @@ minetest.register_node("default:grass", {
 	sounds = default.node_sound_leaves_defaults(),
 	after_dig_node = function(pos, oldnode, oldmetadata, user)
 	local item = user:get_wielded_item()
-		if item:get_name() == "default:shears" then 
+		if item:get_name() == "mcre_default:shears" then 
 			user:get_inventory():add_item("main", ItemStack(oldnode.name))
 		end
 	end
 })
 
-minetest.register_node("default:glowstone", {
+minetest.register_node("mcre_default:glowstone", {
 	description = "Glowstone",
 	tiles = {"default_glowstone.png"},
 	is_ground_content = true,
@@ -1861,17 +1861,17 @@ minetest.register_node("default:glowstone", {
 	drop = {
 	max_items = 1,
 	items = {
-			{items = {'default:glowdust 9'},rarity = 7},
-			{items = {'default:glowdust 6'},rarity = 5},
-			{items = {'default:glowdust 4'},rarity = 3},
-			{items = {'default:glowdust 3'},rarity = 2},
-			{items = {'default:glowdust 2'}},
+			{items = {'mcre_default:glowdust 9'},rarity = 7},
+			{items = {'mcre_default:glowdust 6'},rarity = 5},
+			{items = {'mcre_default:glowdust 4'},rarity = 3},
+			{items = {'mcre_default:glowdust 3'},rarity = 2},
+			{items = {'mcre_default:glowdust 2'}},
 		}
 	},
 	light_source = 12,
 })
 
-minetest.register_node("default:sponge", {
+minetest.register_node("mcre_default:sponge", {
 	description = "Sponge",
 	drawtype = "normal",
 	tiles = {"default_sponge.png"},
@@ -1902,7 +1902,7 @@ minetest.register_node("default:sponge", {
 			local p = {x=pos.x+i, y=pos.y, z=pos.z}
 			local n = minetest.env:get_node(p)
 			-- On verifie si il y a de l'eau
-			if (n.name=="default:water_flowing") or (n.name == "default:water_source") then
+			if (n.name=="mcre_default:water_flowing") or (n.name == "mcre_default:water_source") then
 				on_water = true
 			end
 		end
@@ -1910,7 +1910,7 @@ minetest.register_node("default:sponge", {
 			local p = {x=pos.x, y=pos.y+i, z=pos.z}
 			local n = minetest.env:get_node(p)
 			-- On verifie si il y a de l'eau
-			if (n.name=="default:water_flowing") or (n.name == "default:water_source") then
+			if (n.name=="mcre_default:water_flowing") or (n.name == "mcre_default:water_source") then
 				on_water = true
 			end
 		end
@@ -1918,7 +1918,7 @@ minetest.register_node("default:sponge", {
 			local p = {x=pos.x, y=pos.y, z=pos.z+i}
 			local n = minetest.env:get_node(p)
 			-- On verifie si il y a de l'eau
-			if (n.name=="default:water_flowing") or (n.name == "default:water_source") then
+			if (n.name=="mcre_default:water_flowing") or (n.name == "mcre_default:water_source") then
 				on_water = true
 			end
 		end
@@ -1930,7 +1930,7 @@ minetest.register_node("default:sponge", {
 							p = {x=pos.x+i, y=pos.y+j, z=pos.z+k}
 							n = minetest.env:get_node(p)
 							-- On Supprime l'eau
-							if (n.name=="default:water_flowing") or (n.name == "default:water_source")then
+							if (n.name=="mcre_default:water_flowing") or (n.name == "mcre_default:water_source")then
 								minetest.env:add_node(p, {name="air"})
 								change = true
 							end
@@ -1941,16 +1941,16 @@ minetest.register_node("default:sponge", {
 			local p = {x=pos.x, y=pos.y, z=pos.z}
 			local n = minetest.env:get_node(p)
 			if change == true then
-				minetest.env:add_node(pointed_thing.above, {name = "default:sponge_wet"})	
+				minetest.env:add_node(pointed_thing.above, {name = "mcre_default:sponge_wet"})	
 			else
-				minetest.env:add_node(pointed_thing.above, {name = "default:sponge"})	
+				minetest.env:add_node(pointed_thing.above, {name = "mcre_default:sponge"})	
 			end
 		return itemstack
 		
 	end
 })
 
-minetest.register_node("default:sponge_wet", {
+minetest.register_node("mcre_default:sponge_wet", {
 	description = "Wet Sponge",
 	drawtype = "normal",
 	tiles = {"default_sponge_wet.png"},
@@ -1964,7 +1964,7 @@ minetest.register_node("default:sponge_wet", {
 })
 
 
-minetest.register_node("default:ice", {
+minetest.register_node("mcre_default:ice", {
 	description = "Ice",
 	drawtype = "glasslike",
 	inventory_image = minetest.inventorycube("default_ice.png"),
@@ -1977,7 +1977,7 @@ minetest.register_node("default:ice", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("default:packedice", {
+minetest.register_node("mcre_default:packedice", {
 	description = "Packed Ice",
 	drawtype = "glasslike",
 	inventory_image = minetest.inventorycube("default_ice_packed.png"),
@@ -1990,7 +1990,7 @@ minetest.register_node("default:packedice", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
-minetest.register_node("default:snow", {
+minetest.register_node("mcre_default:snow", {
 	description = "Snow",
 	tiles = {"default_snow.png"},
 	inventory_image = "default_snowball.png",
@@ -2013,13 +2013,13 @@ minetest.register_node("default:snow", {
 	on_use = snow_shoot_snowball,
 	on_construct = function(pos)
 	pos.y = pos.y - 1
-		if minetest.env:get_node(pos).name == "default:dirt_with_grass" then
-			minetest.env:set_node(pos, {name="default:dirt_with_snow"})
+		if minetest.env:get_node(pos).name == "mcre_default:dirt_with_grass" then
+			minetest.env:set_node(pos, {name="mcre_default:dirt_with_snow"})
 		end
 	end,
 })
 
-minetest.register_node("default:snowblock", {
+minetest.register_node("mcre_default:snowblock", {
 	description = "Snow Block",
 	tiles = {"default_snow.png"},
 	is_ground_content = true,
@@ -2028,10 +2028,10 @@ minetest.register_node("default:snowblock", {
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
-	drop = "default:snow 4",
+	drop = "mcre_default:snow 4",
 })
 
-minetest.register_node("default:cobweb", {
+minetest.register_node("mcre_default:cobweb", {
        description = "Cobweb",
        drawtype = "plantlike",
        visual_scale = 1.1,
@@ -2042,8 +2042,8 @@ minetest.register_node("default:cobweb", {
        sunlight_propagates = true,
        liquid_viscosity = 14,
        liquidtype = "source",
-       liquid_alternative_flowing = "default:cobweb",
-       liquid_alternative_source = "default:cobweb",
+       liquid_alternative_flowing = "mcre_default:cobweb",
+       liquid_alternative_source = "mcre_default:cobweb",
        liquid_renewable = false,
        liquid_range = 0,
        walkable = false,

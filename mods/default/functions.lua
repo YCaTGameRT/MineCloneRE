@@ -24,15 +24,15 @@
 --
 
 default.cool_lava_source = function(pos)
-	minetest.set_node(pos, {name="default:obsidian"})
+	minetest.set_node(pos, {name="mcre_default:obsidian"})
 end
 
 default.cool_lava_flowing = function(pos)
-	minetest.set_node(pos, {name="default:stone"})
+	minetest.set_node(pos, {name="mcre_default:stone"})
 end
 
 minetest.register_abm({
-	nodenames = {"default:lava_flowing"},
+	nodenames = {"mcre_default:lava_flowing"},
 	neighbors = {"group:water"},
 	interval = 1,
 	chance = 1,
@@ -42,7 +42,7 @@ minetest.register_abm({
 })
 
 minetest.register_abm({
-	nodenames = {"default:lava_source"},
+	nodenames = {"mcre_default:lava_source"},
 	neighbors = {"group:water"},
 	interval = 1,
 	chance = 1,
@@ -62,13 +62,13 @@ grow_cactus = function(pos, node)
 	if minetest.get_item_group(name, "sand") ~= 0 then
 		pos.y = pos.y+1
 		local height = 0
-		while minetest.get_node(pos).name == "default:cactus" and height < 4 do
+		while minetest.get_node(pos).name == "mcre_default:cactus" and height < 4 do
 			height = height+1
 			pos.y = pos.y+1
 		end
 		if height < 4 then
 			if minetest.get_node(pos).name == "air" then
-				minetest.set_node(pos, {name="default:cactus"})
+				minetest.set_node(pos, {name="mcre_default:cactus"})
 			end
 		end
 	end
@@ -77,19 +77,19 @@ end
 grow_reeds = function(pos, node)
 	pos.y = pos.y-1
 	local name = minetest.get_node(pos).name
-	if name == "default:dirt" or name == "default:dirt_with_grass" then
+	if name == "mcre_default:dirt" or name == "mcre_default:dirt_with_grass" then
 		if minetest.find_node_near(pos, 3, {"group:water"}) == nil then
 			return
 		end
 		pos.y = pos.y+1
 		local height = 0
-		while minetest.get_node(pos).name == "default:reeds" and height < 3 do
+		while minetest.get_node(pos).name == "mcre_default:reeds" and height < 3 do
 			height = height+1
 			pos.y = pos.y+1
 		end
 		if height < 3 then
 			if minetest.get_node(pos).name == "air" then
-				minetest.set_node(pos, {name="default:reeds"})
+				minetest.set_node(pos, {name="mcre_default:reeds"})
 			end
 		end
 	end
@@ -108,7 +108,7 @@ minetest.register_abm({
 				local p = {x=pos.x+xp, y=pos.y, z=pos.z+zp}
 				local n = minetest.get_node(p)
 				-- On verifie si il y a de l'eau
-				if (n.name=="default:water_flowing") then
+				if (n.name=="mcre_default:water_flowing") then
 						compatibility.drop_attached_node(pos)
 						minetest.dig_node(pos)
 						break
@@ -120,7 +120,7 @@ minetest.register_abm({
 			local p = {x=pos.x, y=pos.y+yp, z=pos.z}
 			local n = minetest.get_node(p)
 			-- On verifie si il y a de l'eau
-			if (n.name=="default:water_flowing") then
+			if (n.name=="mcre_default:water_flowing") then
 				compatibility.drop_attached_node(pos)
 				minetest.dig_node(pos)
 				break
@@ -131,7 +131,7 @@ minetest.register_abm({
 })
 
 minetest.register_abm({
-	nodenames = {"default:cactus"},
+	nodenames = {"mcre_default:cactus"},
 	neighbors = {"group:sand"},
 	interval = 25,
 	chance = 10,
@@ -141,8 +141,8 @@ minetest.register_abm({
 })
 
 minetest.register_abm({
-	nodenames = {"default:reeds"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
+	nodenames = {"mcre_default:reeds"},
+	neighbors = {"mcre_default:dirt", "mcre_default:dirt_with_grass"},
 	interval = 25,
 	chance = 10,
 	action = function(pos)
@@ -154,7 +154,7 @@ minetest.register_abm({
 -- Papyrus and cactus drop
 --
 
-local timber_nodenames={"default:reeds", "default:cactus"}
+local timber_nodenames={"mcre_default:reeds", "mcre_default:cactus"}
 
 minetest.register_on_dignode(function(pos, node)
 	local i=1
@@ -213,9 +213,9 @@ local pos
 
 function apple_leave()
 	if math.random(0, 10) == 3 then
-		return {name = "default:apple"}
+		return {name = "mcre_default:apple"}
 	else
-		return {name = "default:leaves"}
+		return {name = "mcre_default:leaves"}
 	end
 end
 
@@ -223,7 +223,7 @@ function air_leave()
 	if math.random(0, 50) == 3 then
 		return {name = "air"}
 	else
-		return {name = "default:leaves"}
+		return {name = "mcre_default:leaves"}
 	end
 end
 
@@ -329,14 +329,14 @@ function generate_tree(pos, trunk, leaves, typearbre)
 			for dz=0,1 do
 					pos.z = pos.z + dz
 					--> 0
-					if minetest.get_node(pos).name == "default:dirt_with_grass" 
-					or  minetest.get_node(pos).name == "default:dirt" then else
+					if minetest.get_node(pos).name == "mcre_default:dirt_with_grass" 
+					or  minetest.get_node(pos).name == "mcre_default:dirt" then else
 							return
 					end
 					pos.x = pos.x+1
 					--> 1
-					if minetest.get_node(pos).name == "default:dirt_with_grass" 
-					or  minetest.get_node(pos).name == "default:dirt" then else
+					if minetest.get_node(pos).name == "mcre_default:dirt_with_grass" 
+					or  minetest.get_node(pos).name == "mcre_default:dirt" then else
 							return
 					end
 					pos.x = pos.x-1
@@ -354,22 +354,22 @@ function generate_tree(pos, trunk, leaves, typearbre)
 				if dz == -1 then
 					pos.z = pos.z + dz
 					if math.random(1, 3) == 1 and minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, {name = "default:vine", param2 = 4})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 4})
 					end
 					pos.x = pos.x+1
 					if math.random(1, 3) == 1 and  minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, {name = "default:vine", param2 = 4})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 4})
 					end
 					pos.x = pos.x-1
 					pos.z = pos.z - dz
 				elseif dz == 2 then
 					pos.z = pos.z + dz
 					if math.random(1, 3) == 1 and  minetest.get_node(pos).name == "air"then
-						minetest.add_node(pos, {name = "default:vine", param2 = 5})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 5})
 					end
 					pos.x = pos.x+1
 					if math.random(1, 3) == 1 and minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, {name = "default:vine", param2 = 5})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 5})
 					end
 					pos.x = pos.x-1
 					pos.z = pos.z - dz
@@ -377,7 +377,7 @@ function generate_tree(pos, trunk, leaves, typearbre)
 					pos.z = pos.z + dz
 					pos.x = pos.x-1
 					if math.random(1, 3) == 1  and minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, {name = "default:vine", param2 = 2})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 2})
 					end
 					pos.x = pos.x+1
 					if minetest.get_node(pos).name == "air" then
@@ -389,7 +389,7 @@ function generate_tree(pos, trunk, leaves, typearbre)
 					end
 					pos.x = pos.x+1
 					if math.random(1, 3) == 1 and minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, {name = "default:vine", param2 = 3})
+						minetest.add_node(pos, {name = "mcre_default:vine", param2 = 3})
 					end
 					pos.x = pos.x-2
 					pos.z = pos.z - dz
@@ -410,21 +410,21 @@ function generate_tree(pos, trunk, leaves, typearbre)
 					pos.z = pos.z+dz
 
 					if dx == 0 and dz == 0 and dy==3 then
-						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "default:vine" and math.random(1, 2) == 1 then
+						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "mcre_default:vine" and math.random(1, 2) == 1 then
 							minetest.add_node(pos, node)
 							end
 					elseif dx == 0 and dz == 0 and dy==4 then
-						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "default:vine"  and math.random(1, 5) == 1 then
+						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "mcre_default:vine"  and math.random(1, 5) == 1 then
 							minetest.add_node(pos, node)
 								minetest.add_node(pos, air_leave())
 						end
 					elseif math.abs(dx) ~= 2 and math.abs(dz) ~= 2 then
-						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "default:vine"  then
+						if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "mcre_default:vine"  then
 							minetest.add_node(pos, node)
 						end
 					else
 						if math.abs(dx) ~= 2 or math.abs(dz) ~= 2 then
-							if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "default:vine" and math.random(1, 3) == 1 then
+							if minetest.get_node(pos).name == "air" or minetest.get_node(pos).name == "mcre_default:vine" and math.random(1, 3) == 1 then
 								minetest.add_node(pos, node)
 							end
 						else
@@ -446,11 +446,11 @@ local plant_tab = {}
 local rnd_max = 5
 minetest.after(0.5, function()
 	plant_tab[0] = "air"
-	plant_tab[1] = "default:grass"
-	plant_tab[2] = "default:grass"
-	plant_tab[3] = "default:grass"
-	plant_tab[4] = "default:grass"
-	plant_tab[5] = "default:grass"
+	plant_tab[1] = "mcre_default:grass"
+	plant_tab[2] = "mcre_default:grass"
+	plant_tab[3] = "mcre_default:grass"
+	plant_tab[4] = "mcre_default:grass"
+	plant_tab[5] = "mcre_default:grass"
 
 if minetest.get_modpath("flowers") ~= nil then
 	rnd_max = 16
@@ -474,9 +474,9 @@ function duengen(pointed_thing)
 	n = minetest.get_node(pos)
 	if n.name == "" then return end
 	local stage = ""
-	if n.name == "default:sapling" then
+	if n.name == "mcre_default:sapling" then
 		minetest.add_node(pos, {name="air"})
-		generate_tree(pos, "default:tree", "default:leaves", 1)
+		generate_tree(pos, "mcre_default:tree", "mcre_default:leaves", 1)
 	elseif string.find(n.name, "farming:wheat_") ~= nil then
 		stage = string.sub(n.name, 15)
 		if stage == "3" then
@@ -514,14 +514,14 @@ function duengen(pointed_thing)
 		else
 			minetest.add_node(pos, {name="farming:melontige_unconnect"})
 		end
-	elseif n.name ~= ""  and n.name == "default:junglesapling" then
+	elseif n.name ~= ""  and n.name == "mcre_default:junglesapling" then
 		minetest.add_node(pos, {name="air"})
-		generate_tree(pos, "default:jungletree", "default:jungleleaves", 2)
-	elseif n.name ~="" and n.name == "default:reeds" then
+		generate_tree(pos, "mcre_default:jungletree", "mcre_default:jungleleaves", 2)
+	elseif n.name ~="" and n.name == "mcre_default:reeds" then
 		grow_reeds(pos)
-	elseif n.name ~="" and n.name == "default:cactus" then
+	elseif n.name ~="" and n.name == "mcre_default:cactus" then
 		grow_cactus(pos)
-	elseif n.name == "default:dirt_with_grass" then
+	elseif n.name == "mcre_default:dirt_with_grass" then
 		for i = -2, 3, 1 do
 			for j = -3, 2, 1 do
 				pos = pointed_thing.above
@@ -529,7 +529,7 @@ function duengen(pointed_thing)
 				n = minetest.get_node(pos)
 				n2 = minetest.get_node({x=pos.x, y=pos.y-1, z=pos.z})
 
-				if n.name ~= ""  and n.name == "air" and n2.name == "default:dirt_with_grass" then
+				if n.name ~= ""  and n.name == "air" and n2.name == "mcre_default:dirt_with_grass" then
 					if math.random(0,5) > 3 then
 						minetest.add_node(pos, {name=plant_tab[math.random(0, rnd_max)]})
 					else
@@ -548,7 +548,7 @@ end
 ------------------------------
 -- turn dirt to dirt with grass
 minetest.register_abm({
-	nodenames = {"default:dirt"},
+	nodenames = {"mcre_default:dirt"},
 	neighbors = {"air"},
 	interval = 30,
 	chance = 20,
@@ -568,7 +568,7 @@ minetest.register_abm({
 		if can_change > 3 then
 			local light = minetest.get_node_light(pos)
 			if light or light > 10 then
-				minetest.add_node(pos, {name="default:dirt_with_grass"})
+				minetest.add_node(pos, {name="mcre_default:dirt_with_grass"})
 			end
 			
 		end
@@ -582,30 +582,30 @@ minetest.register_abm({
 --------------------------
 -- Normal tree
 minetest.register_abm({
-	nodenames = {"default:sapling"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
+	nodenames = {"mcre_default:sapling"},
+	neighbors = {"mcre_default:dirt", "mcre_default:dirt_with_grass"},
 	interval = 30,
 	chance = 15,
 	action = function(pos)
 		local light = minetest.get_node_light(pos)
 		if light or light > 10 then
 		minetest.add_node(pos, {name="air"})
-		generate_tree(pos, "default:tree", "default:leaves", 1)
+		generate_tree(pos, "mcre_default:tree", "mcre_default:leaves", 1)
 		end
 	end,
 })
 
 -- Jungle Tree
 minetest.register_abm({
-	nodenames = {"default:junglesapling"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
+	nodenames = {"mcre_default:junglesapling"},
+	neighbors = {"mcre_default:dirt", "mcre_default:dirt_with_grass"},
 	interval = 30,
 	chance = 15,
 	action = function(pos)
 		local light = minetest.get_node_light(pos)
 		if light or light > 10 then
 			minetest.add_node(pos, {name="air"})
-			generate_tree(pos, "default:jungletree", "default:jungleleaves", 2)
+			generate_tree(pos, "mcre_default:jungletree", "mcre_default:jungleleaves", 2)
 		end
 	end,
 })
@@ -614,7 +614,7 @@ minetest.register_abm({
 -- Vine generating --
 ---------------------
 minetest.register_abm({
-	nodenames = {"default:vine"},
+	nodenames = {"mcre_default:vine"},
 	interval = 80,
 	chance = 5,
 	action = function(pos, node, active_object_count, active_object_count_wider)
@@ -622,7 +622,7 @@ minetest.register_abm({
 		local n = minetest.get_node(newpos)
 		if n.name == "air" then
 			walldir = node.param2
-			minetest.add_node(newpos, {name = "default:vine", param2 = walldir})
+			minetest.add_node(newpos, {name = "mcre_default:vine", param2 = walldir})
 		end
 	end
 })
@@ -638,7 +638,7 @@ snowball_VELOCITY=19
 --Shoot snowball.
 snow_shoot_snowball=function (item, player, pointed_thing)
 	local playerpos=player:getpos()
-	local obj=minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, "default:snowball_entity")
+	local obj=minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, "mcre_default:snowball_entity")
 	local dir=player:get_look_dir()
 	obj:setvelocity({x=dir.x*snowball_VELOCITY, y=dir.y*snowball_VELOCITY, z=dir.z*snowball_VELOCITY})
 	obj:setacceleration({x=dir.x*-3, y=-snowball_GRAVITY, z=dir.z*-3})
@@ -670,7 +670,7 @@ snowball_ENTITY.on_step = function(self, dtime)
 	self.lastpos={x=pos.x, y=pos.y, z=pos.z} -- Set lastpos-->Node will be added at last pos outside the node
 end
 
-minetest.register_entity("default:snowball_entity", snowball_ENTITY)
+minetest.register_entity("mcre_default:snowball_entity", snowball_ENTITY)
 
 -- Global environment step function
 function on_step(dtime)
@@ -898,7 +898,7 @@ minetest.register_abm({
 ------------------------
 function AddGlass(desc, recipeitem, color)
 
-	minetest.register_node("default:glass"..color, {
+	minetest.register_node("mcre_default:glass"..color, {
 		description = desc,
 		drawtype = "glasslike",
 		tiles = {"xpanes_pane_glass"..color..".png"},
@@ -912,9 +912,9 @@ function AddGlass(desc, recipeitem, color)
 	})
 	
 	minetest.register_craft({
-		output = 'default:glass_'..color..'',
+		output = 'mcre_default:glass_'..color..'',
 		recipe = {
-			{'default:glass', 'group:dye,'..recipeitem}
+			{'mcre_default:glass', 'group:dye,'..recipeitem}
 		}
 	})
 end

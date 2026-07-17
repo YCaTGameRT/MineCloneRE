@@ -22,20 +22,20 @@ print("|_|  |_|_|_| |_|\\___|\\_____|_|\\___/|_| |_|\\___|   \\_/  \\___(_)____|
 default = {}
 
 -- Load files
-dofile(minetest.get_modpath("default").."/functions.lua")
-dofile(minetest.get_modpath("default").."/nodes.lua")
-dofile(minetest.get_modpath("default").."/tools.lua")
-dofile(minetest.get_modpath("default").."/craftitems.lua")
-dofile(minetest.get_modpath("default").."/crafting.lua")
-dofile(minetest.get_modpath("default").."/mapgen.lua")
+dofile(minetest.get_modpath("mcre_default").."/functions.lua")
+dofile(minetest.get_modpath("mcre_default").."/nodes.lua")
+dofile(minetest.get_modpath("mcre_default").."/tools.lua")
+dofile(minetest.get_modpath("mcre_default").."/craftitems.lua")
+dofile(minetest.get_modpath("mcre_default").."/crafting.lua")
+dofile(minetest.get_modpath("mcre_default").."/mapgen.lua")
 --dofile(minetest.get_modpath("default").."/mapgen_v7.lua")
-dofile(minetest.get_modpath("default").."/player.lua")
+dofile(minetest.get_modpath("mcre_default").."/player.lua")
 
 -- Aliases
-minetest.register_alias("default:desert_sand", "default:sand")
-minetest.register_alias("default:desert_stone", "default:sandstone")
-minetest.register_alias("default:iron_lump", "default:stone_with_iron")
-minetest.register_alias("default:gold_lump", "default:stone_with_gold")
+minetest.register_alias("mcre_default:desert_sand", "mcre_default:sand")
+minetest.register_alias("mcre_default:desert_stone", "mcre_default:sandstone")
+minetest.register_alias("mcre_default:iron_lump", "mcre_default:stone_with_iron")
+minetest.register_alias("mcre_default:gold_lump", "mcre_default:stone_with_gold")
 
 local time_to_load= os.clock() - init
 print(string.format("[MOD] "..minetest.get_current_modname().." loaded in %.4f s", time_to_load))
