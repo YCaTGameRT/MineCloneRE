@@ -1,8 +1,8 @@
 -- minetest/wool/init.lua
 
 -- Backwards compatibility with jordach's 16-color wool mod
-minetest.register_alias("wool:dark_blue", "wool:blue")
-minetest.register_alias("wool:gold", "wool:yellow")
+minetest.register_alias("mcre_wool:dark_blue", "mcre_wool:blue")
+minetest.register_alias("mcre_wool:gold", "mcre_wool:yellow")
 
 local wool = {}
 -- This uses a trick: you can first define the recipes using all of the base
@@ -32,14 +32,14 @@ for _, row in ipairs(wool.dyes) do
 	local craft_color_group = row[3]
 	local dye = row[4]
 	-- Node Definition
-		minetest.register_node("wool:"..name, {
+		minetest.register_node("mcre_wool:"..name, {
 			description = desc.." Wool",
 			stack_max = 64,
 			tiles = {"wool_"..name..".png"},
 			groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3,wool=1},
 			sounds = default.node_sound_defaults(),
 		})
-		minetest.register_node("wool:"..name.."_carpet", {
+		minetest.register_node("mcre_wool:"..name.."_carpet", {
 			description = desc.." Carpet",
 			walkable = false,
 			tiles = {"wool_"..name..".png"},
@@ -60,13 +60,13 @@ for _, row in ipairs(wool.dyes) do
 	-- Crafting from dye and white wool
 		minetest.register_craft({
 			type = "shapeless",
-			output = 'wool:'..name,
+			output = 'mcre_wool:'..name,
 			recipe = {'dye:'..dye, 'group:wool'},
 		})
 		minetest.register_craft({
 			type = "shapeless",
-			output = 'wool:'..name..'_carpet 3',
-			recipe = {'wool:'..name, 'wool:'..name},
+			output = 'mcre_wool:'..name..'_carpet 3',
+			recipe = {'mcre_wool:'..name, 'mcre_wool:'..name},
 		})
 	end
 end

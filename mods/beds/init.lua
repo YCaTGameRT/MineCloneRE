@@ -4,7 +4,7 @@ local hand
 local old_yaw = 0
 
 local function get_dir(pos)
-	local btop = "beds:bed_top"
+	local btop = "mcre_beds:bed_top"
 	if minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z}).name == btop then
 		return 7.9
 	elseif minetest.env:get_node({x=pos.x-1,y=pos.y,z=pos.z}).name == btop then
@@ -28,7 +28,7 @@ function plock(start, max, tick, player, yaw)
 end
 
 function exit(pos)
-	local npos = minetest.env:find_node_near(pos, 1, "beds:bed_bottom")
+	local npos = minetest.env:find_node_near(pos, 1, "mcre_beds:bed_bottom")
 	if npos ~= nil then pos = npos end
 	if minetest.env:get_node({x=pos.x+1,y=pos.y,z=pos.z}).name == "air" then
 		return {x=pos.x+1,y=pos.y,z=pos.z}
@@ -43,7 +43,7 @@ function exit(pos)
 	end
 end
 
-minetest.register_node("beds:bed_bottom", {
+minetest.register_node("mcre_beds:bed_bottom", {
 	description = "Bed",
 	inventory_image = "beds_bed.png",
 	wield_image = "beds_bed.png",
@@ -79,7 +79,7 @@ minetest.register_node("beds:bed_bottom", {
 			npos.x = npos.x-1
 		end
 		if minetest.registered_nodes[minetest.env:get_node(npos).name].buildable_to == true and minetest.env:get_node({x=npos.x, y=npos.y-1, z=npos.z}).name ~= "air" then
-			minetest.env:set_node(npos, {name="beds:bed_top", param2 = param2})
+			minetest.env:set_node(npos, {name="mcre_beds:bed_top", param2 = param2})
 		else
 			minetest.env:dig_node(pos)
 			return true
@@ -87,7 +87,7 @@ minetest.register_node("beds:bed_bottom", {
 	end,	
 	
 	on_destruct = function(pos)
-		pos = minetest.env:find_node_near(pos, 1, "beds:bed_top")
+		pos = minetest.env:find_node_near(pos, 1, "mcre_beds:bed_top")
 		if pos ~= nil then minetest.env:remove_node(pos) end
 	end,
 	
@@ -148,7 +148,7 @@ minetest.register_node("beds:bed_bottom", {
 	end
 })
 
-minetest.register_node("beds:bed_top", {
+minetest.register_node("mcre_beds:bed_top", {
 	drawtype = "nodebox",
 	tiles = {"beds_bed_top_top.png^[transformR90", "beds_bed_leer_top.png",  "beds_bed_side_top_r.png",  "beds_bed_side_top_r.png^[transformfx",  "beds_bed_side_top.png", "beds_bed_leer.png"},
 	paramtype = "light",
@@ -165,10 +165,10 @@ minetest.register_node("beds:bed_top", {
 	},
 })
 
-minetest.register_alias("beds:bed", "beds:bed_bottom")
+minetest.register_alias("mcre_beds:bed", "mcre_beds:bed_bottom")
 
 minetest.register_craft({
-	output = "beds:bed",
+	output = "mcre_beds:bed",
 	recipe = {
 		{"group:wool", "group:wool", "group:wool", },
 		{"group:wood", "group:wood", "group:wood", }
@@ -229,7 +229,7 @@ minetest.register_on_respawnplayer(function(player)
 end)
 
 minetest.register_abm({
-	nodenames = {"beds:bed_bottom"},
+	nodenames = {"mcre_beds:bed_bottom"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node)
