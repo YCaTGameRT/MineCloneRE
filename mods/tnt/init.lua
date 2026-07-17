@@ -4,7 +4,7 @@ function spawn_tnt(pos, entname)
 end
 
 function activate_if_tnt(nname, np, tnt_np, tntr)
-    if nname == "tnt:tnt" then
+    if nname == "mcre_tnt:tnt" then
         local e = spawn_tnt(np, nname)
         e:setvelocity({x=(np.x - tnt_np.x)*5+(tntr / 4), y=(np.y - tnt_np.y)*5+(tntr / 3), z=(np.z - tnt_np.z)*5+(tntr / 4)})
     end
@@ -16,7 +16,7 @@ function do_tnt_physics(tnt_np,tntr)
         local oname = obj:get_entity_name()
         local v = obj:getvelocity()
         local p = obj:getpos()
-        if oname == "tnt:tnt" then
+        if oname == "mcre_tnt:tnt" then
             obj:setvelocity({x=(p.x - tnt_np.x) + (tntr / 2) + v.x, y=(p.y - tnt_np.y) + tntr + v.y, z=(p.z - tnt_np.z) + (tntr / 2) + v.z})
         else
             if v ~= nil then
@@ -30,7 +30,7 @@ function do_tnt_physics(tnt_np,tntr)
     end
 end
 
-minetest.register_node("tnt:tnt", {
+minetest.register_node("mcre_tnt:tnt", {
 	tiles = {"default_tnt_top.png", "default_tnt_bottom.png",
 			"default_tnt_side.png", "default_tnt_side.png",
 			"default_tnt_side.png", "default_tnt_side.png"},
@@ -43,16 +43,16 @@ minetest.register_node("tnt:tnt", {
 	mesecons = {effector = {
 		action_on = (function(p, node)
 			minetest.env:remove_node(p)
-			spawn_tnt(p, "tnt:tnt")
+			spawn_tnt(p, "mcre_tnt:tnt")
 			core.check_for_falling(p)
 		end),
 	}}
 })
 
 minetest.register_on_punchnode(function(p, node)
-	if node.name == "tnt:tnt" then
+	if node.name == "mcre_tnt:tnt" then
 		minetest.env:remove_node(p)
-		spawn_tnt(p, "tnt:tnt")
+		spawn_tnt(p, "mcre_tnt:tnt")
 		core.check_for_falling(p)
 	end
 end)
@@ -124,7 +124,7 @@ function TNT:on_step(dtime)
 							activate_if_tnt(n.name, np, pos, 3)
 							minetest.env:remove_node(np)
 							core.check_for_falling(np)
-							if n.name ~= "tnt:tnt" and math.random() > 0.9 then
+							if n.name ~= "mcre_tnt:tnt" and math.random() > 0.9 then
 								local drop = minetest.get_node_drops(n.name, "")
 									for _,item in ipairs(drop) do
 										if type(item) == "string" then
@@ -147,14 +147,14 @@ function TNT:on_punch(hitter)
 	self.health = self.health - 1
 	if self.health <= 0 then
 		self.object:remove()
-		hitter:get_inventory():add_item("main", "tnt:tnt")
+		hitter:get_inventory():add_item("main", "mcre_tnt:tnt")
 	end
 end
 
-minetest.register_entity("tnt:tnt", TNT)
+minetest.register_entity("mcre_tnt:tnt", TNT)
 
 minetest.register_craft({
-	output = "tnt:tnt",
+	output = "mcre_tnt:tnt",
 	recipe = {
 		{'default:gunpowder','default:sand','default:gunpowder'},
 		{'default:sand','default:gunpowder','default:sand'},
