@@ -1,7 +1,7 @@
 -- Minetest 0.4 mod: vessels
 -- See README.txt for licensing and other information.
 
-minetest.register_node("vessels:glass_bottle", {
+minetest.register_node("mcre_vessels:glass_bottle", {
 	description = "Glass Bottle (empty)",
 	drawtype = "plantlike",
 	tiles = {"vessels_glass_bottle.png"},
@@ -18,7 +18,7 @@ minetest.register_node("vessels:glass_bottle", {
 })
 
 minetest.register_craft( {
-	output = "vessels:glass_bottle 4",
+	output = "mcre_vessels:glass_bottle 4",
 	recipe = {
 		{ "default:glass", "", "default:glass" },
 		{ "", "default:glass", "" }
