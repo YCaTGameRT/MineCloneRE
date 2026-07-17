@@ -1,9 +1,9 @@
-minetest.register_craftitem("throwing:arrow", {
+minetest.register_craftitem("mcre_throwing:arrow", {
 	description = "Arrow",
 	inventory_image = "throwing_arrow_inv.png",
 })
 
-minetest.register_node("throwing:arrow_box", {
+minetest.register_node("mcre_throwing:arrow_box", {
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -49,7 +49,7 @@ THROWING_ARROW_ENTITY.on_step = function(self, dtime)
 		local objs = minetest.env:get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, 2)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "throwing:arrow_entity" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "mcre_throwing:arrow_entity" and obj:get_luaentity().name ~= "__builtin:item" then
 					local damage = 3
 					obj:punch(self.object, 1.0, {
 						full_punch_interval=1.0,
@@ -70,17 +70,17 @@ THROWING_ARROW_ENTITY.on_step = function(self, dtime)
 
 	if self.lastpos.x~=nil then
 		if node.name ~= "air" then
-			minetest.env:add_item(self.lastpos, 'throwing:arrow')
+			minetest.env:add_item(self.lastpos, 'mcre_throwing:arrow')
 			self.object:remove()
 		end
 	end
 	self.lastpos={x=pos.x, y=pos.y, z=pos.z}
 end
 
-minetest.register_entity("throwing:arrow_entity", THROWING_ARROW_ENTITY)
+minetest.register_entity("mcre_throwing:arrow_entity", THROWING_ARROW_ENTITY)
 
 minetest.register_craft({
-	output = 'throwing:arrow 4',
+	output = 'mcre_throwing:arrow 4',
 	recipe = {
 		{'default:flint'},
 		{'default:stick'},

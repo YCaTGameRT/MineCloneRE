@@ -1,8 +1,8 @@
 
-dofile(minetest.get_modpath("throwing").."/arrow.lua")
+dofile(minetest.get_modpath("mcre_throwing").."/arrow.lua")
 
 arrows = {
-	{"throwing:arrow", "throwing:arrow_entity"},
+	{"mcre_throwing:arrow", "mcre_throwing:arrow_entity"},
 }
 
 local throwing_shoot_arrow = function(itemstack, player)
@@ -26,13 +26,13 @@ local throwing_shoot_arrow = function(itemstack, player)
 	return false
 end
 
-minetest.register_tool("throwing:bow", {
+minetest.register_tool("mcre_throwing:bow", {
 	description = "Bow",
 	inventory_image = "throwing_bow.png",
     stack_max = 1,
 	on_place = function(itemstack, placer, pointed_thing)
 		wear = itemstack:get_wear()
-		itemstack:replace("throwing:bow_0")
+		itemstack:replace("mcre_throwing:bow_0")
 		itemstack:add_wear(wear)
 		return itemstack
 	end,
@@ -48,14 +48,14 @@ minetest.register_tool("throwing:bow", {
 	end,
 })
 
-minetest.register_tool("throwing:bow_0", {
+minetest.register_tool("mcre_throwing:bow_0", {
 	description = "Bow",
 	inventory_image = "throwing_bow_0.png",
     stack_max = 1,
 	groups = {not_in_creative_inventory=1},
 	on_place = function(itemstack, placer, pointed_thing)
 		wear = itemstack:get_wear()
-		itemstack:replace("throwing:bow_1")
+		itemstack:replace("mcre_throwing:bow_1")
 		itemstack:add_wear(wear)
 		return itemstack
 	end,
@@ -71,14 +71,14 @@ minetest.register_tool("throwing:bow_0", {
 	end,
 })
 
-minetest.register_tool("throwing:bow_1", {
+minetest.register_tool("mcre_throwing:bow_1", {
 	description = "Bow",
 	inventory_image = "throwing_bow_1.png",
     stack_max = 1,
 	groups = {not_in_creative_inventory=1},
 	on_place = function(itemstack, placer, pointed_thing)
 		wear = itemstack:get_wear()
-		itemstack:replace("throwing:bow_2")
+		itemstack:replace("mcre_throwing:bow_2")
 		itemstack:add_wear(wear)
 		return itemstack
 	end,
@@ -94,14 +94,14 @@ minetest.register_tool("throwing:bow_1", {
 	end,
 })
 
-minetest.register_tool("throwing:bow_2", {
+minetest.register_tool("mcre_throwing:bow_2", {
 	description = "Bow",
 	inventory_image = "throwing_bow_2.png",
     stack_max = 1,
 	groups = {not_in_creative_inventory=1},
 	on_use = function(itemstack, user, pointed_thing)
 		wear = itemstack:get_wear()
-		itemstack:replace("throwing:bow")
+		itemstack:replace("mcre_throwing:bow")
 		itemstack:add_wear(wear)
 		if throwing_shoot_arrow(itemstack, user, pointed_thing) then
 			if not minetest.setting_getbool("creative_mode") then
@@ -113,7 +113,7 @@ minetest.register_tool("throwing:bow_2", {
 })
 
 minetest.register_craft({
-	output = 'throwing:bow',
+	output = 'mcre_throwing:bow',
 	recipe = {
 		{'', 'group:wood', 'default:string'},
 		{'group:wood', '', 'default:string'},
