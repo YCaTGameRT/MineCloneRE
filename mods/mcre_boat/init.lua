@@ -64,13 +64,13 @@ function boat.on_punch(self, puncher, time_from_last_punch, tool_capabilities, d
 		self.driver = nil
 		boat.schedule_removal(self)
 		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", "boat:boat")
+			puncher:get_inventory():add_item("main", "mcre_boat:boat")
 		end
 	else
 
 		boat.schedule_removal(self)
 		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", "boat:boat")
+			puncher:get_inventory():add_item("main", "mcre_boat:boat")
 		end
 	
 	end
@@ -145,9 +145,9 @@ function boat.schedule_removal(self)
 end
 
 
-minetest.register_entity("boat:boat", boat)
+minetest.register_entity("mcre_boat:boat", boat)
 
-minetest.register_craftitem("boat:boat", {
+minetest.register_craftitem("mcre_boat:boat", {
 	description = "Boat",
 	inventory_image = "boat_inventory.png",
 	liquids_pointable = true,
@@ -160,7 +160,7 @@ minetest.register_craftitem("boat:boat", {
 			return
 		end
 		pointed_thing.under.y = pointed_thing.under.y+0.5
-		minetest.add_entity(pointed_thing.under, "boat:boat")
+		minetest.add_entity(pointed_thing.under, "mcre_boat:boat")
 		if not minetest.setting_getbool("creative_mode") then
 			itemstack:take_item()
 		end
@@ -169,10 +169,10 @@ minetest.register_craftitem("boat:boat", {
 })
 
 minetest.register_craft({
-	output = "boat:boat",
+	output = "mcre_boat:boat",
 	recipe = {
-		{"default:wood", "", "default:wood"},
-		{"default:wood", "default:wood", "default:wood"},
+		{"mcre_default:wood", "", "mcre_default:wood"},
+		{"mcre_default:wood", "mcre_default:wood", "mcre_default:wood"},
 	},
 })
 
