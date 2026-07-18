@@ -12,7 +12,7 @@ minetest.register_node("mcre_inventory:crafting_table", {
 })
 
 minetest.register_craft({
-	output = "inventory:crafting_table",
+	output = "mcre_inventory:crafting_table",
 	recipe = {
 		{"group:wood", "group:wood"},
 		{"group:wood", "group:wood"},
