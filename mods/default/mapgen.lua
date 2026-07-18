@@ -5,29 +5,29 @@
 --
 
 minetest.register_alias("mapgen_air", "air")
-minetest.register_alias("mapgen_stone", "default:stone")
-minetest.register_alias("mapgen_tree", "default:tree")
-minetest.register_alias("mapgen_leaves", "default:leaves")
-minetest.register_alias("mapgen_jungletree", "default:jungletree")
-minetest.register_alias("mapgen_jungleleaves", "default:jungleleaves")
-minetest.register_alias("mapgen_sprucetree", "default:sprucetree")
-minetest.register_alias("mapgen_spruceleaves", "default:spruceleaves")
-minetest.register_alias("mapgen_apple", "default:leaves")
-minetest.register_alias("mapgen_water_source", "default:water_source")
-minetest.register_alias("mapgen_dirt", "default:dirt")
-minetest.register_alias("mapgen_sand", "default:sand")
-minetest.register_alias("mapgen_gravel", "default:gravel")
-minetest.register_alias("mapgen_clay", "default:clay")
-minetest.register_alias("mapgen_lava_source", "default:lava_source")
-minetest.register_alias("mapgen_cobble", "default:cobble")
-minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
-minetest.register_alias("mapgen_dirt_with_grass", "default:dirt_with_grass")
-minetest.register_alias("mapgen_junglegrass", "default:grass")
-minetest.register_alias("mapgen_stone_with_coal", "default:stone_with_coal")
-minetest.register_alias("mapgen_stone_with_iron", "default:stone_with_iron")
-minetest.register_alias("mapgen_desert_sand", "default:sand")
-minetest.register_alias("mapgen_desert_stone", "default:sandstone")
-minetest.register_alias("mapgen_river_water_source", "default:water_source")
+minetest.register_alias("mapgen_stone", "mcre_default:stone")
+minetest.register_alias("mapgen_tree", "mcre_default:tree")
+minetest.register_alias("mapgen_leaves", "mcre_default:leaves")
+minetest.register_alias("mapgen_jungletree", "mcre_default:jungletree")
+minetest.register_alias("mapgen_jungleleaves", "mcre_default:jungleleaves")
+minetest.register_alias("mapgen_sprucetree", "mcre_default:sprucetree")
+minetest.register_alias("mapgen_spruceleaves", "mcre_default:spruceleaves")
+minetest.register_alias("mapgen_apple", "mcre_default:leaves")
+minetest.register_alias("mapgen_water_source", "mcre_default:water_source")
+minetest.register_alias("mapgen_dirt", "mcre_default:dirt")
+minetest.register_alias("mapgen_sand", "mcre_default:sand")
+minetest.register_alias("mapgen_gravel", "mcre_default:gravel")
+minetest.register_alias("mapgen_clay", "mcre_default:clay")
+minetest.register_alias("mapgen_lava_source", "mcre_default:lava_source")
+minetest.register_alias("mapgen_cobble", "mcre_default:cobble")
+minetest.register_alias("mapgen_mossycobble", "mcre_default:mossycobble")
+minetest.register_alias("mapgen_dirt_with_grass", "mcre_default:dirt_with_grass")
+minetest.register_alias("mapgen_junglegrass", "mcre_default:grass")
+minetest.register_alias("mapgen_stone_with_coal", "mcre_default:stone_with_coal")
+minetest.register_alias("mapgen_stone_with_iron", "mcre_default:stone_with_iron")
+minetest.register_alias("mapgen_desert_sand", "mcre_default:sand")
+minetest.register_alias("mapgen_desert_stone", "mcre_default:sandstone")
+minetest.register_alias("mapgen_river_water_source", "mcre_default:water_source")
 --
 -- Ore generation
 --
@@ -37,8 +37,8 @@ minetest.register_alias("mapgen_river_water_source", "default:water_source")
 --
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_coal",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_coal",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 500,
 	clust_num_ores = 8,
 	clust_size     = 3,
@@ -47,8 +47,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_coal",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_coal",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 1000,
 	clust_num_ores = 6,
 	clust_size     = 3,
@@ -57,8 +57,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_coal",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_coal",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 5000,
 	clust_num_ores = 4,
 	clust_size     = 2,
@@ -71,8 +71,8 @@ minetest.register_ore({
 --
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_iron",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_iron",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 830,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -81,8 +81,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_iron",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_iron",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 1660,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -95,8 +95,8 @@ minetest.register_ore({
 --
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_gold",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_gold",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 5000,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -105,8 +105,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_gold",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_gold",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -119,8 +119,8 @@ minetest.register_ore({
 --
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_diamond",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_diamond",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 4,
 	clust_size     = 3,
@@ -129,8 +129,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_diamond",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_diamond",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 5000,
 	clust_num_ores = 2,
 	clust_size     = 2,
@@ -139,8 +139,8 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_diamond",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_diamond",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 8,
 	clust_size     = 3,
@@ -154,8 +154,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_redstone",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_redstone",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -165,8 +165,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_redstone",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_redstone",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 10,
 	clust_size     = 4,
@@ -180,8 +180,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_emerald",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_emerald",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 1,
 	clust_size     = 2,
@@ -191,8 +191,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_emerald",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_emerald",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 50000,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -206,8 +206,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_lapis",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_lapis",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 7,
 	clust_size     = 4,
@@ -217,8 +217,8 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:stone_with_lapis",
-	wherein        = "default:stone",
+	ore            = "mcre_default:stone_with_lapis",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 10000,
 	clust_num_ores = 5,
 	clust_size     = 4,
@@ -231,8 +231,8 @@ minetest.register_ore({
 --
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "default:glowstone",
-	wherein        = "default:stone",
+	ore            = "mcre_default:glowstone",
+	wherein        = "mcre_default:stone",
 	clust_scarcity = 50000,
 	clust_num_ores = 10,
 	clust_size     = 5,
@@ -288,7 +288,7 @@ function default.make_reeds(pos, size)
 		local nn = minetest.env:get_node(p).name
 		if minetest.registered_nodes[nn] and
 			minetest.registered_nodes[nn].buildable_to then
-			minetest.env:set_node(p, {name="default:reeds"})
+			minetest.env:set_node(p, {name="mcre_default:reeds"})
 		else
 			return
 		end
@@ -301,7 +301,7 @@ function default.make_cactus(pos, size)
 		local nn = minetest.env:get_node(p).name
 		if minetest.registered_nodes[nn] and
 			minetest.registered_nodes[nn].buildable_to then
-			minetest.env:set_node(p, {name="default:cactus"})
+			minetest.env:set_node(p, {name="mcre_default:cactus"})
 		else
 			return
 		end
@@ -319,17 +319,17 @@ minetest.register_on_generated(function(minp, maxp, seed)
 		for divz=0+1,divs-1-1 do
 			local cx = minp.x + math.floor((divx+0.5)*divlen)
 			local cz = minp.z + math.floor((divz+0.5)*divlen)
-			if minetest.env:get_node({x=cx,y=1,z=cz}).name == "default:water_source" and
-					minetest.env:get_node({x=cx,y=0,z=cz}).name == "default:sand" then
+			if minetest.env:get_node({x=cx,y=1,z=cz}).name == "mcre_default:water_source" and
+					minetest.env:get_node({x=cx,y=0,z=cz}).name == "mcre_default:sand" then
 				local is_shallow = true
 				local num_water_around = 0
-				if minetest.env:get_node({x=cx-divlen*2,y=1,z=cz+0}).name == "default:water_source" then
+				if minetest.env:get_node({x=cx-divlen*2,y=1,z=cz+0}).name == "mcre_default:water_source" then
 					num_water_around = num_water_around + 1 end
-				if minetest.env:get_node({x=cx+divlen*2,y=1,z=cz+0}).name == "default:water_source" then
+				if minetest.env:get_node({x=cx+divlen*2,y=1,z=cz+0}).name == "mcre_default:water_source" then
 					num_water_around = num_water_around + 1 end
-				if minetest.env:get_node({x=cx+0,y=1,z=cz-divlen*2}).name == "default:water_source" then
+				if minetest.env:get_node({x=cx+0,y=1,z=cz-divlen*2}).name == "mcre_default:water_source" then
 					num_water_around = num_water_around + 1 end
-				if minetest.env:get_node({x=cx+0,y=1,z=cz+divlen*2}).name == "default:water_source" then
+				if minetest.env:get_node({x=cx+0,y=1,z=cz+divlen*2}).name == "mcre_default:water_source" then
 					num_water_around = num_water_around + 1 end
 				if num_water_around >= 2 then
 					is_shallow = false
@@ -337,8 +337,8 @@ minetest.register_on_generated(function(minp, maxp, seed)
 				if is_shallow then
 					for x1=-divlen,divlen do
 					for z1=-divlen,divlen do
-						if minetest.env:get_node({x=cx+x1,y=0,z=cz+z1}).name == "default:sand" or minetest.env:get_node({x=cx+x1,y=0,z=cz+z1}).name == "default:sandstone" then
-							minetest.env:set_node({x=cx+x1,y=0,z=cz+z1}, {name="default:clay"})
+						if minetest.env:get_node({x=cx+x1,y=0,z=cz+z1}).name == "mcre_default:sand" or minetest.env:get_node({x=cx+x1,y=0,z=cz+z1}).name == "mcre_default:sandstone" then
+							minetest.env:set_node({x=cx+x1,y=0,z=cz+z1}, {name="mcre_default:clay"})
 						end
 					end
 					end
@@ -364,11 +364,11 @@ minetest.register_on_generated(function(minp, maxp, seed)
 			for i=0,reeds_amount do
 				local x = pr:next(x0, x1)
 				local z = pr:next(z0, z1)
-				if minetest.env:get_node({x=x,y=1,z=z}).name == "default:dirt_with_grass" and
-						minetest.env:find_node_near({x=x,y=1,z=z}, 1, "default:water_source") then
+				if minetest.env:get_node({x=x,y=1,z=z}).name == "mcre_default:dirt_with_grass" and
+						minetest.env:find_node_near({x=x,y=1,z=z}, 1, "mcre_default:water_source") then
 					default.make_reeds({x=x,y=2,z=z}, pr:next(2, 4))
 				end
-				if minetest.env:get_node({x=x,y=1,z=z}).name == "default:sand" then
+				if minetest.env:get_node({x=x,y=1,z=z}).name == "mcre_default:sand" then
 					if math.random(0,1000) == 1 then -- 0,12000
 						random_struct.call_struct({x=x,y=1,z=z},2)
 					end
@@ -404,7 +404,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 					end
 				end
 				-- If desert sand, make cactus
-				if ground_y and minetest.env:get_node({x=x,y=ground_y,z=z}).name == "default:desert_sand" then
+				if ground_y and minetest.env:get_node({x=x,y=ground_y,z=z}).name == "mcre_default:desert_sand" then
 					default.make_cactus({x=x,y=ground_y+1,z=z}, pr:next(3, 4))
 				end
 			end
@@ -445,12 +445,12 @@ minetest.register_on_generated(function(minp, maxp, seed)
 						minetest.registered_nodes[nn].buildable_to then
 						nn = minetest.env:get_node({x=x,y=ground_y,z=z}).name
 						-- If desert sand, add dry shrub
-						if nn == "default:desert_sand" then
-							minetest.env:set_node(p,{name="default:dry_shrub"})
+						if nn == "mcre_default:desert_sand" then
+							minetest.env:set_node(p,{name="mcre_default:dry_shrub"})
 							
 						-- If dirt with grass, add grass
-						elseif nn == "default:dirt_with_grass" then
-							minetest.env:set_node(p,{name="default:grass"})
+						elseif nn == "mcre_default:dirt_with_grass" then
+							minetest.env:set_node(p,{name="mcre_default:grass"})
 							if math.random(0,12000) == 1 then 
 								random_struct.call_struct(p,1)
 							end
@@ -479,24 +479,24 @@ local function replace(old, new, min, max)
 		height_max     = max,
 	})
 end
-replace("air", "default:bedrock", -90, -80)
-replace("air", "default:lava_source", -80, -70)
-replace("default:stone", "default:bedrock", -90, -80)
-replace("default:gravel", "default:bedrock", -90, -80)
-replace("default:dirt", "default:bedrock", -90, -80)
-replace("default:sand", "default:bedrock", -90, -80)
-replace("default:cobble", "default:bedrock", -90, -80)
-replace("default:mossycobble", "default:bedrock", -90, -80)
-replace("stairs:stair_cobble", "default:bedrock", -90, -80)
-replace("default:lava_source", "default:bedrock", -90, -80)
-replace("default:lava_flowing", "default:bedrock", -90, -80)
-replace("default:water_source", "default:bedrock", -90, -80)
-replace("default:water_flowing", "default:bedrock", -90, -80)
+replace("air", "mcre_default:bedrock", -90, -80)
+replace("air", "mcre_default:lava_source", -80, -70)
+replace("mcre_default:stone", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:gravel", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:dirt", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:sand", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:cobble", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:mossycobble", "mcre_default:bedrock", -90, -80)
+replace("mcre_stairs:stair_cobble", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:lava_source", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:lava_flowing", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:water_source", "mcre_default:bedrock", -90, -80)
+replace("mcre_default:water_flowing", "mcre_default:bedrock", -90, -80)
 
 local function bedrock(old)
 	minetest.register_ore({
 		ore_type       = "scatter",
-		ore            = "default:bedrock",
+		ore            = "mcre_default:bedrock",
 		wherein        = old,
 		clust_scarcity = 5,
 		clust_num_ores = 3,
@@ -506,15 +506,15 @@ local function bedrock(old)
 	})
 end
 bedrock("air")
-bedrock("default:stone")
-bedrock("default:gravel")
-bedrock("default:dirt")
-bedrock("default:sand")
-bedrock("default:cobble")
-bedrock("default:mossycobble")
-bedrock("stairs:stair_cobble")
-bedrock("default:lava_source")
-bedrock("default:lava_flowing")
-bedrock("default:water_source")
-bedrock("default:water_flowing")
+bedrock("mcre_default:stone")
+bedrock("mcre_default:gravel")
+bedrock("mcre_default:dirt")
+bedrock("mcre_default:sand")
+bedrock("mcre_default:cobble")
+bedrock("mcre_default:mossycobble")
+bedrock("mcre_stairs:stair_cobble")
+bedrock("mcre_default:lava_source")
+bedrock("mcre_default:lava_flowing")
+bedrock("mcre_default:water_source")
+bedrock("mcre_default:water_flowing")
 
