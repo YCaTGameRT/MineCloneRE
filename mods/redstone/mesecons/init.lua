@@ -50,28 +50,28 @@ mesecon.effectors={} --  saves all information about effectors  | DEPRECATED
 mesecon.conductors={} -- saves all information about conductors | DEPRECATED
 
 -- Settings
-dofile(minetest.get_modpath("mesecons").."/settings.lua")
+dofile(minetest.get_modpath("mcre_mesecons").."/settings.lua")
 
 -- Presets (eg default rules)
-dofile(minetest.get_modpath("mesecons").."/presets.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/presets.lua");
 
 
 -- Utilities like comparing positions,
 -- adding positions and rules,
 -- mostly things that make the source look cleaner
-dofile(minetest.get_modpath("mesecons").."/util.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/util.lua");
 
 -- Internal stuff
 -- This is the most important file
 -- it handles signal transmission and basically everything else
 -- It is also responsible for managing the nodedef things,
 -- like calling action_on/off/change
-dofile(minetest.get_modpath("mesecons").."/internal.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/internal.lua");
 
 -- Deprecated stuff
 -- To be removed in future releases
 -- Currently there is nothing here
-dofile(minetest.get_modpath("mesecons").."/legacy.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/legacy.lua");
 
 -- API
 -- these are the only functions you need to remember
@@ -105,10 +105,10 @@ function mesecon:receptor_off(pos, rules)
 end
 
 --The actual wires
-dofile(minetest.get_modpath("mesecons").."/wires.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/wires.lua");
 
 --Services like turnoff receptor on dignode and so on
-dofile(minetest.get_modpath("mesecons").."/services.lua");
+dofile(minetest.get_modpath("mcre_mesecons").."/services.lua");
 
 local time_to_load= os.clock() - init
 print(string.format("[MOD] "..minetest.get_current_modname().." loaded in %.4f s", time_to_load))

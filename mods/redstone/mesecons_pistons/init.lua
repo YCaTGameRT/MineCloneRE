@@ -133,16 +133,16 @@ local piston_on_box = {
 -- Normal (non-sticky) ones:
 
 local pistonspec_normal = {
-	offname = "mesecons_pistons:piston_normal_off",
-	onname = "mesecons_pistons:piston_normal_on",
+	offname = "mcre_mesecons_pistons:piston_normal_off",
+	onname = "mcre_mesecons_pistons:piston_normal_on",
 	dir = piston_facedir_direction,
-	pusher = "mesecons_pistons:piston_pusher_normal",
-	piston_down = "mesecons_pistons:piston_down_normal_off",
-	piston_up   = "mesecons_pistons:piston_up_normal_off",
+	pusher = "mcre_mesecons_pistons:piston_pusher_normal",
+	piston_down = "mcre_mesecons_pistons:piston_down_normal_off",
+	piston_up   = "mcre_mesecons_pistons:piston_up_normal_off",
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_normal_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_normal_off", {
 	description = "Piston",
 	tiles = {
 		"mesecons_piston_top.png", 
@@ -164,7 +164,7 @@ minetest.register_node("mesecons_pistons:piston_normal_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_normal_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_normal_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_top.png", 
@@ -179,7 +179,7 @@ minetest.register_node("mesecons_pistons:piston_normal_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_on_box,
 	selection_box = piston_on_box,
@@ -192,7 +192,7 @@ minetest.register_node("mesecons_pistons:piston_normal_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_pusher_normal", {
+minetest.register_node("mcre_mesecons_pistons:piston_pusher_normal", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_top.png",
@@ -205,7 +205,7 @@ minetest.register_node("mesecons_pistons:piston_pusher_normal", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_normal_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_normal_on",
 	selection_box = piston_pusher_box,
 	node_box = piston_pusher_box,
 })
@@ -213,17 +213,17 @@ minetest.register_node("mesecons_pistons:piston_pusher_normal", {
 -- Sticky ones
 
 local pistonspec_sticky = {
-	offname = "mesecons_pistons:piston_sticky_off",
-	onname = "mesecons_pistons:piston_sticky_on",
+	offname = "mcre_mesecons_pistons:piston_sticky_off",
+	onname = "mcre_mesecons_pistons:piston_sticky_on",
 	dir = piston_facedir_direction,
-	pusher = "mesecons_pistons:piston_pusher_sticky",
+	pusher = "mcre_mesecons_pistons:piston_pusher_sticky",
 	sticky = true,
-	piston_down = "mesecons_pistons:piston_down_sticky_off",
-	piston_up   = "mesecons_pistons:piston_up_sticky_off",
+	piston_down = "mcre_mesecons_pistons:piston_down_sticky_off",
+	piston_up   = "mcre_mesecons_pistons:piston_up_sticky_off",
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_sticky_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_sticky_off", {
 	description = "Sticky Piston",
 	tiles = {
 		"mesecons_piston_top.png", 
@@ -245,7 +245,7 @@ minetest.register_node("mesecons_pistons:piston_sticky_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_sticky_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_sticky_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_top.png", 
@@ -260,7 +260,7 @@ minetest.register_node("mesecons_pistons:piston_sticky_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_on_box,
 	selection_box = piston_on_box,
@@ -273,7 +273,7 @@ minetest.register_node("mesecons_pistons:piston_sticky_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_pusher_sticky", {
+minetest.register_node("mcre_mesecons_pistons:piston_pusher_sticky", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_top.png",
@@ -286,7 +286,7 @@ minetest.register_node("mesecons_pistons:piston_pusher_sticky", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_sticky_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_sticky_on",
 	selection_box = piston_pusher_box,
 	node_box = piston_pusher_box,
 })
@@ -315,14 +315,14 @@ local piston_up_on_box = {
 -- Normal
 
 local pistonspec_normal_up = {
-	offname = "mesecons_pistons:piston_up_normal_off",
-	onname = "mesecons_pistons:piston_up_normal_on",
+	offname = "mcre_mesecons_pistons:piston_up_normal_off",
+	onname = "mcre_mesecons_pistons:piston_up_normal_on",
 	dir = {x = 0, y = 1, z = 0},
-	pusher = "mesecons_pistons:piston_up_pusher_normal"
+	pusher = "mcre_mesecons_pistons:piston_up_pusher_normal"
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_up_normal_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_normal_off", {
 	tiles = {
 		"mesecons_piston_pusher_front.png",
 		"mesecons_piston_back.png", 
@@ -335,7 +335,7 @@ minetest.register_node("mesecons_pistons:piston_up_normal_off", {
 	wield_image = "mesecons_piston_top.png",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	mesecons_piston = pistonspec_normal_up,
 	mesecons = {effector={
 		action_on = piston_on,
@@ -344,7 +344,7 @@ minetest.register_node("mesecons_pistons:piston_up_normal_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_up_normal_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_normal_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_on_front.png",
@@ -359,7 +359,7 @@ minetest.register_node("mesecons_pistons:piston_up_normal_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_up_on_box,
 	selection_box = piston_up_on_box,
@@ -372,7 +372,7 @@ minetest.register_node("mesecons_pistons:piston_up_normal_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_up_pusher_normal", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_pusher_normal", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_front.png",
@@ -385,7 +385,7 @@ minetest.register_node("mesecons_pistons:piston_up_pusher_normal", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_up_normal_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_up_normal_on",
 	selection_box = piston_up_pusher_box,
 	node_box = piston_up_pusher_box,
 })
@@ -396,15 +396,15 @@ minetest.register_node("mesecons_pistons:piston_up_pusher_normal", {
 
 
 local pistonspec_sticky_up = {
-	offname = "mesecons_pistons:piston_up_sticky_off",
-	onname = "mesecons_pistons:piston_up_sticky_on",
+	offname = "mcre_mesecons_pistons:piston_up_sticky_off",
+	onname = "mcre_mesecons_pistons:piston_up_sticky_on",
 	dir = {x = 0, y = 1, z = 0},
-	pusher = "mesecons_pistons:piston_up_pusher_sticky",
+	pusher = "mcre_mesecons_pistons:piston_up_pusher_sticky",
 	sticky = true
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_up_sticky_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_sticky_off", {
 	tiles = {
 		"mesecons_piston_pusher_front_sticky.png",
 		"mesecons_piston_back.png", 
@@ -418,7 +418,7 @@ minetest.register_node("mesecons_pistons:piston_up_sticky_off", {
 	wield_image = "mesecons_piston_top.png",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_sticky_off",
+	drop = "mcre_mesecons_pistons:piston_sticky_off",
 	mesecons_piston = pistonspec_sticky_up,
 	sounds = default.node_sound_wood_defaults(),
 	mesecons = {effector={
@@ -428,7 +428,7 @@ minetest.register_node("mesecons_pistons:piston_up_sticky_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_up_sticky_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_sticky_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_on_front.png",
@@ -443,7 +443,7 @@ minetest.register_node("mesecons_pistons:piston_up_sticky_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_up_on_box,
 	selection_box = piston_up_on_box,
@@ -456,7 +456,7 @@ minetest.register_node("mesecons_pistons:piston_up_sticky_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_up_pusher_sticky", {
+minetest.register_node("mcre_mesecons_pistons:piston_up_pusher_sticky", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_front_sticky.png",
@@ -469,7 +469,7 @@ minetest.register_node("mesecons_pistons:piston_up_pusher_sticky", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_up_sticky_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_up_sticky_on",
 	selection_box = piston_up_pusher_box,
 	node_box = piston_up_pusher_box,
 })
@@ -500,14 +500,14 @@ local piston_down_on_box = {
 -- Normal
 
 local pistonspec_normal_down = {
-	offname = "mesecons_pistons:piston_down_normal_off",
-	onname = "mesecons_pistons:piston_down_normal_on",
+	offname = "mcre_mesecons_pistons:piston_down_normal_off",
+	onname = "mcre_mesecons_pistons:piston_down_normal_on",
 	dir = {x = 0, y = -1, z = 0},
-	pusher = "mesecons_pistons:piston_down_pusher_normal",
+	pusher = "mcre_mesecons_pistons:piston_down_pusher_normal",
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_down_normal_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_normal_off", {
 	tiles = {
 		"mesecons_piston_back.png", 
 		"mesecons_piston_pusher_front.png",
@@ -520,7 +520,7 @@ minetest.register_node("mesecons_pistons:piston_down_normal_off", {
 	wield_image = "mesecons_piston_top.png",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	mesecons_piston = pistonspec_normal_down,
 	sounds = default.node_sound_wood_defaults(),
 	mesecons = {effector={
@@ -530,7 +530,7 @@ minetest.register_node("mesecons_pistons:piston_down_normal_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_down_normal_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_normal_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_back.png", 
@@ -545,7 +545,7 @@ minetest.register_node("mesecons_pistons:piston_down_normal_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_normal_off",
+	drop = "mcre_mesecons_pistons:piston_normal_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_down_on_box,
 	selection_box = piston_down_on_box,
@@ -558,7 +558,7 @@ minetest.register_node("mesecons_pistons:piston_down_normal_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_down_pusher_normal", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_pusher_normal", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_back.png",
@@ -571,7 +571,7 @@ minetest.register_node("mesecons_pistons:piston_down_pusher_normal", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_down_normal_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_down_normal_on",
 	selection_box = piston_down_pusher_box,
 	node_box = piston_down_pusher_box,
 })
@@ -579,15 +579,15 @@ minetest.register_node("mesecons_pistons:piston_down_pusher_normal", {
 -- Sticky
 
 local pistonspec_sticky_down = {
-	onname = "mesecons_pistons:piston_down_sticky_on",
-	offname = "mesecons_pistons:piston_down_sticky_off",
+	onname = "mcre_mesecons_pistons:piston_down_sticky_on",
+	offname = "mcre_mesecons_pistons:piston_down_sticky_off",
 	dir = {x = 0, y = -1, z = 0},
-	pusher = "mesecons_pistons:piston_down_pusher_sticky",
+	pusher = "mcre_mesecons_pistons:piston_down_pusher_sticky",
 	sticky = true
 }
 
 -- offstate
-minetest.register_node("mesecons_pistons:piston_down_sticky_off", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_sticky_off", {
 	tiles = {
 		"mesecons_piston_back.png", 
 		"mesecons_piston_pusher_front_sticky.png",
@@ -600,7 +600,7 @@ minetest.register_node("mesecons_pistons:piston_down_sticky_off", {
 	wield_image = "mesecons_piston_top.png",
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_sticky_off",
+	drop = "mcre_mesecons_pistons:piston_sticky_off",
 	mesecons_piston = pistonspec_sticky_down,
 	sounds = default.node_sound_wood_defaults(),
 	mesecons = {effector={
@@ -610,7 +610,7 @@ minetest.register_node("mesecons_pistons:piston_down_sticky_off", {
 })
 
 -- onstate
-minetest.register_node("mesecons_pistons:piston_down_sticky_on", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_sticky_on", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_back.png", 
@@ -625,7 +625,7 @@ minetest.register_node("mesecons_pistons:piston_down_sticky_on", {
 	groups = {cracky = 3, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "mesecons_pistons:piston_sticky_off",
+	drop = "mcre_mesecons_pistons:piston_sticky_off",
 	after_dig_node = piston_remove_pusher,
 	node_box = piston_down_on_box,
 	selection_box = piston_down_on_box,
@@ -638,7 +638,7 @@ minetest.register_node("mesecons_pistons:piston_down_sticky_on", {
 })
 
 -- pusher
-minetest.register_node("mesecons_pistons:piston_down_pusher_sticky", {
+minetest.register_node("mcre_mesecons_pistons:piston_down_pusher_sticky", {
 	drawtype = "nodebox",
 	tiles = {
 		"mesecons_piston_pusher_back.png",
@@ -651,7 +651,7 @@ minetest.register_node("mesecons_pistons:piston_down_pusher_sticky", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	diggable = false,
-	corresponding_piston = "mesecons_pistons:piston_down_sticky_on",
+	corresponding_piston = "mcre_mesecons_pistons:piston_down_sticky_on",
 	selection_box = piston_down_pusher_box,
 	node_box = piston_down_pusher_box,
 })
@@ -680,14 +680,14 @@ local piston_pusher_up_down_get_stopper = function (node, dir, stack, stackid)
 	return true
 end
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_pusher_normal", piston_pusher_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_pusher_sticky", piston_pusher_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_pusher_normal", piston_pusher_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_pusher_sticky", piston_pusher_get_stopper)
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_up_pusher_normal", piston_pusher_up_down_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_up_pusher_sticky", piston_pusher_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_up_pusher_normal", piston_pusher_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_up_pusher_sticky", piston_pusher_up_down_get_stopper)
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_down_pusher_normal", piston_pusher_up_down_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_down_pusher_sticky", piston_pusher_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_down_pusher_normal", piston_pusher_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_down_pusher_sticky", piston_pusher_up_down_get_stopper)
 
 
 -- Register pistons as stoppers if they would be seperated from the stopper
@@ -718,29 +718,29 @@ local piston_get_stopper = function (node, dir, stack, stackid)
 	return true
 end
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_normal_on", piston_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_sticky_on", piston_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_normal_on", piston_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_sticky_on", piston_get_stopper)
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_up_normal_on", piston_up_down_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_up_sticky_on", piston_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_up_normal_on", piston_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_up_sticky_on", piston_up_down_get_stopper)
 
-mesecon:register_mvps_stopper("mesecons_pistons:piston_down_normal_on", piston_up_down_get_stopper)
-mesecon:register_mvps_stopper("mesecons_pistons:piston_down_sticky_on", piston_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_down_normal_on", piston_up_down_get_stopper)
+mesecon:register_mvps_stopper("mcre_mesecons_pistons:piston_down_sticky_on", piston_up_down_get_stopper)
 
 --craft recipes
 minetest.register_craft({
-	output = 'mesecons_pistons:piston_normal_off',
+	output = 'mcre_mesecons_pistons:piston_normal_off',
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
-		{"default:cobble", "default:steel_ingot", "default:cobble"},
-		{"default:cobble", "default:redstone_dust", "default:cobble"},
+		{"mcre_default:cobble", "mcre_default:steel_ingot", "mcre_default:cobble"},
+		{"mcre_default:cobble", "mcre_default:redstone_dust", "mcre_default:cobble"},
 	}
 })
 
 minetest.register_craft({
-	output = "mesecons_pistons:piston_sticky_off",
+	output = "mcre_mesecons_pistons:piston_sticky_off",
 	recipe = {
-		{"mesecons_materials:glue"},
-		{"mesecons_pistons:piston_normal_off"},
+		{"mcre_mesecons_materials:glue"},
+		{"mcre_mesecons_pistons:piston_normal_off"},
 	}
 })

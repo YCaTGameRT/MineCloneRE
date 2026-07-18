@@ -106,17 +106,17 @@ function mesecon:register_pressure_plate(offstate, onstate, description, texture
 end
 
 mesecon:register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_wood_off",
-	"mesecons_pressureplates:pressure_plate_wood_on",
+	"mcre_mesecons_pressureplates:pressure_plate_wood_off",
+	"mcre_mesecons_pressureplates:pressure_plate_wood_on",
 	"Wooden Pressure Plate",
 	"default_wood.png",
 	"default_wood.png",
-	{{"default:wood", "default:wood"}})
+	{{"mcre_default:wood", "mcre_default:wood"}})
 
 mesecon:register_pressure_plate(
-	"mesecons_pressureplates:pressure_plate_stone_off",
-	"mesecons_pressureplates:pressure_plate_stone_on",
+	"mcre_mesecons_pressureplates:pressure_plate_stone_off",
+	"mcre_mesecons_pressureplates:pressure_plate_stone_on",
 	"Stone Pressure Plate",
 	"default_stone.png",
 	"default_stone.png",
-	{{"default:cobble", "default:cobble"}})
+	{{"mcre_default:cobble", "mcre_default:cobble"}})

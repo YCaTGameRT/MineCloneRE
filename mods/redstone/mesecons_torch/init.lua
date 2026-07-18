@@ -35,10 +35,10 @@ local torch_get_input_rules = function(node)
 end
 
 minetest.register_craft({
-	output = '"mesecons_torch:mesecon_torch_on" 4',
+	output = '"mcre_mesecons_torch:mesecon_torch_on" 4',
 	recipe = {
-	{"default:redstone_dust"},
-	{"default:stick"},}
+	{"mcre_default:redstone_dust"},
+	{"mcre_default:stick"},}
 })
 
 local torch_selectionbox =
@@ -49,7 +49,7 @@ local torch_selectionbox =
 	wall_side = {-0.5, -0.1, -0.1, -0.5+0.6, 0.1, 0.1},
 }
 
-minetest.register_node("mesecons_torch:mesecon_torch_off", {
+minetest.register_node("mcre_mesecons_torch:mesecon_torch_off", {
 	drawtype = "torchlike",
 	tiles = {"jeija_torches_off.png", "jeija_torches_off_ceiling.png", "jeija_torches_off_side.png"},
 	inventory_image = "jeija_torches_off.png",
@@ -58,14 +58,14 @@ minetest.register_node("mesecons_torch:mesecon_torch_off", {
 	paramtype2 = "wallmounted",
 	selection_box = torch_selectionbox,
 	groups = {dig_immediate = 3, not_in_creative_inventory = 1},
-	drop = "mesecons_torch:mesecon_torch_on",
+	drop = "mcre_mesecons_torch:mesecon_torch_on",
 	mesecons = {receptor = {
 		state = mesecon.state.off,
 		rules = torch_get_output_rules
 	}}
 })
 
-minetest.register_node("mesecons_torch:mesecon_torch_on", {
+minetest.register_node("mcre_mesecons_torch:mesecon_torch_on", {
 	drawtype = "torchlike",
 	tiles = {"jeija_torches_on.png", "jeija_torches_on_ceiling.png", "jeija_torches_on_side.png"},
 	inventory_image = "jeija_torches_on.png",
@@ -85,7 +85,7 @@ minetest.register_node("mesecons_torch:mesecon_torch_on", {
 	}},
 })
 
-minetest.register_node("mesecons_torch:redstoneblock", {
+minetest.register_node("mcre_mesecons_torch:redstoneblock", {
 	description = "Redstone Block",
 	tiles = {"default_redstone_block.png"},
 	stack_max = 64,
@@ -98,23 +98,23 @@ minetest.register_node("mesecons_torch:redstoneblock", {
 })
 
 minetest.register_craft({
-	output = "mesecons_torch:redstoneblock",
+	output = "mcre_mesecons_torch:redstoneblock",
 	recipe = {
-		{'mesecons:wire_00000000_off','mesecons:wire_00000000_off','mesecons:wire_00000000_off'},
-		{'mesecons:wire_00000000_off','mesecons:wire_00000000_off','mesecons:wire_00000000_off'},
-		{'mesecons:wire_00000000_off','mesecons:wire_00000000_off','mesecons:wire_00000000_off'},
+		{'mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off'},
+		{'mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off'},
+		{'mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off','mcre_mesecons:wire_00000000_off'},
 	}
 })
 
 minetest.register_craft({
-	output = 'mesecons:wire_00000000_off 9',
+	output = 'mcre_mesecons:wire_00000000_off 9',
 	recipe = {
-		{'mesecons_torch:redstoneblock'},
+		{'mcre_mesecons_torch:redstoneblock'},
 	}
 })
 
 minetest.register_abm({
-	nodenames = {"mesecons_torch:mesecon_torch_off","mesecons_torch:mesecon_torch_on"},
+	nodenames = {"mcre_mesecons_torch:mesecon_torch_off","mcre_mesecons_torch:mesecon_torch_on"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node)
@@ -127,12 +127,12 @@ minetest.register_abm({
 		end
 
 		if is_powered then
-			if node.name == "mesecons_torch:mesecon_torch_on" then
-				mesecon:swap_node(pos, "mesecons_torch:mesecon_torch_off")
+			if node.name == "mcre_mesecons_torch:mesecon_torch_on" then
+				mesecon:swap_node(pos, "mcre_mesecons_torch:mesecon_torch_off")
 				mesecon:receptor_off(pos, torch_get_output_rules(node))
 			end
-		elseif node.name == "mesecons_torch:mesecon_torch_off" then
-			mesecon:swap_node(pos, "mesecons_torch:mesecon_torch_on")
+		elseif node.name == "mcre_mesecons_torch:mesecon_torch_off" then
+			mesecon:swap_node(pos, "mcre_mesecons_torch:mesecon_torch_on")
 			mesecon:receptor_on(pos, torch_get_output_rules(node))
 		end
 	end

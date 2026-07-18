@@ -85,7 +85,7 @@ boxes = {
 }
 end
 
-minetest.register_node("mesecons_delayer:delayer_off_"..tostring(i), {
+minetest.register_node("mcre_mesecons_delayer:delayer_off_"..tostring(i), {
 	description = "Delayer",
 	drawtype = "nodebox",
 	tiles = {
@@ -111,20 +111,20 @@ minetest.register_node("mesecons_delayer:delayer_off_"..tostring(i), {
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
 	is_ground_content = true,
-	drop = 'mesecons_delayer:delayer_off_1',
+	drop = 'mcre_mesecons_delayer:delayer_off_1',
 	on_punch = function (pos, node)
-		if node.name=="mesecons_delayer:delayer_off_1" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_off_2")
-		elseif node.name=="mesecons_delayer:delayer_off_2" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_off_3")
-		elseif node.name=="mesecons_delayer:delayer_off_3" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_off_4")
-		elseif node.name=="mesecons_delayer:delayer_off_4" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_off_1")
+		if node.name=="mcre_mesecons_delayer:delayer_off_1" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_off_2")
+		elseif node.name=="mcre_mesecons_delayer:delayer_off_2" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_off_3")
+		elseif node.name=="mcre_mesecons_delayer:delayer_off_3" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_off_4")
+		elseif node.name=="mcre_mesecons_delayer:delayer_off_4" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_off_1")
 		end
 	end,
 	delayer_time = delaytime,
-	delayer_onstate = "mesecons_delayer:delayer_on_"..tostring(i),
+	delayer_onstate = "mcre_mesecons_delayer:delayer_on_"..tostring(i),
 	sounds = default.node_sound_stone_defaults(),
 	mesecons = {
 		receptor =
@@ -141,7 +141,7 @@ minetest.register_node("mesecons_delayer:delayer_off_"..tostring(i), {
 })
 
 
-minetest.register_node("mesecons_delayer:delayer_on_"..tostring(i), {
+minetest.register_node("mcre_mesecons_delayer:delayer_on_"..tostring(i), {
 	description = "You hacker you",
 	drawtype = "nodebox",
 	tiles = {
@@ -166,20 +166,20 @@ minetest.register_node("mesecons_delayer:delayer_on_"..tostring(i), {
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
 	is_ground_content = true,
-	drop = 'mesecons_delayer:delayer_off_1',
+	drop = 'mcre_mesecons_delayer:delayer_off_1',
 	on_punch = function (pos, node)
-		if node.name=="mesecons_delayer:delayer_on_1" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_on_2")
-		elseif node.name=="mesecons_delayer:delayer_on_2" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_on_3")
-		elseif node.name=="mesecons_delayer:delayer_on_3" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_on_4")
-		elseif node.name=="mesecons_delayer:delayer_on_4" then
-			mesecon:swap_node(pos,"mesecons_delayer:delayer_on_1")
+		if node.name=="mcre_mesecons_delayer:delayer_on_1" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_on_2")
+		elseif node.name=="mcre_mesecons_delayer:delayer_on_2" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_on_3")
+		elseif node.name=="mcre_mesecons_delayer:delayer_on_3" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_on_4")
+		elseif node.name=="mcre_mesecons_delayer:delayer_on_4" then
+			mesecon:swap_node(pos,"mcre_mesecons_delayer:delayer_on_1")
 		end
 	end,
 	delayer_time = delaytime,
-	delayer_offstate = "mesecons_delayer:delayer_off_"..tostring(i),
+	delayer_offstate = "mcre_mesecons_delayer:delayer_off_"..tostring(i),
 	mesecons = {
 		receptor =
 		{
@@ -196,9 +196,9 @@ minetest.register_node("mesecons_delayer:delayer_on_"..tostring(i), {
 end
 
 minetest.register_craft({
-	output = "mesecons_delayer:delayer_off_1",
+	output = "mcre_mesecons_delayer:delayer_off_1",
 	recipe = {
-		{"mesecons_torch:mesecon_torch_on", "", "mesecons_torch:mesecon_torch_on"},
-		{"default:stone","default:stone", "default:stone"},
+		{"mcre_mesecons_torch:mesecon_torch_on", "", "mcre_mesecons_torch:mesecon_torch_on"},
+		{"mcre_default:stone","mcre_default:stone", "mcre_default:stone"},
 	}
 })

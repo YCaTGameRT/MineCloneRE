@@ -1,11 +1,11 @@
-minetest.register_node("mesecons_noteblock:noteblock", {
+minetest.register_node("mcre_mesecons_noteblock:noteblock", {
 	description = "Noteblock",
 	tiles = {"mesecons_noteblock.png"},
 	groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2},
 	drawtype = "allfaces_optional",
 	paramtype="light",
 	after_place_node = function(pos)
-		minetest.env:add_node(pos, {name="mesecons_noteblock:noteblock", param2=0})
+		minetest.env:add_node(pos, {name="mcre_mesecons_noteblock:noteblock", param2=0})
 	end,
 	on_punch = function (pos, node) -- change sound when punched
 		local param2 = node.param2+1
@@ -22,10 +22,10 @@ minetest.register_node("mesecons_noteblock:noteblock", {
 })
 
 minetest.register_craft({
-	output = '"mesecons_noteblock:noteblock" 1',
+	output = '"mcre_mesecons_noteblock:noteblock" 1',
 	recipe = {
 		{"group:wood", "group:wood", "group:wood"},
-		{"default:steel_ingot", "default:redstone_dust", "default:steel_ingot"},
+		{"mcre_default:steel_ingot", "mcre_default:redstone_dust", "mcre_default:steel_ingot"},
 		{"group:wood", "group:wood", "group:wood"},
 	}
 })
@@ -58,19 +58,19 @@ mesecon.noteblock_play = function (pos, param2)
 		soundname="mesecons_noteblock_gsharp"
 	end
 	local block_below_name = minetest.env:get_node({x=pos.x, y=pos.y-1, z=pos.z}).name
-	if block_below_name == "default:glass" then
+	if block_below_name == "mcre_default:glass" then
 		soundname="mesecons_noteblock_hihat"
 	end
-	if block_below_name == "default:stone" then
+	if block_below_name == "mcre_default:stone" then
 		soundname="mesecons_noteblock_kick"
 	end
-	if block_below_name == "default:chest" then
+	if block_below_name == "mcre_default:chest" then
 		soundname="mesecons_noteblock_snare"
 	end
-	if block_below_name == "default:tree" then
+	if block_below_name == "mcre_default:tree" then
 		soundname="mesecons_noteblock_crash"
 	end
-	if block_below_name == "default:wood" then
+	if block_below_name == "mcre_default:wood" then
 		soundname="mesecons_noteblock_litecrash"
 	end
 	minetest.sound_play(soundname,

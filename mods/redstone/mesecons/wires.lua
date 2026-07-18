@@ -95,7 +95,7 @@ for zmy=0, 1 do
 		nodebox = {-8/16, -.5, -1/16, 8/16, -.5+1/16, 1/16}
 	end
 
-	minetest.register_node("mesecons:wire_"..nodeid.."_off", {
+	minetest.register_node("mcre_mesecons:wire_"..nodeid.."_off", {
 		description = "Redstone Dust",
 		drawtype = "nodebox",
 		tiles = tiles_off,
@@ -117,14 +117,14 @@ for zmy=0, 1 do
 		groups = groups,
 		walkable = false,
 		stack_max = 64,
-		drop = "mesecons:wire_00000000_off",
+		drop = "mcre_mesecons:wire_00000000_off",
 		mesecons = {conductor={
 			state = mesecon.state.off,
-			onstate = "mesecons:wire_"..nodeid.."_on"
+			onstate = "mcre_mesecons:wire_"..nodeid.."_on"
 		}},
 	})
 
-	minetest.register_node("mesecons:wire_"..nodeid.."_on", {
+	minetest.register_node("mcre_mesecons:wire_"..nodeid.."_on", {
 		description = "Redstone Dust",
 		drawtype = "nodebox",
 		tiles = tiles_on,
@@ -146,10 +146,10 @@ for zmy=0, 1 do
 		groups = {dig_immediate = 3, mesecon = 2, not_in_creative_inventory = 1},
 		walkable = false,
 		stack_max = 64,
-		drop = "mesecons:wire_00000000_off",
+		drop = "mcre_mesecons:wire_00000000_off",
 		mesecons = {conductor={
 			state = mesecon.state.on,
-			offstate = "mesecons:wire_"..nodeid.."_off"
+			offstate = "mcre_mesecons:wire_"..nodeid.."_off"
 		}},
 	})
 end
@@ -208,7 +208,7 @@ function mesecon:update_autoconnect(pos, secondcall, replace_old)
 	end
 
 	nodename = minetest.env:get_node(pos).name
-	if string.find(nodename, "mesecons:wire_") == nil and not replace_old then return nil end
+	if string.find(nodename, "mcre_mesecons:wire_") == nil and not replace_old then return nil end
 
 	if mesecon:rules_link_anydir(pos, xppos) then xp = 1 else xp = 0 end
 	if mesecon:rules_link_anydir(pos, xmpos) then xm = 1 else xm = 0 end
@@ -235,8 +235,8 @@ function mesecon:update_autoconnect(pos, secondcall, replace_old)
 
 	
 	if string.find(nodename, "_off") ~= nil then
-		minetest.env:set_node(pos, {name = "mesecons:wire_"..nodeid.."_off"})
+		minetest.env:set_node(pos, {name = "mcre_mesecons:wire_"..nodeid.."_off"})
 	else
-		minetest.env:set_node(pos, {name = "mesecons:wire_"..nodeid.."_on" })
+		minetest.env:set_node(pos, {name = "mcre_mesecons:wire_"..nodeid.."_on" })
 	end
 end

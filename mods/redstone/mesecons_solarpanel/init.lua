@@ -1,7 +1,7 @@
 local boxes = { -8/16, -8/16, -8/16,  8/16, -2/16, 8/16 } -- Solar Pannel
 
 -- Solar Panel
-minetest.register_node("mesecons_solarpanel:solar_panel_on", {
+minetest.register_node("mcre_mesecons_solarpanel:solar_panel_on", {
 	drawtype = "nodebox",
 	tiles = { "jeija_solar_panel.png","jeija_solar_panel.png","jeija_solar_panel_side.png",
 	"jeija_solar_panel_side.png","jeija_solar_panel_side.png","jeija_solar_panel_side.png", },
@@ -17,7 +17,7 @@ minetest.register_node("mesecons_solarpanel:solar_panel_on", {
 		type = "fixed",
 		fixed = boxes
 	},
-	drop = "mesecons_solarpanel:solar_panel_off",
+	drop = "mcre_mesecons_solarpanel:solar_panel_off",
 	groups = {dig_immediate=3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	mesecons = {receptor = {
@@ -26,7 +26,7 @@ minetest.register_node("mesecons_solarpanel:solar_panel_on", {
 })
 
 -- Solar Panel
-minetest.register_node("mesecons_solarpanel:solar_panel_off", {
+minetest.register_node("mcre_mesecons_solarpanel:solar_panel_off", {
 	drawtype = "nodebox",
 	tiles = { "jeija_solar_panel.png","jeija_solar_panel.png","jeija_solar_panel_side.png",
 	"jeija_solar_panel_side.png","jeija_solar_panel_side.png","jeija_solar_panel_side.png", },
@@ -53,35 +53,35 @@ minetest.register_node("mesecons_solarpanel:solar_panel_off", {
 minetest.register_craft({
 	output = '"mesecons_solarpanel:solar_panel_off" 1',
 	recipe = {
-		{'default:glass', 'default:glass', 'default:glass'},
-		{'default:glass', 'default:glass', 'default:glass'},
-		{'default:restone_dust', 'default:restone_dust', 'default:restone_dust'},
+		{'mcre_default:glass', 'mcre_default:glass', 'mcre_default:glass'},
+		{'mcre_default:glass', 'mcre_default:glass', 'mcre_default:glass'},
+		{'mcre_default:restone_dust', 'mcre_default:restone_dust', 'mcre_default:restone_dust'},
 	}
 })
 
 minetest.register_abm(
-	{nodenames = {"mesecons_solarpanel:solar_panel_off"},
+	{nodenames = {"mcre_mesecons_solarpanel:solar_panel_off"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local light = minetest.env:get_node_light(pos, nil)
 
 		if light >= 12 and minetest.get_timeofday() > 0.2 and minetest.get_timeofday() < 0.8 then
-			minetest.env:set_node(pos, {name="mesecons_solarpanel:solar_panel_on", param2=node.param2})
+			minetest.env:set_node(pos, {name="mcre_mesecons_solarpanel:solar_panel_on", param2=node.param2})
 			mesecon:receptor_on(pos)
 		end
 	end,
 })
 
 minetest.register_abm(
-	{nodenames = {"mesecons_solarpanel:solar_panel_on"},
+	{nodenames = {"mcre_mesecons_solarpanel:solar_panel_on"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local light = minetest.env:get_node_light(pos, nil)
 
 		if light < 12 then
-			minetest.env:set_node(pos, {name="mesecons_solarpanel:solar_panel_off", param2=node.param2})
+			minetest.env:set_node(pos, {name="mcre_mesecons_solarpanel:solar_panel_off", param2=node.param2})
 			mesecon:receptor_off(pos)
 		end
 	end,
@@ -90,7 +90,7 @@ minetest.register_abm(
 --- Solar panel inversed
 
 -- Solar Panel
-minetest.register_node("mesecons_solarpanel:solar_panel_inverted_on", {
+minetest.register_node("mcre_mesecons_solarpanel:solar_panel_inverted_on", {
 	drawtype = "nodebox",
 	tiles = { "jeija_solar_panel_inverted.png","jeija_solar_panel_inverted.png","jeija_solar_panel_side.png",
 	"jeija_solar_panel_side.png","jeija_solar_panel_side.png","jeija_solar_panel_side.png", },
@@ -106,7 +106,7 @@ minetest.register_node("mesecons_solarpanel:solar_panel_inverted_on", {
 		type = "fixed",
 		fixed = boxes
 	},
-	drop = "mesecons_solarpanel:solar_panel_inverted_off",
+	drop = "mcre_mesecons_solarpanel:solar_panel_inverted_off",
 	groups = {dig_immediate=3, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 	mesecons = {receptor = {
@@ -115,7 +115,7 @@ minetest.register_node("mesecons_solarpanel:solar_panel_inverted_on", {
 })
 
 -- Solar Panel
-minetest.register_node("mesecons_solarpanel:solar_panel_inverted_off", {
+minetest.register_node("mcre_mesecons_solarpanel:solar_panel_inverted_off", {
 	drawtype = "nodebox",
 	tiles = { "jeija_solar_panel_inverted.png","jeija_solar_panel_inverted.png","jeija_solar_panel_side.png",
 	"jeija_solar_panel_side.png","jeija_solar_panel_side.png","jeija_solar_panel_side.png", },
@@ -140,37 +140,37 @@ minetest.register_node("mesecons_solarpanel:solar_panel_inverted_off", {
 })
 
 minetest.register_craft({
-	output = '"mesecons_solarpanel:solar_panel_inverted_off" 1',
+	output = '"mcre_mesecons_solarpanel:solar_panel_inverted_off" 1',
 	recipe = {
-		{'default:restone_dust', 'default:restone_dust', 'default:restone_dust'},
-		{'default:glass', 'default:glass', 'default:glass'},
-		{'default:glass', 'default:glass', 'default:glass'},
+		{'mcre_default:restone_dust', 'mcre_default:restone_dust', 'mcre_default:restone_dust'},
+		{'mcre_default:glass', 'mcre_default:glass', 'mcre_default:glass'},
+		{'mcre_default:glass', 'mcre_default:glass', 'mcre_default:glass'},
 	}
 })
 
 minetest.register_abm(
-	{nodenames = {"mesecons_solarpanel:solar_panel_inverted_off"},
+	{nodenames = {"mcre_mesecons_solarpanel:solar_panel_inverted_off"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local light = minetest.env:get_node_light(pos, nil)
 
 		if light < 12 then
-			minetest.env:set_node(pos, {name="mesecons_solarpanel:solar_panel_inverted_on", param2=node.param2})
+			minetest.env:set_node(pos, {name="mcre_mesecons_solarpanel:solar_panel_inverted_on", param2=node.param2})
 			mesecon:receptor_on(pos)
 		end
 	end,
 })
 
 minetest.register_abm(
-	{nodenames = {"mesecons_solarpanel:solar_panel_inverted_on"},
+	{nodenames = {"mcre_mesecons_solarpanel:solar_panel_inverted_on"},
 	interval = 1,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		local light = minetest.env:get_node_light(pos, nil)
 
 		if light >= 12 and minetest.get_timeofday() > 0.8 and minetest.get_timeofday() < 0.2 then
-			minetest.env:set_node(pos, {name="mesecons_solarpanel:solar_panel_inverted_off", param2=node.param2})
+			minetest.env:set_node(pos, {name="mcre_mesecons_solarpanel:solar_panel_inverted_off", param2=node.param2})
 			mesecon:receptor_off(pos)
 		end
 	end,
