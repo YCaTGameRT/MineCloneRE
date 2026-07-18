@@ -2,7 +2,7 @@ local init = os.clock()
 random_struct ={}
 
 random_struct.get_struct = function(file)
-	local localfile = minetest.get_modpath("random_struct").."/build/"..file
+	local localfile = minetest.get_modpath("mcre_random_struct").."/build/"..file
 	local file, errorload = io.open(localfile, "rb")
 	if errorload ~= nil then
 	    minetest.log("action", '[Random_Struct] error: could not open this struct "' .. localfile .. '"')
