@@ -46,7 +46,7 @@ function potions.register_potion(iname, color, exptime, action, expaction)
 end
 
 
-minetest.register_craftitem("potions:glass_bottle", {
+minetest.register_craftitem("mcre_potions:glass_bottle", {
 		description = "Glass Bottle",
 		inventory_image = "potions_bottle.png",
 		on_place = function(itemstack, user, pointed_thing)
