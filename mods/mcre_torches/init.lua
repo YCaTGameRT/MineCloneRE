@@ -98,7 +98,7 @@ minetest.register_craftitem("mcre_torches:torch", {
 		local pn = placer:get_player_name()
 		if pointed_thing.type ~= "node" 
 		or string.find(minetest.env:get_node(pointed_thing.above).name, "group:torch") 
-		or string.find(minetest.env:get_node(pointed_thing.above).name, "doors:") then
+		or string.find(minetest.env:get_node(pointed_thing.above).name, "mcre_doors:") then
 			return itemstack
 		end
 		if minetest.is_protected(pointed_thing.above, pn) then

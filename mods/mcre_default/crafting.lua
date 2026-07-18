@@ -75,7 +75,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'torches:torch 4',
+	output = 'mcre_torches:torch 4',
 	recipe = {
 		{'mcre_default:coal_lump'},
 		{'mcre_default:stick'},
@@ -83,7 +83,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'torches:torch 4',
+	output = 'mcre_torches:torch 4',
 	recipe = {
 		{'mcre_default:charcoal_lump'},
 		{'mcre_default:stick'},
@@ -315,7 +315,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:furnace',
+	output = 'mcre_default:furnace',
 	recipe = {
 		{'group:stone', 'group:stone', 'group:stone'},
 		{'group:stone', '', 'group:stone'},
