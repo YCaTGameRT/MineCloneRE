@@ -29,8 +29,8 @@ minetest.register_on_joinplayer(function(player)
 	uniskins.skin[name] = uniskins.default_skin
 	uniskins.armor[name] = uniskins.default_texture
 	uniskins.wielditem[name] = uniskins.default_texture
-	if minetest.get_modpath("player_textures") then
-		local filename = minetest.get_modpath("player_textures").."/textures/player_"..name
+	if minetest.get_modpath("mcre_player_textures") then
+		local filename = minetest.get_modpath("mcre_player_textures").."/textures/player_"..name
 		local f = io.open(filename..".png")
 		if f then
 			f:close()
