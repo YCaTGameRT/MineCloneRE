@@ -20,7 +20,7 @@ clay.dyes = {
 	{"light_blue", "Light Blue", "lightblue"},
 }
 
-minetest.register_node("hardened_clay:hardened_clay", {
+minetest.register_node("mcre_hardened_clay:hardened_clay", {
 	description = "Hardened Clay",
 	tiles = {"hardened_clay.png"},
 	stack_max = 64,
@@ -31,7 +31,7 @@ minetest.register_node("hardened_clay:hardened_clay", {
 minetest.register_craft({
 	type = "cooking",
 	output = "hardened_clay:hardened_clay",
-	recipe = "default:clay",
+	recipe = "mcre_default:clay",
 })
 
 
@@ -40,7 +40,7 @@ for _, row in ipairs(clay.dyes) do
 	local desc = row[2]
 	local craft_color_group = row[3]
 	-- Node Definition
-		minetest.register_node("hardened_clay:"..name, {
+		minetest.register_node("mcre_hardened_clay:"..name, {
 			description = desc.." Hardened Clay",
 			tiles = {"hardened_clay_stained_"..name..".png"},
 			groups = {cracky=3,hardened_clay=1},
@@ -49,11 +49,11 @@ for _, row in ipairs(clay.dyes) do
 		})
 	if craft_color_group then
 		minetest.register_craft({
-			output = 'hardened_clay:'..name..' 8',
+			output = 'mcre_hardened_clay:'..name..' 8',
 			recipe = {
-					{'hardened_clay:hardened_clay', 'hardened_clay:hardened_clay', 'hardened_clay:hardened_clay'},
-					{'hardened_clay:hardened_clay', 'dye:'..craft_color_group, 'hardened_clay:hardened_clay'},
-					{'hardened_clay:hardened_clay', 'hardened_clay:hardened_clay', 'hardened_clay:hardened_clay'},
+					{'mcre_hardened_clay:hardened_clay', 'mcre_hardened_clay:hardened_clay', 'mcre_hardened_clay:hardened_clay'},
+					{'mcre_hardened_clay:hardened_clay', 'mcre_dye:'..craft_color_group, 'mcre_hardened_clay:hardened_clay'},
+					{'mcre_hardened_clay:hardened_clay', 'mcre_hardened_clay:hardened_clay', 'mcre_hardened_clay:hardened_clay'},
 			},
 		})
 	end
