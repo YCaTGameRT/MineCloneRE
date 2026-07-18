@@ -126,13 +126,13 @@ minetest.register_globalstep(function(dtime)
   local players  = minetest.get_connected_players()
   for i,player in ipairs(players) do
 
-    if string.sub(player:get_wielded_item():get_name(), 0, 11) == "watch:watch" then
-      player:set_wielded_item("watch:watch_"..t..now)
+    if string.sub(player:get_wielded_item():get_name(), 0, 11) == "mcre_watch:watch" then
+      player:set_wielded_item("mcre_watch:watch_"..t..now)
     end
     for i,stack in ipairs(player:get_inventory():get_list("main")) do
-      if i<9 and string.sub(stack:get_name(), 0, 11) == "watch:watch" then
+      if i<9 and string.sub(stack:get_name(), 0, 11) == "mcre_watch:watch" then
         player:get_inventory():remove_item("main", stack:get_name())
-        player:get_inventory():add_item("main", "watch:watch_"..t..now)
+        player:get_inventory():add_item("main", "mcre_watch:watch_"..t..now)
       end
     end
   end

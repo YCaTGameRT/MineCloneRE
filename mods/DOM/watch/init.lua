@@ -7,10 +7,10 @@
 local init = os.clock()
 
 --Rotinas usadas pelo mod
-dofile(minetest.get_modpath("watch").."/rotinas.lua")
+dofile(minetest.get_modpath("mcre_watch").."/rotinas.lua")
 
 --Declarações dos objetos
-dofile(minetest.get_modpath("watch").."/itens.lua")
+dofile(minetest.get_modpath("mcre_watch").."/itens.lua")
 
 local time_to_load= os.clock() - init
 print(string.format("[MOD] "..minetest.get_current_modname().." loaded in %.4f s", time_to_load))
