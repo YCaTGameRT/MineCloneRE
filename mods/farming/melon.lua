@@ -1,4 +1,4 @@
-minetest.register_node("farming:melon", {
+minetest.register_node("mcre_farming:melon", {
 	description = "Melon",
 	paramtype2 = "facedir",
 	stack_max = 64,
@@ -7,11 +7,11 @@ minetest.register_node("farming:melon", {
 	drop = {
 		max_items = 1,
 		items = {
-			{ items = {'farming:melon_item 3'} },
-			{ items = {'farming:melon_item 4'}, rarity = 2 },
-			{ items = {'farming:melon_item 5'}, rarity = 5 },
-			{ items = {'farming:melon_item 6'}, rarity = 10 },
-			{ items = {'farming:melon_item 7'}, rarity = 14 }
+			{ items = {'mcre_farming:melon_item 3'} },
+			{ items = {'mcre_farming:melon_item 4'}, rarity = 2 },
+			{ items = {'mcre_farming:melon_item 5'}, rarity = 5 },
+			{ items = {'mcre_farming:melon_item 6'}, rarity = 10 },
+			{ items = {'mcre_farming:melon_item 7'}, rarity = 14 }
 		}
 	},
 	after_dig_node = function(pos, oldnode, oldmetadata, user)
@@ -21,7 +21,7 @@ minetest.register_node("farming:melon", {
 				local n = minetest.env:get_node(p)
 			if string.find(n.name, "melontige_linked_") and have_change == 0 then
 					have_change = 1
-					minetest.env:add_node(p, {name="farming:melontige_unconnect"})
+					minetest.env:add_node(p, {name="mcre_farming:melontige_unconnect"})
 			end
 		end
 		if have_change == 0 then
@@ -30,14 +30,14 @@ minetest.register_node("farming:melon", {
 				local n = minetest.env:get_node(p)
 				if string.find(n.name, "melontige_linked_") and have_change == 0 then
 						have_change = 1
-						minetest.env:add_node(p, {name="farming:melontige_unconnect"})
+						minetest.env:add_node(p, {name="mcre_farming:melontige_unconnect"})
 				end
 			end
 		end
 	end
 })
 
-minetest.register_node("farming:melontige_1", {
+minetest.register_node("mcre_farming:melontige_1", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
@@ -54,7 +54,7 @@ minetest.register_node("farming:melontige_1", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_2", {
+minetest.register_node("mcre_farming:melontige_2", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
@@ -71,7 +71,7 @@ minetest.register_node("farming:melontige_2", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_unconnect", {
+minetest.register_node("mcre_farming:melontige_unconnect", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -82,7 +82,7 @@ minetest.register_node("farming:melontige_unconnect", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_linked_r", {
+minetest.register_node("mcre_farming:melontige_linked_r", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -113,7 +113,7 @@ minetest.register_node("farming:melontige_linked_r", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_linked_l", {
+minetest.register_node("mcre_farming:melontige_linked_l", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -144,7 +144,7 @@ minetest.register_node("farming:melontige_linked_l", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_linked_t", {
+minetest.register_node("mcre_farming:melontige_linked_t", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -175,7 +175,7 @@ minetest.register_node("farming:melontige_linked_t", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:melontige_linked_b", {
+minetest.register_node("mcre_farming:melontige_linked_b", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -206,30 +206,30 @@ minetest.register_node("farming:melontige_linked_b", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_craftitem("farming:melon_seed", {
+minetest.register_craftitem("mcre_farming:melon_seed", {
 	description = "Melon seed",
 	stack_max = 64,
 	inventory_image = "farming_melon_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
-		return farming:place_seed(itemstack, placer, pointed_thing, "farming:melontige_1")
+		return farming:place_seed(itemstack, placer, pointed_thing, "mcre_farming:melontige_1")
 	end,
 })
 
-minetest.register_craftitem("farming:melon_item", {
+minetest.register_craftitem("mcre_farming:melon_item", {
 	description = "Melon",
 	stack_max = 64,
 	inventory_image = "farming_melon.png",
 	on_use = minetest.item_eat(2),
 })
 
-minetest.register_craftitem("farming:melon_item_speckled", {
+minetest.register_craftitem("mcre_farming:melon_item_speckled", {
 	description = "Melon Speckled",
 	stack_max = 64,
 	inventory_image = "farming_melon_speckled.png",
 })
 
 minetest.register_abm({
-	nodenames = {"farming:melontige_unconnect"},
+	nodenames = {"mcre_farming:melontige_unconnect"},
 	neighbors = {"air"},
 	interval = 25,
 	chance = 15,
@@ -243,15 +243,15 @@ minetest.register_abm({
 				newpos = {x=pos.x+x, y=pos.y, z=pos.z}
 				local n = minetest.env:get_node(p)
 				local nod = minetest.env:get_node(newpos)
-			if n.name=="default:dirt_with_grass" and nod.name=="air" and have_change == 0 
-			or n.name=="default:dirt" and nod.name=="air" and have_change == 0
+			if n.name=="mcre_default:dirt_with_grass" and nod.name=="air" and have_change == 0 
+			or n.name=="mcre_default:dirt" and nod.name=="air" and have_change == 0
 			or string.find(n.name, "farming:soil") and nod.name=="air" and have_change == 0 then
 					have_change = 1
-					minetest.env:add_node(newpos, {name="farming:melon"})
+					minetest.env:add_node(newpos, {name="mcre_farming:melon"})
 					if x == 1 then
-						minetest.env:add_node(pos, {name="farming:melontige_linked_r" })
+						minetest.env:add_node(pos, {name="mcre_farming:melontige_linked_r" })
 					else
-						minetest.env:add_node(pos, {name="farming:melontige_linked_l"})
+						minetest.env:add_node(pos, {name="mcre_farming:melontige_linked_l"})
 					end
 			end
 		end
@@ -261,15 +261,15 @@ minetest.register_abm({
 					newpos = {x=pos.x, y=pos.y, z=pos.z+z}
 					n = minetest.env:get_node(p)
 					local nod2 = minetest.env:get_node(newpos)
-					if n.name=="default:dirt_with_grass" and nod2.name=="air" and have_change == 0 
-					or n.name=="default:dirt" and nod2.name=="air" and have_change == 0 
-					or string.find(n.name, "farming:soil") and nod2.name=="air" and have_change == 0 then
+					if n.name=="mcre_default:dirt_with_grass" and nod2.name=="air" and have_change == 0 
+					or n.name=="mcre_default:dirt" and nod2.name=="air" and have_change == 0 
+					or string.find(n.name, "mcre_farming:soil") and nod2.name=="air" and have_change == 0 then
 						have_change = 1
-						minetest.env:add_node(newpos, {name="farming:melon"})
+						minetest.env:add_node(newpos, {name="mcre_farming:melon"})
 					if z == 1 then
-						minetest.env:add_node(pos, {name="farming:melontige_linked_t" })
+						minetest.env:add_node(pos, {name="mcre_farming:melontige_linked_t" })
 					else
-						minetest.env:add_node(pos, {name="farming:melontige_linked_b" })
+						minetest.env:add_node(pos, {name="mcre_farming:melontige_linked_b" })
 					end
 					end
 			end
@@ -278,19 +278,19 @@ minetest.register_abm({
 	end,
 })
 
-farming:add_plant("farming:melontige_unconnect", {"farming:melontige_1", "farming:melontige_2"}, 50, 20)
+farming:add_plant("mcre_farming:melontige_unconnect", {"mcre_farming:melontige_1", "mcre_farming:melontige_2"}, 50, 20)
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "farming:melon_seed",
-	recipe = {"farming:melon_item"}
+	output = "mcre_farming:melon_seed",
+	recipe = {"mcre_farming:melon_item"}
 })
 
 minetest.register_craft({
-	output = 'farming:melon',
+	output = 'mcre_farming:melon',
 	recipe = {
-		{'farming:melon_item', 'farming:melon_item', 'farming:melon_item'},
-		{'farming:melon_item', 'farming:melon_item', 'farming:melon_item'},
-		{'farming:melon_item', 'farming:melon_item', 'farming:melon_item'},
+		{'mcre_farming:melon_item', 'mcre_farming:melon_item', 'mcre_farming:melon_item'},
+		{'mcre_farming:melon_item', 'mcre_farming:melon_item', 'mcre_farming:melon_item'},
+		{'mcre_farming:melon_item', 'mcre_farming:melon_item', 'mcre_farming:melon_item'},
 	}
 })

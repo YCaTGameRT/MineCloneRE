@@ -1,13 +1,13 @@
 LIGHT_MAX = 15
 
-minetest.register_craftitem("farming:pumpkin_seed", {
+minetest.register_craftitem("mcre_farming:pumpkin_seed", {
 	description = "Pumpkin Seed",
 	stack_max = 64,
 	inventory_image = "farming_pumpkin_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		local above = minetest.env:get_node(pointed_thing.above)
 		if above.name == "air" then
-			above.name = "farming:pumpkin_1"
+			above.name = "mcre_farming:pumpkin_1"
 			minetest.env:set_node(pointed_thing.above, above)
 			itemstack:take_item(1)
 			return itemstack
@@ -15,7 +15,7 @@ minetest.register_craftitem("farming:pumpkin_seed", {
 	end
 })
 
-minetest.register_node("farming:pumpkin_1", {
+minetest.register_node("mcre_farming:pumpkin_1", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
@@ -32,7 +32,7 @@ minetest.register_node("farming:pumpkin_1", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:pumpkin_2", {
+minetest.register_node("mcre_farming:pumpkin_2", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
@@ -50,7 +50,7 @@ minetest.register_node("farming:pumpkin_2", {
 })
 
 
-minetest.register_node("farming:pumpkin_face", {
+minetest.register_node("mcre_farming:pumpkin_face", {
 	description = "Pumpkin Face",
 	stack_max = 64,
 	paramtype2 = "facedir",
@@ -63,7 +63,7 @@ minetest.register_node("farming:pumpkin_face", {
 				local n = minetest.env:get_node(p)
 			if string.find(n.name, "pumpkintige_linked_") and have_change == 0 then
 					have_change = 1
-					minetest.env:add_node(p, {name="farming:pumpkintige_unconnect"})
+					minetest.env:add_node(p, {name="mcre_farming:pumpkintige_unconnect"})
 			end
 		end
 		if have_change == 0 then
@@ -72,14 +72,14 @@ minetest.register_node("farming:pumpkin_face", {
 				local n = minetest.env:get_node(p)
 				if string.find(n.name, "pumpkintige_linked_") and have_change == 0 then
 						have_change = 1
-						minetest.env:add_node(p, {name="farming:pumpkintige_unconnect"})
+						minetest.env:add_node(p, {name="mcre_farming:pumpkintige_unconnect"})
 				end
 			end
 		end
 	end
 })
 
-minetest.register_node("farming:pumpkintige_unconnect", {
+minetest.register_node("mcre_farming:pumpkintige_unconnect", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -91,7 +91,7 @@ minetest.register_node("farming:pumpkintige_unconnect", {
 })
 
 
-minetest.register_node("farming:pumpkintige_linked_r", {
+minetest.register_node("mcre_farming:pumpkintige_linked_r", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -122,7 +122,7 @@ minetest.register_node("farming:pumpkintige_linked_r", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:pumpkintige_linked_l", {
+minetest.register_node("mcre_farming:pumpkintige_linked_l", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -153,7 +153,7 @@ minetest.register_node("farming:pumpkintige_linked_l", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:pumpkintige_linked_t", {
+minetest.register_node("mcre_farming:pumpkintige_linked_t", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -184,7 +184,7 @@ minetest.register_node("farming:pumpkintige_linked_t", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming:pumpkintige_linked_b", {
+minetest.register_node("mcre_farming:pumpkintige_linked_b", {
 	paramtype = "light",
 	walkable = false,
 	sunlight_propagates = true,
@@ -215,11 +215,11 @@ minetest.register_node("farming:pumpkintige_linked_b", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-farming:add_plant("farming:pumpkintige_unconnect", {"farming:pumpkin_1", "farming:pumpkin_2"}, 80, 20)
+farming:add_plant("mcre_farming:pumpkintige_unconnect", {"mcre_farming:pumpkin_1", "mcre_farming:pumpkin_2"}, 80, 20)
 
 
 minetest.register_abm({
-	nodenames = {"farming:pumpkintige_unconnect"},
+	nodenames = {"mcre_farming:pumpkintige_unconnect"},
 	neighbors = {"air"},
 	interval = 30,
 	chance = 15,
@@ -233,15 +233,15 @@ minetest.register_abm({
 				newpos = {x=pos.x+x, y=pos.y, z=pos.z}
 				local n = minetest.env:get_node(p)
 				local nod = minetest.env:get_node(newpos)
-			if n.name=="default:dirt_with_grass" and nod.name=="air" and have_change == 0 
-			or n.name=="default:dirt" and nod.name=="air" and have_change == 0
-			or string.find(n.name, "farming:soil") and nod.name=="air" and have_change == 0 then
+			if n.name=="mcre_default:dirt_with_grass" and nod.name=="air" and have_change == 0 
+			or n.name=="mcre_default:dirt" and nod.name=="air" and have_change == 0
+			or string.find(n.name, "mcre_farming:soil") and nod.name=="air" and have_change == 0 then
 					have_change = 1
-					minetest.env:add_node(newpos, {name="farming:pumpkin_face"})
+					minetest.env:add_node(newpos, {name="mcre_farming:pumpkin_face"})
 					if x == 1 then
-						minetest.env:add_node(pos, {name="farming:pumpkintige_linked_r" })
+						minetest.env:add_node(pos, {name="mcre_farming:pumpkintige_linked_r" })
 					else
-						minetest.env:add_node(pos, {name="farming:pumpkintige_linked_l"})
+						minetest.env:add_node(pos, {name="mcre_farming:pumpkintige_linked_l"})
 					end
 			end
 		end
@@ -251,15 +251,15 @@ minetest.register_abm({
 					newpos = {x=pos.x, y=pos.y, z=pos.z+z}
 					n = minetest.env:get_node(p)
 					local nod2 = minetest.env:get_node(newpos)
-					if n.name=="default:dirt_with_grass" and nod2.name=="air" and have_change == 0 
-					or n.name=="default:dirt" and nod2.name=="air" and have_change == 0 
-					or string.find(n.name, "farming:soil") and nod2.name=="air" and have_change == 0 then
+					if n.name=="mcre_default:dirt_with_grass" and nod2.name=="air" and have_change == 0 
+					or n.name=="mcre_default:dirt" and nod2.name=="air" and have_change == 0 
+					or string.find(n.name, "mcre_farming:soil") and nod2.name=="air" and have_change == 0 then
 						have_change = 1
-						minetest.env:add_node(newpos, {name="farming:pumpkin_face"})
+						minetest.env:add_node(newpos, {name="mcre_farming:pumpkin_face"})
 					if z == 1 then
-						minetest.env:add_node(pos, {name="farming:pumpkintige_linked_t" })
+						minetest.env:add_node(pos, {name="mcre_farming:pumpkintige_linked_t" })
 					else
-						minetest.env:add_node(pos, {name="farming:pumpkintige_linked_b" })
+						minetest.env:add_node(pos, {name="mcre_farming:pumpkintige_linked_b" })
 					end
 					end
 			end
@@ -270,7 +270,7 @@ minetest.register_abm({
 
 
 
-minetest.register_node("farming:pumpkin_face_light", {
+minetest.register_node("mcre_farming:pumpkin_face_light", {
 	description = "Jack O' Lantern",
 	stack_max = 64,
 	paramtype2 = "facedir",
@@ -281,20 +281,20 @@ minetest.register_node("farming:pumpkin_face_light", {
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "farming:pumpkin_face_light",
-	recipe = {"farming:pumpkin_face", "default:torch"}
+	output = "mcre_farming:pumpkin_face_light",
+	recipe = {"mcre_farming:pumpkin_face", "mcre_default:torch"}
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "farming:pumpkin_seed 4",
-	recipe = {"farming:pumpkin_face"}
+	output = "mcre_farming:pumpkin_seed 4",
+	recipe = {"mcre_farming:pumpkin_face"}
 })
 
 
 -- ========= FUEL =========
 minetest.register_craft({
 	type = "fuel",
-	recipe = "farming:pumpkin_seed",
+	recipe = "mcre_farming:pumpkin_seed",
 	burntime = 1
 })
