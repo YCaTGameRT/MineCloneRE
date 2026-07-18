@@ -198,7 +198,7 @@ dye.colors = {
 -- corresponding dye name (if it exists), nil otherwise.
 function dye.unicolor_to_dye(unicolor_group)
 	for k,v in pairs(dye.colors) do
-		if v.groups[unicolor_group] == 1 then return "dye:"..k end
+		if v.groups[unicolor_group] == 1 then return "mcre_dye:"..k end
 	end
 end
 
@@ -219,7 +219,7 @@ function dye.palette_index_to_color(index)
 end
 
 for k, v in pairs(dye.colors) do
-	core.register_craftitem("dye:" .. k, {
+	core.register_craftitem("mcre_dye:" .. k, {
 		_color = k,
 		description = (v.readable_name .. " Dye"),
 		groups = {craftitem = 1, dye = 1}, v.groups,
@@ -257,8 +257,8 @@ for one,results in pairs(dyelocal.mixes) do
 		local another = dyelocal.mixbases[i]
 		minetest.register_craft({
 			type = "shapeless",
-			output = 'dye:'..result..' 2',
-			recipe = {'dye:'..one, 'dye:'..another},
+			output = 'mcre_dye:'..result..' 2',
+			recipe = {'mcre_dye:'..one, 'mcre_dye:'..another},
 		})
 	end
 end
@@ -280,99 +280,99 @@ minetest.register_craftitem("dye:white", {
 
 -- Crafts
 minetest.register_craft({
-	output = 'dye:white',
+	output = 'mcre_dye:white',
 	recipe = {
-		{'default:bone_meal'},
+		{'mcre_default:bone_meal'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:white',
+	output = 'mcre_dye:white',
 	recipe = {
-		{'flowers:tulip_white'},
+		{'mcre_flowers:tulip_white'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:light_gray',
+	output = 'mcre_dye:light_gray',
 	recipe = {
-		{'flowers:oxeye_daisy'},
+		{'mcre_flowers:oxeye_daisy'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:black',
+	output = 'mcre_dye:black',
 	recipe = {
-		{'default:ink_sac'},
+		{'mcre_default:ink_sac'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:blue',
+	output = 'mcre_dye:blue',
 	recipe = {
-		{'default:lapis_lazuli'},
+		{'mcre_default:lapis_lazuli'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:light_blue',
+	output = 'mcre_dye:light_blue',
 	recipe = {
-		{'flowers:blue_orchid'},
+		{'mcre_flowers:blue_orchid'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:red',
+	output = 'mcre_mcre_dye:red',
 	recipe = {
-		{'flowers:rose'},
+		{'mcre_flowers:rose'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:red',
+	output = 'mcre_dye:red',
 	recipe = {
-		{'flowers:tulip_red'},
+		{'mcre_flowers:tulip_red'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:magenta',
+	output = 'mcre_dye:magenta',
 	recipe = {
-		{'flowers:allium'},
+		{'mcre_flowers:allium'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:pink',
+	output = 'mcre_dye:pink',
 	recipe = {
-		{'flowers:houstonia'},
+		{'mcre_flowers:houstonia'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:pink',
+	output = 'mcre_dye:pink',
 	recipe = {
-		{'flowers:tulip_pink'},
+		{'mcre_flowers:tulip_pink'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:pink',
+	output = 'mcre_dye:pink',
 	recipe = {
-		{'flowers:houstonia'},
+		{'mcre_flowers:houstonia'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:yellow',
+	output = 'mcre_dye:yellow',
 	recipe = {
-		{'flowers:dandelion_yellow'},
+		{'mcre_flowers:dandelion_yellow'},
 	}
 })
 
 minetest.register_craft({
-	output = 'dye:orange',
+	output = 'mcre_dye:orange',
 	recipe = {
-		{'flowers:tulip_orange'},
+		{'mcre_flowers:tulip_orange'},
 	}
 })
