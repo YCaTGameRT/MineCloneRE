@@ -1,8 +1,8 @@
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 local S;
-if (minetest.get_modpath("intllib")) then
-    dofile(minetest.get_modpath("intllib").."/intllib.lua");
+if (minetest.get_modpath("mcre_intllib")) then
+    dofile(minetest.get_modpath("mcre_intllib").."/intllib.lua");
     S = intllib.Getter(minetest.get_current_modname());
 else
     S = function ( s ) return s end;
@@ -20,7 +20,7 @@ local function deepcopy ( t )
     return nt;
 end
 
-local newbook = deepcopy(minetest.registered_items["default:book"]);
+local newbook = deepcopy(minetest.registered_items["mcre_default:book"]);
 
 newbook.on_use = function ( itemstack, user, pointed_thing )
 
@@ -31,16 +31,16 @@ newbook.on_use = function ( itemstack, user, pointed_thing )
         "textarea[0.5,0.25;7.5,9.25;text;;"..minetest.formspec_escape(text).."]"..
         "button_exit[3,8.25;2,1;ok;Exit]";
 
-    minetest.show_formspec(user:get_player_name(), "default:book", formspec);
+    minetest.show_formspec(user:get_player_name(), "mcre_default:book", formspec);
 
 end
 
-minetest.register_craftitem(":default:book", newbook);
+minetest.register_craftitem(":mcre_default:book", newbook);
 
 minetest.register_on_player_receive_fields(function ( player, formname, fields )
-    if ((formname == "default:book") and fields and fields.text) then
+    if ((formname == "mcre_default:book") and fields and fields.text) then
         local stack = player:get_wielded_item();
-        if (stack:get_name() and (stack:get_name() == "default:book")) then
+        if (stack:get_name() and (stack:get_name() == "mcre_default:book")) then
             local t = stack:to_table();
             t.metadata = fields.text;
             player:set_wielded_item(ItemStack(t));
