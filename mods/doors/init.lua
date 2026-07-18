@@ -291,7 +291,7 @@ function doors:register_door(name, def)
 end
 
 --- Normal Door ---
-doors:register_door("doors:door_wood", {
+doors:register_door("mcre_doors:door_wood", {
 	description = "Wooden Door",
 	inventory_image = "door_wood.png",
 	stack_max = 16,
@@ -301,7 +301,7 @@ doors:register_door("doors:door_wood", {
 })
 
 minetest.register_craft({
-	output = "doors:door_wood 3",
+	output = "mcre_doors:door_wood 3",
 	recipe = {
 		{"group:wood", "group:wood"},
 		{"group:wood", "group:wood"},
@@ -310,7 +310,7 @@ minetest.register_craft({
 })
 
 --- Accacia Door --
-doors:register_door("doors:door_acacia", {
+doors:register_door("mcre_doors:door_acacia", {
 	description = "Wooden Acacia Door",
 	inventory_image = "door_acacia.png",
 	stack_max = 16,
@@ -320,16 +320,16 @@ doors:register_door("doors:door_acacia", {
 })
 
 minetest.register_craft({
-	output = "doors:door_acacia 3",
+	output = "mcre_doors:door_acacia 3",
 	recipe = {
-		{"default:acaciawood", "default:acaciawood"},
-		{"default:acaciawood", "default:acaciawood"},
-		{"default:acaciawood", "default:acaciawood"}
+		{"mcre_default:acaciawood", "mcre_default:acaciawood"},
+		{"mcre_default:acaciawood", "mcre_default:acaciawood"},
+		{"mcre_default:acaciawood", "mcre_default:acaciawood"}
 	}
 })
 
 --- birch Door --
-doors:register_door("doors:door_birch", {
+doors:register_door("mcre_doors:door_birch", {
 	description = "Wooden Birch Door",
 	stack_max = 16,
 	inventory_image = "door_birch.png",
@@ -339,7 +339,7 @@ doors:register_door("doors:door_birch", {
 })
 
 --- dark oak Door --
-doors:register_door("doors:door_dark_oak", {
+doors:register_door("mcre_doors:door_dark_oak", {
 	description = "Wooden Dark Oak Door",
 	inventory_image = "door_dark_oak.png",
 	stack_max = 16,
@@ -349,7 +349,7 @@ doors:register_door("doors:door_dark_oak", {
 })
 
 --- jungle Door --
-doors:register_door("doors:door_jungle", {
+doors:register_door("mcre_doors:door_jungle", {
 	description = "Wooden Jungle Door",
 	stack_max = 16,
 	inventory_image = "door_jungle.png",
@@ -359,16 +359,16 @@ doors:register_door("doors:door_jungle", {
 })
 
 minetest.register_craft({
-	output = "doors:door_jungle 3",
+	output = "mcre_doors:door_jungle 3",
 	recipe = {
-		{"default:junglewood", "default:junglewood"},
-		{"default:junglewood", "default:junglewood"},
-		{"default:junglewood", "default:junglewood"}
+		{"mcre_default:junglewood", "mcre_default:junglewood"},
+		{"mcre_default:junglewood", "mcre_default:junglewood"},
+		{"mcre_default:junglewood", "mcre_default:junglewood"}
 	}
 })
 
 --- spruce Door --
-doors:register_door("doors:door_spruce", {
+doors:register_door("mcre_doors:door_spruce", {
 	description = "Wooden Spruce Door",
 	stack_max = 16,
 	inventory_image = "door_spruce.png",
@@ -378,17 +378,17 @@ doors:register_door("doors:door_spruce", {
 })
 
 minetest.register_craft({
-	output = "doors:door_spruce 3",
+	output = "mcre_doors:door_spruce 3",
 	recipe = {
-		{"default:sprucewood", "default:sprucewood"},
-		{"default:sprucewood", "default:sprucewood"},
-		{"default:sprucewood", "default:sprucewood"}
+		{"mcre_default:sprucewood", "mcre_default:sprucewood"},
+		{"mcre_default:sprucewood", "mcre_default:sprucewood"},
+		{"mcre_default:sprucewood", "mcre_default:sprucewood"}
 	}
 })
 
 
 --- Door in Steel ---
-doors:register_door("doors:door_steel", {
+doors:register_door("mcre_doors:door_steel", {
 	description = "Steel Door",
 	stack_max = 16,
 	inventory_image = "door_steel.png",
@@ -400,18 +400,18 @@ doors:register_door("doors:door_steel", {
 })
 
 minetest.register_craft({
-	output = "doors:door_steel 3",
+	output = "mcre_doors:door_steel 3",
 	recipe = {
-		{"default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot"}
+		{"mcre_default:steel_ingot", "mcre_default:steel_ingot"},
+		{"mcre_default:steel_ingot", "mcre_default:steel_ingot"},
+		{"mcre_default:steel_ingot", "mcre_default:steel_ingot"}
 	}
 })
 
-minetest.register_alias("doors:door_wood_a_c", "doors:door_wood_t_1")
-minetest.register_alias("doors:door_wood_a_o", "doors:door_wood_t_1")
-minetest.register_alias("doors:door_wood_b_c", "doors:door_wood_b_1")
-minetest.register_alias("doors:door_wood_b_o", "doors:door_wood_b_1")
+minetest.register_alias("mcre_doors:door_wood_a_c", "mcre_doors:door_wood_t_1")
+minetest.register_alias("mcre_doors:door_wood_a_o", "mcre_doors:door_wood_t_1")
+minetest.register_alias("mcre_doors:door_wood_b_c", "mcre_doors:door_wood_b_1")
+minetest.register_alias("mcre_doors:door_wood_b_o", "mcre_doors:door_wood_b_1")
 
 
 ----trapdoor Wood----
@@ -434,18 +434,18 @@ local function punch(pos)
 		if state == 1 then
 			state = 0
 			minetest.sound_play("door_close", {pos = pos, gain = 0.3, max_hear_distance = 10})
-			tmp_node = {name="doors:trapdoor", param1=me.param1, param2=me.param2}
+			tmp_node = {name="mcre_doors:trapdoor", param1=me.param1, param2=me.param2}
 		else
 			state = 1
 			minetest.sound_play("door_open", {pos = pos, gain = 0.3, max_hear_distance = 10})
-			tmp_node = {name="doors:trapdoor_open", param1=me.param1, param2=me.param2}
+			tmp_node = {name="mcre_doors:trapdoor_open", param1=me.param1, param2=me.param2}
 		end
 		update_door(pos, tmp_node)
 		meta:set_int("state", state)
 end
 
 
-minetest.register_node("doors:trapdoor", {
+minetest.register_node("mcre_doors:trapdoor", {
 	description = "Trapdoor",
 	drawtype = "nodebox",
 	tiles = {"door_trapdoor.png", "door_trapdoor.png",  "default_wood.png",  "default_wood.png", "default_wood.png", "default_wood.png"},
@@ -454,7 +454,7 @@ minetest.register_node("doors:trapdoor", {
 	paramtype2 = "facedir",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,mesecon_effector_on=1,flammable=2,door=1},
 	sounds = default.node_sound_wood_defaults(),
-	drop = "doors:trapdoor",
+	drop = "mcre_doors:trapdoor",
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -491,7 +491,7 @@ minetest.register_node("doors:trapdoor", {
 })
 
 
-minetest.register_node("doors:trapdoor_open", {
+minetest.register_node("mcre_doors:trapdoor_open", {
 	drawtype = "nodebox",
 	tiles = {"default_wood.png", "default_wood.png",  "default_wood.png",  "default_wood.png", "door_trapdoor.png", "door_trapdoor.png"},
 	paramtype = "light",
@@ -500,7 +500,7 @@ minetest.register_node("doors:trapdoor_open", {
 	stack_max = 0,
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,mesecon_effector_on=1,flammable=2,door=1},
 	sounds = default.node_sound_wood_defaults(),
-	drop = "doors:trapdoor",
+	drop = "mcre_doors:trapdoor",
 	node_box = {
 		type = "fixed",
 		fixed = {-0.5, -0.5, 0.4, 0.5, 0.5, 0.5}
@@ -524,7 +524,7 @@ minetest.register_node("doors:trapdoor_open", {
 
 
 minetest.register_craft({
-	output = 'doors:trapdoor 2',
+	output = 'mcre_doors:trapdoor 2',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},
 		{'group:wood', 'group:wood', 'group:wood'},
@@ -550,18 +550,18 @@ local function punch(pos)
 		if state == 1 then
 			state = 0
 			minetest.sound_play("door_close", {pos = pos, gain = 0.3, max_hear_distance = 10})
-			tmp_node = {name="doors:iron_trapdoor", param1=me.param1, param2=me.param2}
+			tmp_node = {name="mcre_doors:iron_trapdoor", param1=me.param1, param2=me.param2}
 		else
 			state = 1
 			minetest.sound_play("door_open", {pos = pos, gain = 0.3, max_hear_distance = 10})
-			tmp_node = {name="doors:iron_trapdoor_open", param1=me.param1, param2=me.param2}
+			tmp_node = {name="mcre_doors:iron_trapdoor_open", param1=me.param1, param2=me.param2}
 		end
 		update_door(pos, tmp_node)
 		meta:set_int("state", state)
 end
 
 
-minetest.register_node("doors:iron_trapdoor", {
+minetest.register_node("mcre_doors:iron_trapdoor", {
 	description = "Trapdoor",
 	drawtype = "nodebox",
 	tiles = {"iron_trapdoor.png", "iron_trapdoor.png",  "default_steel_block.png",  "default_steel_block.png", "default_steel_block.png", "default_steel_block.png"},
@@ -604,7 +604,7 @@ minetest.register_node("doors:iron_trapdoor", {
 })
 
 
-minetest.register_node("doors:iron_trapdoor_open", {
+minetest.register_node("mcre_doors:iron_trapdoor_open", {
 	drawtype = "nodebox",
 	tiles = {"default_steel_block.png", "default_steel_block.png",  "default_steel_block.png",  "default_steel_block.png", "iron_trapdoor.png", "iron_trapdoor.png"},
 	paramtype = "light",
@@ -613,7 +613,7 @@ minetest.register_node("doors:iron_trapdoor_open", {
 	stack_max = 0,
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=0,door=1,mesecon_effector_on=1},
 	sounds = default.node_sound_wood_defaults(),
-	drop = "doors:iron_trapdoor",
+	drop = "mcre_doors:iron_trapdoor",
 	node_box = {
 		type = "fixed",
 		fixed = {-0.5, -0.5, 0.4, 0.5, 0.5, 0.5}
@@ -630,10 +630,10 @@ minetest.register_node("doors:iron_trapdoor_open", {
 })
 
 minetest.register_craft({
-	output = 'doors:iron_trapdoor 2',
+	output = 'mcre_doors:iron_trapdoor 2',
 	recipe = {
-		{'default:steel_ingot', 'default:steel_ingot', ''},
-		{'default:steel_ingot', 'default:steel_ingot', ''},
+		{'mcre_default:steel_ingot', 'mcre_default:steel_ingot', ''},
+		{'mcre_default:steel_ingot', 'mcre_default:steel_ingot', ''},
 	}
 })
 
