@@ -185,7 +185,7 @@ end
 function set_fire(pointed_thing)
 		local n = minetest.get_node(pointed_thing.above)
 		if n.name ~= ""  and n.name == "air" and not minetest.is_protected(pointed_thing.above, "fire") then
-			minetest.add_node(pointed_thing.above, {name="fire:basic_flame"})
+			minetest.add_node(pointed_thing.above, {name="mcre_fire:basic_flame"})
 		end
 end
 
@@ -452,19 +452,19 @@ minetest.after(0.5, function()
 	plant_tab[4] = "mcre_default:grass"
 	plant_tab[5] = "mcre_default:grass"
 
-if minetest.get_modpath("flowers") ~= nil then
+if minetest.get_modpath("mcre_flowers") ~= nil then
 	rnd_max = 16
-	plant_tab[6] = "flowers:dandelion_yellow"
-	plant_tab[7] = "flowers:rose"
-	plant_tab[8] = "flowers:oxeye_daisy"
-	plant_tab[9] = "flowers:tulip_orange"
-	plant_tab[10] = "flowers:tulip_red"
-	plant_tab[11] = "flowers:tulip_white"
-	plant_tab[12] = "flowers:tulip_pink"
-	plant_tab[13] = "flowers:allium"
-	plant_tab[14] = "flowers:paeonia"
-	plant_tab[15] = "flowers:houstonia"
-	plant_tab[16] = "flowers:blue_orchid"
+	plant_tab[6] = "mcre_flowers:dandelion_yellow"
+	plant_tab[7] = "mcre_flowers:rose"
+	plant_tab[8] = "mcre_flowers:oxeye_daisy"
+	plant_tab[9] = "mcre_flowers:tulip_orange"
+	plant_tab[10] = "mcre_flowers:tulip_red"
+	plant_tab[11] = "mcre_flowers:tulip_white"
+	plant_tab[12] = "mcre_flowers:tulip_pink"
+	plant_tab[13] = "mcre_flowers:allium"
+	plant_tab[14] = "mcre_flowers:paeonia"
+	plant_tab[15] = "mcre_flowers:houstonia"
+	plant_tab[16] = "mcre_flowers:blue_orchid"
 end
 
 end)
@@ -477,42 +477,42 @@ function duengen(pointed_thing)
 	if n.name == "mcre_default:sapling" then
 		minetest.add_node(pos, {name="air"})
 		generate_tree(pos, "mcre_default:tree", "mcre_default:leaves", 1)
-	elseif string.find(n.name, "farming:wheat_") ~= nil then
+	elseif string.find(n.name, "mcre_farming:wheat_") ~= nil then
 		stage = string.sub(n.name, 15)
 		if stage == "3" then
-			minetest.add_node(pos, {name="farming:wheat"})
+			minetest.add_node(pos, {name="mcre_farming:wheat"})
 		elseif math.random(1,5) < 3 then
-			minetest.add_node(pos, {name="farming:wheat"})
+			minetest.add_node(pos, {name="mcre_farming:wheat"})
 		else
-			minetest.add_node(pos, {name="farming:wheat_"..math.random(2,3)})
+			minetest.add_node(pos, {name="mcre_farming:wheat_"..math.random(2,3)})
 		end
-	elseif string.find(n.name, "farming:potato_") ~= nil then
+	elseif string.find(n.name, "mcre_farming:potato_") ~= nil then
 		stage = tonumber(string.sub(n.name, 16))
 		if stage == 1 then
-			minetest.add_node(pos, {name="farming:potato_"..math.random(stage,2)})
+			minetest.add_node(pos, {name="mcre_farming:potato_"..math.random(stage,2)})
 		else
-			minetest.add_node(pos, {name="farming:potato"})
+			minetest.add_node(pos, {name="mcre_farming:potato"})
 		end
-	elseif string.find(n.name, "farming:carrot_") ~= nil then
+	elseif string.find(n.name, "mcre_farming:carrot_") ~= nil then
 		stage = tonumber(string.sub(n.name, 16))
 		if stage == 1 then
-			minetest.add_node(pos, {name="farming:carrot_"..math.random(stage,2)})
+			minetest.add_node(pos, {name="mcre_farming:carrot_"..math.random(stage,2)})
 		else
-			minetest.add_node(pos, {name="farming:carrot"})
+			minetest.add_node(pos, {name="mcre_farming:carrot"})
 		end
-	elseif string.find(n.name, "farming:pumpkin_") ~= nil then
+	elseif string.find(n.name, "mcre_farming:pumpkin_") ~= nil then
 		stage = tonumber(string.sub(n.name, 17))
 		if stage == 1 then
-			minetest.add_node(pos, {name="farming:pumpkin_"..math.random(stage,2)})
+			minetest.add_node(pos, {name="mcre_farming:pumpkin_"..math.random(stage,2)})
 		else
-			minetest.add_node(pos, {name="farming:pumpkintige_unconnect"})
+			minetest.add_node(pos, {name="mcre_farming:pumpkintige_unconnect"})
 		end
-	elseif string.find(n.name, "farming:melontige_") ~= nil then
+	elseif string.find(n.name, "mcre_farming:melontige_") ~= nil then
 		stage = tonumber(string.sub(n.name, 18))
 		if stage == 1 then
-			minetest.add_node(pos, {name="farming:melontige_"..math.random(stage,2)})
+			minetest.add_node(pos, {name="mcre_farming:melontige_"..math.random(stage,2)})
 		else
-			minetest.add_node(pos, {name="farming:melontige_unconnect"})
+			minetest.add_node(pos, {name="mcre_farming:melontige_unconnect"})
 		end
 	elseif n.name ~= ""  and n.name == "mcre_default:junglesapling" then
 		minetest.add_node(pos, {name="air"})
