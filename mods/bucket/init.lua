@@ -3,15 +3,15 @@
 
 local LIQUID_MAX = 8  --The number of water levels when liquid_finite is enabled
 
-minetest.register_alias("bucket", "bucket:bucket_empty")
-minetest.register_alias("bucket_water", "bucket:bucket_water")
-minetest.register_alias("bucket_lava", "bucket:bucket_lava")
+minetest.register_alias("bucket", "mcre_bucket:bucket_empty")
+minetest.register_alias("bucket_water", "mcre_bucket:bucket_water")
+minetest.register_alias("bucket_lava", "mcre_bucket:bucket_lava")
 
 minetest.register_craft({
-	output = 'bucket:bucket_empty 1',
+	output = 'mcre_bucket:bucket_empty 1',
 	recipe = {
-		{'default:steel_ingot', '', 'default:steel_ingot'},
-		{'', 'default:steel_ingot', ''},
+		{'mcre_default:steel_ingot', '', 'mcre_default:steel_ingot'},
+		{'', 'mcre_default:steel_ingot', ''},
 	}
 })
 
@@ -105,13 +105,13 @@ function bucket.register_liquid(source, flowing, itemname, inventory_image, name
 					end
 				end
 
-				return {name="bucket:bucket_empty"}
+				return {name="mcre_bucket:bucket_empty"}
 			end
 		})
 	end
 end
 
-minetest.register_craftitem("bucket:bucket_empty", {
+minetest.register_craftitem("mcre_bucket:bucket_empty", {
 	description = "Empty Bucket",
 	inventory_image = "bucket.png",
 	stack_max = 1,
@@ -136,24 +136,24 @@ minetest.register_craftitem("bucket:bucket_empty", {
 })
 
 bucket.register_liquid(
-	"default:water_source",
-	"default:water_flowing",
-	"bucket:bucket_water",
+	"mcre_default:water_source",
+	"mcre_default:water_flowing",
+	"mcre_bucket:bucket_water",
 	"bucket_water.png",
 	"Water Bucket"
 )
 
 bucket.register_liquid(
-	"default:lava_source",
-	"default:lava_flowing",
-	"bucket:bucket_lava",
+	"mcre_default:lava_source",
+	"mcre_default:lava_flowing",
+	"mcre_bucket:bucket_lava",
 	"bucket_lava.png",
 	"Lava Bucket"
 )
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "bucket:bucket_lava",
+	recipe = "mcre_bucket:bucket_lava",
 	burntime = 60,
-	replacements = {{"bucket:bucket_lava", "bucket:bucket_empty"}},
+	replacements = {{"mcre_bucket:bucket_lava", "mcre_bucket:bucket_empty"}},
 })
