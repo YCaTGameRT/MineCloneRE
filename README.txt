@@ -26,6 +26,10 @@ At version 0.22.0 faithful textures fully removed from game
 
 At version 0.23.0 and above MineCloneRE mods naming start at mcre_ prefix
 and no longer support default compability with MTG mods
+This version have many bugs. If you see one, please reporte it at
+https://kitchen.32potatoes.net/YCaTGameRT/MineCloneRE/issues
+or send me message at
+ycatgamert@gmail.com
 
 
 License of source code
