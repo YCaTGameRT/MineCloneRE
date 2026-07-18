@@ -27,7 +27,7 @@ minetest.register_globalstep(function(dtime)
 			for j,stack in ipairs(player:get_inventory():get_list("main")) do
 				if minetest.get_item_group(stack:get_name(), "compass") ~= 0 and
 						minetest.get_item_group(stack:get_name(), "compass")-1 ~= compass_image then
-					player:get_inventory():set_stack("main", j, "compass:"..compass_image)
+					player:get_inventory():set_stack("main", j, "mcre_compass:"..compass_image)
 				end
 			end
 		end
@@ -55,7 +55,7 @@ for i,img in ipairs(images) do
 	if i == 1 then
 		inv = 0
 	end
-	minetest.register_tool("compass:"..(i-1), {
+	minetest.register_tool("mcre_compass:"..(i-1), {
 		description = "Compass",
 		inventory_image = img,
 		wield_image = img,
@@ -65,10 +65,10 @@ for i,img in ipairs(images) do
 end
 
 minetest.register_craft({
-	output = 'compass:1',
+	output = 'mcre_compass:1',
 	recipe = {
-		{'', 'default:iron_ingot', ''},
-		{'default:iron_ingot', 'default_redstone_dust', 'default:iron_ingot'},
-		{'', 'default:iron_ingot', ''}
+		{'', 'mcre_default:iron_ingot', ''},
+		{'mcre_default:iron_ingot', 'mcre_default_redstone_dust', 'mcre_default:iron_ingot'},
+		{'', 'mcre_default:iron_ingot', ''}
 	}
 })
