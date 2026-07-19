@@ -126,7 +126,7 @@ minetest.register_craftitem("mcre_farming:wheat_harvested", {
 })
 
 minetest.register_craft({
-	output = "farming:bread",
+	output = "mcre_farming:bread",
 	recipe = {
 		{'mcre_farming:wheat_harvested', 'mcre_farming:wheat_harvested', 'mcre_farming:wheat_harvested'},
 	}
