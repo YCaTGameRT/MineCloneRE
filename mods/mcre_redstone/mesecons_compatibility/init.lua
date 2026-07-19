@@ -147,7 +147,7 @@ function doors:register_door(name, def)
 	})
 end
 
-doors:register_door("doors:door_wood", {
+doors:register_door("mcre_doors:door_wood", {
 	description = "Wooden Door",
 	inventory_image = "door_wood.png",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,door=1},
@@ -156,7 +156,7 @@ doors:register_door("doors:door_wood", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-doors:register_door("doors:door_steel", {
+doors:register_door("mcre_doors:door_steel", {
 	description = "Steel Door",
 	inventory_image = "door_steel.png",
 	groups = {snappy=1,bendy=2,cracky=1,melty=2,level=2,door=1},
