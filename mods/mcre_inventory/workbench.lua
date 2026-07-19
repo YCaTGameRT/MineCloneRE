@@ -1,0 +1,22 @@
+minetest.register_node("mcre_inventory:crafting_table", {
+	description = "Crafting Table",
+	tiles = {"inventory_crafting_table_top.png", "default_wood.png", "inventory_crafting_table_side.png",
+		"inventory_crafting_table_side.png", "inventory_crafting_table_front.png", "inventory_crafting_table_front.png"},
+	paramtype2 = "facedir",
+	paramtype = "light",
+	groups = {choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	sounds = default.node_sound_wood_defaults(),
+	on_rightclick = function(pos, node, clicker, itemstack)
+		minetest.show_formspec(clicker:get_player_name(), "mcre_inventory:craftin_table", CRAFTING_FORMSPEC)
+	end,
+})
+
+minetest.register_craft({
+	output = "mcre_inventory:crafting_table",
+	recipe = {
+		{"group:wood", "group:wood"},
+		{"group:wood", "group:wood"},
+	},
+})
+
+

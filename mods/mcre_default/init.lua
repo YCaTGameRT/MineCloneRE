@@ -1,0 +1,41 @@
+-- Minetest 0.4 mod: default
+-- See README.txt for licensing and other information.
+local init = os.clock()
+-- The API documentation in here was moved into doc/lua_api.txt
+
+WATER_ALPHA = 160
+WATER_VISC = 1
+LAVA_VISC = 7
+LIGHT_MAX = 20
+
+-- Show the ModPack Name :D
+print(" __  __ _             _____ _                           ___   ___  _  _   ")
+print("|  \\/  (_)           / ____| |                         / _ \\ |__ \\| || |  ")
+print("| \\  / |_ _ __   ___| |    | | ___  _ __   ___  __   _| | | |   ) | || |_ ")
+print("| |\\/| | | '_ \\ / _ \\ |    | |/ _ \\| '_ \\ / _ \\ \\ \\ / / | | |  / /|__   _|")
+print("| |  | | | | | |  __/ |____| | (_) | | | |  __/  \\ V /| |_| | / /_   | |  ")
+print("|_|  |_|_|_| |_|\\___|\\_____|_|\\___/|_| |_|\\___|   \\_/  \\___(_)____|  |_|  ")
+                                                                           
+                                                                           
+
+-- Definitions made by this mod that other mods can use too
+default = {}
+
+-- Load files
+dofile(minetest.get_modpath("mcre_default").."/functions.lua")
+dofile(minetest.get_modpath("mcre_default").."/nodes.lua")
+dofile(minetest.get_modpath("mcre_default").."/tools.lua")
+dofile(minetest.get_modpath("mcre_default").."/craftitems.lua")
+dofile(minetest.get_modpath("mcre_default").."/crafting.lua")
+dofile(minetest.get_modpath("mcre_default").."/mapgen.lua")
+--dofile(minetest.get_modpath("default").."/mapgen_v7.lua")
+dofile(minetest.get_modpath("mcre_default").."/player.lua")
+
+-- Aliases
+minetest.register_alias("mcre_default:desert_sand", "mcre_default:sand")
+minetest.register_alias("mcre_default:desert_stone", "mcre_default:sandstone")
+minetest.register_alias("mcre_default:iron_lump", "mcre_default:stone_with_iron")
+minetest.register_alias("mcre_default:gold_lump", "mcre_default:stone_with_gold")
+
+local time_to_load= os.clock() - init
+print(string.format("[MOD] "..minetest.get_current_modname().." loaded in %.4f s", time_to_load))
