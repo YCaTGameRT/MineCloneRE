@@ -21,6 +21,16 @@ Forked by YCaTGameRT and fixed by farfind
 MineCloneRE will fix bugs of the original MineClone 
 that occur in the new version of the Luanti engine
 
+At version 0.22.0 faithful textures fully removed from game
+(for legacy exp. play version 0.21.1)
+
+At version 0.23.0 and above MineCloneRE mods naming start at mcre_ prefix
+and no longer support default compability with MTG mods
+This version have many bugs. If you see one, please reporte it at
+https://kitchen.32potatoes.net/YCaTGameRT/MineCloneRE/issues
+or send me message at
+ycatgamert@gmail.com
+
 
 License of source code
 ----------------------
@@ -76,5 +86,17 @@ http://www.minecraftforum.net/topic/72747-/
 License of ./menu/
 Copyright (C) 2025 YCaTGameRT CC BY-SA 4.0
 
-License of ./screenshots/
-Copyright (C) 2025 YCaTGameRT CC BY-SA 4.0
+
+Official source code repositories
+---------------------------------
+
+You can see source code at CodeKitchen:
+https://kitchen.32potatoes.net/YCaTGameRT/MineCloneRE
+
+Or select on of mirrors:
+GitHub - https://github.com/YCaTGameRT/MineCloneRE
+Gitea - https://gitea.com/YCaTGameRT/MineCloneRE
+SolarSystem - https://solar.32potatoes.net/MineCloneRE
+
+Legacy and archived repository on Codeberg:
+https://codeberg.org/YCaTGameRT/MineCloneRE
