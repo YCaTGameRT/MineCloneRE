@@ -28,7 +28,6 @@ dofile(minetest.get_modpath("mcre_default").."/tools.lua")
 dofile(minetest.get_modpath("mcre_default").."/craftitems.lua")
 dofile(minetest.get_modpath("mcre_default").."/crafting.lua")
 dofile(minetest.get_modpath("mcre_default").."/mapgen.lua")
---dofile(minetest.get_modpath("default").."/mapgen_v7.lua")
 dofile(minetest.get_modpath("mcre_default").."/player.lua")
 
 -- Aliases

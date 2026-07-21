@@ -39,6 +39,7 @@ core.register_alias("hardened_clay:red", "mcre_hardened_clay:red")
 core.register_alias("default:chest", "mcre_default:chest")
 core.register_alias("mesecons_pressureplates:pressure_plate_stone_off", "mcre_mesecons_pressureplates:pressure_plate_stone_off")
 core.register_alias("hardened_clay:blue", "mcre_hardened_clay:blue")
+core.register_alias("tnt:tnt", "mcre_tnt:tnt")
 
 
 random_struct.get_struct = function(file)
