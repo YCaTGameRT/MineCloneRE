@@ -40,6 +40,12 @@ core.register_alias("default:chest", "mcre_default:chest")
 core.register_alias("mesecons_pressureplates:pressure_plate_stone_off", "mcre_mesecons_pressureplates:pressure_plate_stone_off")
 core.register_alias("hardened_clay:blue", "mcre_hardened_clay:blue")
 core.register_alias("tnt:tnt", "mcre_tnt:tnt")
+core.register_alias("stairs:stair_sprucewood", "mcre_stairs:stair_sprucewood")
+core.register_alias("stairs:stair_cobble", "mcre_stairs:stair_cobble")
+core.register_alias("stairs:stair_wood", "mcre_stairs:stair_wood")
+core.register_alias("stairs:slab_stone", "mcre_stairs:slab_stone")
+core.register_alias("stairs:stair_sandstone", "mcre_stairs:stair_sandstone")
+core.register_alias("stairs:slab_sandstone", "mcre_stairs:slab_sandstone")
 
 
 random_struct.get_struct = function(file)
